@@ -75,6 +75,8 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 💾 Faça backup antes de instalar qualquer módulo
 
+💥 *NÃO USAR JUNTO COM O FDE.AI, DÃO CONFLITO*
+
 🚫 Use por sua conta e risco. Testado e funcional, mas alterações no sistema sempre têm riscos
 
 ✅ Pode ser desinstalado facilmente pelo próprio Magisk

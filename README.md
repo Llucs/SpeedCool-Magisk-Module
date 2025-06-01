@@ -30,7 +30,7 @@ SpeedCool é um módulo Magisk focado em:
 
 ✔️ Android 10 até 14
 
-✔️ Otimizado para o Galaxy A10 (A105M) com crDroid 10.10, mas pode funcionar em outros aparelhos
+✔️ Otimizado para funcionar na maioria dos aparelhos
 
 ✔️ Funciona em qualquer ROM com suporte ao Magisk
 
@@ -85,12 +85,13 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 # 🛠️ Futuras Atualizações
 
-🎯 Modo Turbo (foco máximo em desempenho)
+🎯 Modo Desempenho (foco máximo em desempenho)
 
 🌿 Modo Eco (foco em bateria e resfriamento)
 
-🎛️ Interface com opções customizadas (em desenvolvimento)
+⚖️ Modo Balanceado (em desenvolvimento)
 
+⏺️ Botão na barra de status para escolher o modo (Em breve na v1.2)
 
 
 ---

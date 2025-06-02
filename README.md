@@ -28,7 +28,7 @@ SpeedCool é um módulo Magisk focado em:
 
 # 📱 Compatibilidade
 
-✔️ Android 10 até 14
+✔️ Android 6 até 16
 
 ✔️ Otimizado para funcionar na maioria dos aparelhos
 

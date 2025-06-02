@@ -36,6 +36,8 @@ SpeedCool é um módulo Magisk focado em:
 
 ✔️ Se adapta de acordo com a marca do celular, aumentando a compatibilidade
 
+> 💡 Observação: O SpeedCool traz benefícios tanto para celulares de entrada, que precisam de mais desempenho e refrigeração, quanto para aparelhos intermediários e topo de linha, oferecendo mais fluidez, menos aquecimento e mais performance.
+
 
 
 ---

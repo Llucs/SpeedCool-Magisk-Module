@@ -99,6 +99,8 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 💻 Menu para escolher modo pelo termux (Em breve na v1.3)
 
+🤖 Modo automático que aprende os padrões de uso para melhor otimização (Em breve na v1.3)
+
 
 
 ---

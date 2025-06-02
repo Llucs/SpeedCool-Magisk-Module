@@ -77,7 +77,7 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 💾 Faça backup antes de instalar qualquer módulo
 
-💥 *NÃO USAR JUNTO COM O FDE.AI, DÃO CONFLITO*
+💥 *NÃO USAR JUNTO COM O FDE.AI ENTRE OUTROS QUE MEXEM EM COISAS DO SISTEMA PRA MELHORAR O DESEMPENHO, COMO O AIONIX, DÃO CONFLITO*
 
 🚫 Use por sua conta e risco. Testado e funcional, mas alterações no sistema sempre têm riscos
 

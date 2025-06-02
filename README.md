@@ -93,7 +93,7 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 ⚖️ Modo Balanceado (em desenvolvimento)
 
-💻 Menu para escolher módulo pelo termux (Em breve na v1.3)
+💻 Menu para escolher modo pelo termux (Em breve na v1.3)
 
 
 ---

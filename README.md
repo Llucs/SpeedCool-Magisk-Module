@@ -99,7 +99,7 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 ---
 
-# 🛩️ Link do canal de atualizações:
+# 📢 Link do canal de atualizações:
 
 https://t.me/SpeedCool_Releases
 

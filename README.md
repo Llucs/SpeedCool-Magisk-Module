@@ -96,6 +96,14 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 💻 Menu para escolher modo pelo termux (Em breve na v1.3)
 
 
+
+---
+
+# 🛩️ Link do canal de atualizações:
+
+https://t.me/SpeedCool_Releases
+
+
 ---
 
 # 👨‍💻 Desenvolvedor

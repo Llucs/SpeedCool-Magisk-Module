@@ -100,15 +100,7 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 # 🛠️ Futuras Atualizações
 
-🎯 Modo Desempenho (foco máximo em desempenho)
-
-🌿 Modo Eco (foco em bateria e resfriamento)
-
-⚖️ Modo Balanceado (em desenvolvimento)
-
-💻 Menu para escolher modo pelo termux (Em breve na v1.3)
-
-🤖 Modo automático que aprende os padrões de uso para melhor otimização (Em breve na v1.3)
+Até agora não temos futuras atualizações previstas, se tiver alguma sugestão pode pedir ela pelo grupo aberto do link abaixo, o grupo é só de atualizações mas tem um canal vinculado de chat:
 
 
 

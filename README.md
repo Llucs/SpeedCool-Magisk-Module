@@ -70,6 +70,15 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 5. Reinicie seu dispositivo
 
+•Após a instalação, para acessar o menu do SpeedCool via Termux, siga os passos: 
+
+1. Abra o Termux e digite su para obter permissões de superusuário.
+
+
+2. Quando solicitado, conceda a permissão de superusuário.
+
+
+3. Execute o comando: sh /data/adb/modules/speedcool/scripts/menu.sh 
 
 
 

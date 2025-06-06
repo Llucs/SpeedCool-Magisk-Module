@@ -50,6 +50,8 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 100% sem interface, leve e funcional
 
+Menu acessível via Termux
+
 
 
 ---
@@ -88,7 +90,7 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 💾 Faça backup antes de instalar qualquer módulo
 
-💥 *NÃO USAR JUNTO COM O FDE.AI ENTRE OUTROS QUE MEXEM EM COISAS DO SISTEMA PRA MELHORAR O DESEMPENHO, COMO O AIONIX, DÃO CONFLITO*
+💥 *NÃO USAR JUNTO COM O FDE.AI ENTRE OUTROS QUE MEXEM EM COISAS DO SISTEMA PRA MELHORAR O DESEMPENHO, DÃO CONFLITO, APENAS O AIONIX PODE*
 
 🚫 Use por sua conta e risco. Testado e funcional, mas alterações no sistema sempre têm riscos
 
@@ -100,9 +102,7 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 # 🛠️ Futuras Atualizações
 
-• Compatibilidade com o Aionix (Em breve na v1.5)
-
-Além disso não temos futuras atualizações previstas, se tiver alguma sugestão pode pedir ela pelo grupo aberto do link abaixo, o grupo é só de atualizações mas tem um canal vinculado de chat:
+Não temos futuras atualizações previstas, se tiver alguma sugestão pode pedir ela pelo grupo aberto do link abaixo, o grupo é só de atualizações mas tem um canal vinculado de chat:
 
 
 

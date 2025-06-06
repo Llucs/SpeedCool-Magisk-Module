@@ -100,7 +100,7 @@ Atua em CPU, GPU, I/O, gerenciamento de RAM e serviços de fundo
 
 # 🛠️ Futuras Atualizações
 
-• Compatibilidade com o Aionix
+• Compatibilidade com o Aionix (Em breve na v1.5)
 
 Além disso não temos futuras atualizações previstas, se tiver alguma sugestão pode pedir ela pelo grupo aberto do link abaixo, o grupo é só de atualizações mas tem um canal vinculado de chat:
 

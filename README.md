@@ -115,6 +115,12 @@ https://t.me/SpeedCool_Releases
 
 ---
 
+# Dispositivos testados ✅
+
+## Moto G8 Play
+
+Caso queria que seu dispositivo esteja aqui pode testar e nós comunicar se está funcionando pelo nosso canal aberto do telegram acima.
+
 # 👨‍💻 Desenvolvedor
 
 🔥 Leandro Lucas (Lkz)

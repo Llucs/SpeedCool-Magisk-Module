@@ -90,7 +90,9 @@ Menu acessível via Termux
 
 💾 Faça backup antes de instalar qualquer módulo
 
-💥 *NÃO USAR JUNTO COM O FDE.AI ENTRE OUTROS QUE MEXEM EM COISAS DO SISTEMA PRA MELHORAR O DESEMPENHO, DÃO CONFLITO, APENAS O AIONIX PODE*
+💥 *NÃO USAR JUNTO COM O FDE.AI ENTRE OUTROS QUE MEXEM EM COISAS DO SISTEMA PRA MELHORAR O DESEMPENHO, DÃO CONFLITO*
+
+⚡ *O AIONIX FOI ADCIONADO A CONPATIBILIDADE NA VERSÃO MAIS RECENTE POREM PODE LIMITAR A OTIMIZAÇÃO*
 
 🚫 Use por sua conta e risco. Testado e funcional, mas alterações no sistema sempre têm riscos
 

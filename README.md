@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Llucs/SpeedCool-Modulo-Magisk/main/banner.png" alt="SpeedCool Banner" />
+</p>
+
 # SpeedCool-Modulo-Magisk
 > 🔥 SpeedCool é um módulo Magisk que melhora o desempenho, reduz o uso da RAM e controla o aquecimento, deixando seu Android mais rápido, leve e frio.
 

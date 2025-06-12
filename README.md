@@ -106,7 +106,9 @@ Menu acessível via Termux
 
 # 🛠️ Futuras Atualizações
 
-Não temos futuras atualizações previstas, se tiver alguma sugestão pode pedir ela pelo grupo aberto do link abaixo, o grupo é só de atualizações mas tem um canal vinculado de chat:
+• Volta da Compatibilidade com Aionix
+
+Além disso não temos futuras atualizações previstas, se tiver alguma sugestão pode pedir ela pelo grupo aberto do link abaixo, o grupo é só de atualizações mas tem um canal vinculado de chat:
 
 
 

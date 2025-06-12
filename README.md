@@ -134,3 +134,5 @@ Caso queria que seu dispositivo esteja aqui pode testar e nós comunicar se est�
 # 👨‍💻 Desenvolvedor
 
 🔥 Leandro Lucas (Lkz)
+
+**SpeedCool** © 2025 • Feito com ❤️ por Llucs

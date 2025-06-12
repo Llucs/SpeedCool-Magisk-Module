@@ -133,6 +133,15 @@ Galaxy A10
 
 Caso queria que seu dispositivo esteja aqui pode testar e nós comunicar se está funcionando pelo nosso canal aberto do telegram acima.
 
+
+---
+
+# Problemas Conhecidos ⛔
+
+• Magisk não reconhece Speedcool como módulo no A23 e talvez em outros dispositivos.
+
+---
+
 # 👨‍💻 Desenvolvedor
 
 🔥 Leandro Lucas (Lkz)

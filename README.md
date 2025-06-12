@@ -120,6 +120,7 @@ Além disso não temos futuras atualizações previstas, se tiver alguma sugest�
 
 https://t.me/SpeedCool_Releases
 
+*Procuramos pessoas com experiência em módulospara nós ajudar a fazer as próximas versões e corrigir bugs porque sozinho não é fácil😅*
 
 ---
 
@@ -138,7 +139,7 @@ Caso queria que seu dispositivo esteja aqui pode testar e nós comunicar se est�
 
 # Problemas Conhecidos ⛔
 
-• Magisk não reconhece Speedcool como módulo no A23 e talvez em outros dispositivos.
+• Magisk não reconhece Speedcool como módulo no A24 e talvez em outros dispositivos.
 
 ---
 

@@ -120,7 +120,7 @@ Além disso não temos futuras atualizações previstas, se tiver alguma sugest�
 
 https://t.me/SpeedCool_Releases
 
-*Procuramos pessoas com experiência em módulospara nós ajudar a fazer as próximas versões e corrigir bugs porque sozinho não é fácil😅*
+*Procuramos pessoas com experiência em módulos para nós ajudar a fazer as próximas versões e corrigir bugs porque sozinho não é fácil😅*
 
 ---
 

@@ -125,11 +125,11 @@ https://t.me/SpeedCool_Releases
 
 # Dispositivos testados ✅
 
-## Moto G8 Play
+Moto G8 Play
 
-## Galaxy A15
+Galaxy A15
 
-## Galaxy A10
+Galaxy A10
 
 Caso queria que seu dispositivo esteja aqui pode testar e nós comunicar se está funcionando pelo nosso canal aberto do telegram acima.
 

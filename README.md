@@ -36,6 +36,8 @@ SpeedCool é um módulo Magisk focado em:
 
 ✔️ Otimizado para funcionar em qualquer aparelho
 
+✔️ Funciona em chips Mediatek, Qualcomm, Exynos e outros podem funcionar
+
 ✔️ Funciona em qualquer ROM com suporte ao Magisk
 
 ✔️ Se adapta de acordo com a marca do celular, aumentando a compatibilidade

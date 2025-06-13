@@ -137,9 +137,19 @@ Caso queria que seu dispositivo esteja aqui pode testar e nós comunicar se est�
 
 ---
 
-# Problemas Conhecidos ⛔
+# ❗ Erros Comuns
 
-• Magisk não reconhece Speedcool como módulo no A24 e talvez em outros dispositivos.
+🔸 Erro:
+
+> "Este não é um módulo Magisk válido"
+
+
+
+🔸 Causa:
+Esse erro geralmente acontece se você estiver usando uma versão antiga do Magisk.
+
+🔸 Solução:
+Atualize o Magisk para a versão 29.0 ou superior e tente instalar novamente.
 
 ---
 

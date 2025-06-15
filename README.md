@@ -151,6 +151,7 @@ Esse erro geralmente acontece se você estiver usando uma versão antiga do Magi
 🔸 Solução:
 Atualize o Magisk para a versão 29.0 ou superior e tente instalar novamente.
 
+• Caso o erro persista, talvez haja algum conflito com outro módulo ou seu dispositivo não é compatível.
 ---
 
 # 👨‍💻 Desenvolvedor

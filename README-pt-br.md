@@ -75,11 +75,8 @@ sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 🔧 Futuras Atualizações
 
-🔥 Suporte completo ao KSU
 
-🔄 Reimplementação da compatibilidade com Aionix
-
-📢 Sugestões? Mande no grupo de atualizações!
+📢 Ainda não temos planos, tem sugestões? Mande no grupo de atualizações!
 
 
 

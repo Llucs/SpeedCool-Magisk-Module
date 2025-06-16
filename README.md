@@ -2,99 +2,93 @@
   <img src="https://raw.githubusercontent.com/Llucs/SpeedCool-Modulo-Magisk/main/banner.png" alt="SpeedCool Banner" />
 </p>
 
-# 🔥 SpeedCool - Módulo Magisk
+# 🔥 SpeedCool - Magisk Module
 
-> Acelere, resfrie e otimize seu Android com o SpeedCool: mais leveza, menos travamentos, mais desempenho!
-
----
-
-## 🚀 Sobre o SpeedCool
-
-**SpeedCool** é um módulo Magisk que aplica otimizações no sistema para:
-
-- ✅ Melhorar o desempenho geral e em jogos
-- ❄️ Reduzir o aquecimento da CPU e GPU
-- 🧠 Liberar memória RAM para deixar o aparelho mais leve
-- ⚡ Tornar o sistema mais rápido, fluido e responsivo
+> Boost, cool down, and optimize your Android with SpeedCool: less lag, more performance, and a cooler system!
 
 ---
 
-## 📱 Compatibilidade
+## 🚀 About SpeedCool
 
-- ✅ Android 6 até Android 16
-- ✅ Compatível com chips **MediaTek, Qualcomm, Exynos** (e possivelmente outros)
-- ✅ Funciona em qualquer ROM com suporte ao Magisk
-- ✅ Se adapta de acordo com a marca do celular (algoritmo adaptativo)
+**SpeedCool** is a Magisk module that applies system-level optimizations to:
 
-> 💡 Ideal tanto para celulares básicos quanto para intermediários e topo de linha.
-
----
-
-## 🏗️ Como Funciona
-
-- Scripts otimizam **CPU, GPU, I/O, RAM e serviços em segundo plano**
-- Aplicado automaticamente no boot
-- Não tem interface — 100% leve e funcional
-- Possui menu via **Termux**
+- ✅ Improve overall and gaming performance
+- ❄️ Reduce CPU and GPU overheating
+- 🧠 Free up RAM for a lighter experience
+- ⚡ Make the system faster, smoother, and more responsive
 
 ---
 
-## 📦 Instalação
+## 📱 Compatibility
 
-1. Abra o **Magisk Manager**
-2. Vá na aba **Módulos**
-3. Toque em **Instalar a partir do armazenamento**
-4. Selecione o arquivo `SpeedCool_Vx.x.zip`
-5. **Reinicie o dispositivo**
+- ✅ Android 6 to Android 16
+- ✅ Compatible with **MediaTek, Qualcomm, Exynos** chips (others may work too)
+- ✅ Works on any ROM that supports Magisk
+- ✅ Adapts to device brand (adaptive optimization engine)
 
-### ➕ Acessar menu (via Termux)
-
-1. Abra o **Termux**
-2. Digite `su` e conceda permissão de superusuário
-3. Execute:
-
-`bash
-sh /data/adb/modules/speedcool/scripts/menu.sh`
-
+> 💡 Ideal for entry-level, mid-range, and flagship devices alike.
 
 ---
 
-⚠️ Avisos Importantes
+## 🏗️ How It Works
 
-💾 Faça backup antes de instalar qualquer módulo
+- Scripts optimize **CPU, GPU, I/O, RAM, and background services**
+- Applied automatically at boot
+- No UI — 100% lightweight and functional
+- Includes a **Termux-based control menu**
 
-🚫 Não use junto com módulos como FDE.AI, Aionix ou similares (pode causar conflito)
+---
 
-✅ Pode ser desinstalado facilmente via Magisk
+## 📦 Installation
 
-⚠️ Uso por conta e risco (testado, mas como todo módulo de sistema, pode variar)
+1. Open **Magisk Manager**
+2. Go to the **Modules** tab
+3. Tap **Install from storage**
+4. Select the file `SpeedCool_Vx.x.zip`
+5. **Reboot your device**
 
+### ➕ Accessing the Menu (via Termux)
+
+1. Open **Termux**
+2. Type `su` and grant superuser permission
+3. Run:
+
+```bash
+sh /data/adb/modules/speedcool/scripts/menu.sh
 
 
 ---
 
-🔧 Futuras Atualizações
+⚠️ Important Notices
 
-🔄 Reimplementação da compatibilidade com Aionix
-
-📢 Sugestões? Mande no grupo de atualizações!
-
+💾 Always make a backup before installing any module
+🚫 Do not use alongside modules like FDE.AI, Aionix, or others that tweak performance (may cause conflict)
+✅ Can be easily uninstalled via Magisk
+⚠️ Use at your own risk (tested and functional, but behavior may vary by device)
 
 
 ---
 
-📢 Canal de Atualizações
+🔧 Future Updates
 
-🔗 SpeedCool Releases no Telegram
+🔄 Re-adding compatibility with Aionix
+📢 Have suggestions? Send them in the update group!
 
-> Procuramos colaboradores experientes com Magisk para ajudar no desenvolvimento. 💪
+
+---
+
+📢 Update Channel
+
+🔗 SpeedCool Releases on Telegram
+
+> We're looking for experienced Magisk module developers to help with future versions! 💪
 
 
 
 
 ---
 
-📱 Dispositivos Testados
+📱 Tested Devices
 
 Moto G8 Play ✅
 
@@ -103,28 +97,28 @@ Galaxy A15 ✅
 Galaxy A10 ✅
 
 
-Quer ajudar? Teste em seu dispositivo e envie feedback no grupo!
+Want to help? Test it on your device and send feedback via the group!
 
 
 ---
 
-❗ Erros Comuns
+❗ Common Errors
 
-🔸 Erro:
+🔸 Error:
 
-> “Este não é um módulo Magisk válido”
+> "This is not a valid Magisk module"
 
 
 
-Causa: Versão do Magisk desatualizada.
-Solução: Atualize o Magisk para a versão 29.0 ou superior.
+Cause: Outdated Magisk version
+Solution: Update Magisk to version 29.0 or higher
 
-Se persistir, pode haver conflito com outro módulo ou incompatibilidade.
+If the issue persists, there may be a conflict with another module or an incompatibility.
 
 
 ---
 
-👨‍💻 Desenvolvedor
+👨‍💻 Developer
 
 🔥 Llucs (Leandro Lucas)
-SpeedCool © 2025 — Feito com ❤️ por @Llucs
+SpeedCool © 2025 — Made with ❤️ by @Llucs

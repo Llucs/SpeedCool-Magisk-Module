@@ -72,6 +72,9 @@ sh /data/adb/modules/speedcool/scripts/menu.sh`
 🔧 Future Updates
 
 🔄 Re-adding compatibility with Aionix
+
+🔥 Full KSU Support
+
 📢 Have suggestions? Send them in the update group!
 
 

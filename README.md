@@ -79,7 +79,7 @@ sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 📢 Update Channel
 
-🔗 SpeedCool Releases on Telegram
+🔗 [SpeedCool Releases on Telegram](https://t.me/SpeedCool_Releases)
 
 > We're looking for experienced Magisk module developers to help with future versions! 💪
 

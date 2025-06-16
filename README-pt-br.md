@@ -75,6 +75,8 @@ sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 🔧 Futuras Atualizações
 
+🔥 Suporte completo ao KSU
+
 🔄 Reimplementação da compatibilidade com Aionix
 
 📢 Sugestões? Mande no grupo de atualizações!
@@ -85,7 +87,7 @@ sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 📢 Canal de Atualizações
 
-🔗 SpeedCool Releases no Telegram
+🔗 [SpeedCool Releases no Telegram](https://t.me/SpeedCool_Releases)
 
 > Procuramos colaboradores experientes com Magisk para ajudar no desenvolvimento. 💪
 

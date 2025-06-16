@@ -52,6 +52,7 @@
 1. Abra o **Termux**
 2. Digite `su` e conceda permissão de superusuário
 3. Execute:
+
 ```bash
 sh /data/adb/modules/speedcool/scripts/menu.sh
 

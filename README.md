@@ -53,8 +53,8 @@
 2. Digite `su` e conceda permissão de superusuário
 3. Execute:
 
-```bash
-sh /data/adb/modules/speedcool/scripts/menu.sh
+`bash
+sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 
 ---

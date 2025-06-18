@@ -11,7 +11,7 @@
 README LANGUAGES:
 
 [Portuguese](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-pt-br.md) 
-[Espanhol](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-es.md)
+[Spanish](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-es.md)
 
 ## 🚀 About SpeedCool
 

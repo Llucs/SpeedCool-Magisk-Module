@@ -22,7 +22,7 @@
 ## 📱 Compatibilidade
 
 - ✅ Android 6 até Android 16
-- ✅ Compatível com chips **MediaTek, Qualcomm, Exynos** (e possivelmente outros)
+- ✅ Compatível com chips **MediaTek, Qualcomm, Tensor, Kirin, Exynos** (e possivelmente outros)
 - ✅ Funciona em qualquer ROM com suporte ao Magisk
 - ✅ Se adapta de acordo com a marca do celular (algoritmo adaptativo)
 

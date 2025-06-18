@@ -53,9 +53,15 @@
 2. Digite `su` e conceda permissão de superusuário
 3. Execute:
 
+No Magisk:
+
 `bash
 sh /data/adb/modules/speedcool/scripts/menu.sh`
 
+
+No KSU Next:
+
+`sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 
 ---
 

@@ -61,7 +61,8 @@ sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 No KSU Next:
 
-`sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
+`bash
+sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 
 ---
 

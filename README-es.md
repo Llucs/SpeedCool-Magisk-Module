@@ -87,7 +87,7 @@ En KSU Next:
 
 📢 Canal de Actualizaciones
 
-🔗 SpeedCool Releases en Telegram
+🔗 [SpeedCool Releases en Telegram](https://t.me/SpeedCool_Releases)
 
 > Buscamos colaboradores con experiencia en Magisk para apoyar el desarrollo. 💪
 

@@ -76,6 +76,8 @@ sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 
 ⚠️ Uso por conta e risco (testado, mas como todo módulo de sistema, pode variar)
 
+*O AIONIX É COMPATÍVEL COM AS VERSÕES MAIS RECENTES GRAÇAS AO SISTEMA ANTI-CONFLITO, NÃO O USE JUNTO COM O FDE.AI, SE VOCÊ TIVER QUE ESCOLHER UM, ESCOLHA O SPEEDCOOL, É MELHOR.*
+
 
 
 ---

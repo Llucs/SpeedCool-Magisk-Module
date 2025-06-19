@@ -75,6 +75,7 @@ En KSU Next:
 
 ⚠️ Uso bajo tu propio riesgo (ha sido probado, pero como cualquier módulo de sistema, puede variar)
 
+*AIONIX СОВМЕСТИМ С ПОСЛЕДНИМИ ВЕРСИЯМИ БЛАГОДАРЯ СИСТЕМЕ АНТИКОНФЛИКТА. НЕ ИСПОЛЬЗУЙТЕ ЕГО ВМЕСТЕ С FDE.AI. ЕСЛИ ВАМ ПРИДЕТСЯ ВЫБИРАТЬ ОДНУ, ВЫБИРАЙТЕ SPEEDCOOL, ЭТО ЛУЧШЕ.*
 
 ---
 

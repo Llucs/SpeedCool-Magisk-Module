@@ -79,6 +79,7 @@ sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 ✅ Can be easily uninstalled via Magisk
 ⚠️ Use at your own risk (tested and functional, but behavior may vary by device)
 
+*AIONIX IS COMPATIBLE WITH THE LATEST VERSIONS THANKS TO THE ANTI-CONFLICT SYSTEM, DO NOT USE IT TOGETHER WITH FDE.AI, IF YOU HAVE TO CHOOSE ONE, CHOOSE SPEEDCOOL, IT'S BETTER.*
 
 ---
 

@@ -55,8 +55,7 @@
 
 En Magisk:
 
-`bash
-sh /data/adb/modules/speedcool/scripts/menu.sh`
+`sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 En KSU Next:
 

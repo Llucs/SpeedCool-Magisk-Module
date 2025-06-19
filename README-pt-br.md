@@ -55,14 +55,12 @@
 
 No Magisk:
 
-`bash
-sh /data/adb/modules/speedcool/scripts/menu.sh`
+`sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 
 No KSU Next:
 
-`bash
-sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
+`sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 
 ---
 

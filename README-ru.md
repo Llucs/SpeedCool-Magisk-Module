@@ -55,12 +55,11 @@
 
 Для Magisk:
 
-```bash
-sh /data/adb/modules/speedcool/scripts/menu.sh
+`sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 Для KSU Next:
 
-sh /data/adb/ksu/modules/speedcool/scripts/menu.sh
+`sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 
 
 ---

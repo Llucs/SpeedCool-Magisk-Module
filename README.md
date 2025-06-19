@@ -61,13 +61,11 @@ README LANGUAGES:
 
 ### in magisk:
 
-`bash
-sh /data/adb/modules/speedcool/scripts/menu.sh`
+`sh /data/adb/modules/speedcool/scripts/menu.sh`
 
 ### in KSU:
 
- `bash
-sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
+ `sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 
 
 ---

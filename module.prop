@@ -1,0 +1,13 @@
+id=speedcool
+name=SpeedCool
+version=v2.0
+versionCode=11
+author=Llucs
+description=SpeedCool v2.0: Enhanced Magisk/KernelSU module with advanced optimization, Eco/Performance/Learning modes, interactive Termux menu, real-time monitoring, smart super cooling, and superior RAM management. Now with chipset detection, advanced learning engine, and improved compatibility with KSU Next.
+support=module
+support=post-fs-data
+support=late_start_service
+support=sh
+support=auto_mount
+
+

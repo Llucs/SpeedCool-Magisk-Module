@@ -53,13 +53,9 @@
 2. Escribe `su` y concede permisos de superusuario
 3. Ejecuta:
 
-En Magisk:
+En Magisk/KSU:
 
 `sh /data/adb/modules/speedcool/scripts/menu.sh`
-
-En KSU Next:
-
-`sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 
 
 ---

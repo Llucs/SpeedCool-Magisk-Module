@@ -59,13 +59,9 @@ README LANGUAGES:
 2. Type `su` and grant superuser permission
 3. Run:
 
-### in magisk:
+### in magisk/ksu:
 
 `sh /data/adb/modules/speedcool/scripts/menu.sh`
-
-### in KSU:
-
- `sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 
 
 ---

@@ -53,13 +53,9 @@
 2. Введите `su` и предоставьте root-доступ
 3. Выполните:
 
-Для Magisk:
+Для Magisk/KSU:
 
 `sh /data/adb/modules/speedcool/scripts/menu.sh`
-
-Для KSU Next:
-
-`sh /data/adb/ksu/modules/speedcool/scripts/menu.sh`
 
 
 ---

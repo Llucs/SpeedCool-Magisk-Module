@@ -59,7 +59,7 @@ README LANGUAGES:
 2. Type `su` and grant superuser permission
 3. Run:
 
-### in magisk/ksu:
+### In Magisk/KSU:
 
 `sh /data/adb/modules/speedcool/scripts/menu.sh`
 

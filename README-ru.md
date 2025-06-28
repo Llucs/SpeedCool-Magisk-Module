@@ -8,6 +8,8 @@
 
 ---
 
+![GitHub Repo stars](https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=social)
+
 ## 🚀 О SpeedCool
 
 **SpeedCool** — это модуль Magisk, который применяет системные оптимизации для:

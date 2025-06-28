@@ -1,4 +1,4 @@
-![Downloads](https://img.shields.io/github/downloads/Llucs/SpeedCool-Magisk-Module/total)
+![Downloads](https://img.shields.io/github/downloads/Llucs/SpeedCool-Magisk-Module/total) ![GitHub Repo stars](https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=social)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Llucs/SpeedCool-Modulo-Magisk/main/banner.png" alt="SpeedCool Banner" />
@@ -15,8 +15,6 @@ README LANGUAGES:
 [Portuguese](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-pt-br.md) 
 [Spanish](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-es.md)
 [Russian](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-ru.md)
-
-![GitHub Repo stars](https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=social)
 
 ## 🚀 About SpeedCool
 

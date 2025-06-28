@@ -14,6 +14,8 @@ README LANGUAGES:
 [Spanish](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-es.md)
 [Russian](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-ru.md)
 
+![GitHub Repo stars](https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=social)
+
 ## 🚀 About SpeedCool
 
 **SpeedCool** is a Magisk module that applies system-level optimizations to:

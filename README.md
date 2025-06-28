@@ -129,3 +129,5 @@ If the issue persists, there may be a conflict with another module or an incompa
 
 🔥 Llucs (Leandro Lucas)
 SpeedCool © 2025 — Made with ❤️ by @Llucs
+
+> Made by those who get it, for those who want true control.

@@ -1,3 +1,6 @@
+![Downloads](https://img.shields.io/github/downloads/Llucs/SpeedCool-Magisk-Module/total) ![GitHub Repo stars](https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=social)
+
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/Llucs/SpeedCool-Modulo-Magisk/main/banner.png" alt="SpeedCool Banner" />
 </p>
@@ -7,8 +10,6 @@
 > Acelere, resfrie e otimize seu Android com o SpeedCool: mais leveza, menos travamentos, mais desempenho!
 
 ---
-
-![GitHub Repo stars](https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=social)
 
 ## 🚀 Sobre o SpeedCool
 

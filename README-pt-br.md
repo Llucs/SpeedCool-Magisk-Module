@@ -128,4 +128,6 @@ Se persistir, pode haver conflito com outro módulo ou incompatibilidade.
 👨‍💻 Desenvolvedor
 
 🔥 Llucs (Leandro Lucas)
-SpeedCool © 2025 — Feito com ❤️ por @Llucs
+SpeedCool © 2025 — Feito com ❤️ por @Llucs>\
+
+> Feito por quem entende, pra quem quer controle de verdade.

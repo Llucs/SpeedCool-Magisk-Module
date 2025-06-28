@@ -123,3 +123,5 @@ Si el error persiste, puede haber conflicto con otro módulo o alguna incompatib
 
 🔥 Llucs (Leandro Lucas)
 SpeedCool © 2025 — Hecho con ❤️ por @Llucs
+
+> Hecho por quienes saben, para quienes quieren control de verdad.

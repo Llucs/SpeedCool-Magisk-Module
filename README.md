@@ -1,3 +1,5 @@
+![Downloads](https://img.shields.io/github/downloads/Llucs/SpeedCool-Magisk-Module/total)
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/Llucs/SpeedCool-Modulo-Magisk/main/banner.png" alt="SpeedCool Banner" />
 </p>

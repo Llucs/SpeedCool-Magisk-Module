@@ -29,6 +29,10 @@ README LANGUAGES:
 
 ---
 
+# ⚠️ SpeedCool version 2.2 is not working, for now use version 2.1
+
+---
+
 ## 📱 Compatibility
 
 - ✅ Android 6 to Android 16

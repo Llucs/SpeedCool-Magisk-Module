@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="auto">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SpeedCool - Módulo Magisk de Resfriamento</title>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap"></noscript>
+  <meta name="description" content="Módulo Magisk para controle térmico avançado em dispositivos Android">
+  <meta property="og:title" content="SpeedCool - Módulo Magisk de Resfriamento">
+  <meta property="og:description" content="Resfriamento inteligente. Desempenho adaptativo. Total controle térmico no seu Android.">
+  <meta property="og:type" content="website">
+  <meta name="keywords" content="magisk, android, resfriamento, performance, módulo, speedcool">
+  <style>
+    :root {
+      --azul-claro: #00b4d8;
+      --azul-escuro: #03045e;
+      --cor-texto: #f1f1f1;
+      --cor-fundo: #1b263b;
+      --cor-caixa: rgba(255, 255, 255, 0.05);
+    }
+
+    [data-theme="light"] {
+      --cor-texto: #222;
+      --cor-fundo: #f8f9fa;
+      --cor-caixa: rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Outfit', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      padding: 2rem;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .top-bar {
+      position: absolute;
+      top: 1.5rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+      z-index: 1001;
+    }
+
+    .theme-button,
+    .menu-button {
+      width: 34px;
+      height: 34px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--azul-claro);
+      outline: none;
+    }
+
+    .theme-button:focus,
+    .menu-button:focus {
+      outline: none;
+    }
+
+    .theme-button svg {
+      fill: #00b4d8 !important;
+      width: 24px;
+      height: 24px;
+      display: block;
+      filter: drop-shadow(0 0 2px rgba(0, 180, 216, 0.7));
+      transition: 0.3s ease;
+    }
+
+    .menu-button div {
+      height: 4px;
+      background-color: var(--azul-claro);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.4s;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      transition: right 0.4s ease;
+      padding-top: 60px;
+      z-index: 1000;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar.open {
+      right: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 1rem 2rem;
+      color: var(--cor-texto);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateX(5px);
+    }
+
+    .theme-button svg.sun {
+      display: none;
+    }
+
+    [data-theme="dark"] .theme-button .sun {
+      display: inline;
+    }
+
+    [data-theme="dark"] .theme-button .moon {
+      display: none;
+    }
+
+    section, header, footer {
+      animation: fadeIn 1s ease;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      color: var(--azul-claro);
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      color: #adb5bd;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--cor-caixa);
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #90e0ef;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    section ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    section ul li {
+      margin: 0.7rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    section ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #00d9ff;
+    }
+
+    .download {
+      text-align: center;
+      margin: 4rem 0 2rem 0;
+    }
+
+    .download a {
+      position: relative;
+      background: var(--azul-claro);
+      color: #fff;
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+      transition: 0.3s ease;
+      overflow: hidden;
+      border: none;
+      outline: none;
+    }
+
+    .download a::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: 0.5s;
+      transform: skewX(-45deg);
+    }
+
+    .download a:hover {
+      transform: scale(1.05);
+    }
+
+    .download a:hover::after {
+      left: 100%;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-top: 5rem;
+    }
+
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--azul-claro);
+      color: white;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      outline: none;
+    }
+    
+    #back-to-top.visible {
+      opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+    }
+
+    /* Estilo para código de terminal */
+    .terminal-code {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    .terminal-code code {
+      display: block;
+      white-space: pre;
+    }
+
+    .step {
+      margin-bottom: 1.5rem;
+    }
+
+    .step-number {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background: var(--azul-claro);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 25px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <button class="theme-button" onclick="toggleTheme()" aria-label="Alternar tema">
+      <!-- Sol (modo escuro ativo) -->
+      <svg class="sun" viewBox="0 0 24 24"><path d="M6.76 4.84l-1.8-1.79L3.5 4.5l1.79 1.8 1.47-1.46zm10.45 0l1.47 1.46 1.79-1.8-1.46-1.47-1.8 1.79zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zm8-10h3v-1h-3v1zM1 13h3v-1H1v1zm16.24 6.76l1.8 1.79 1.46-1.46-1.79-1.8-1.47 1.47zM4.84 17.24l-1.79 1.8 1.46 1.46 1.8-1.79-1.47-1.47zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>
+      <!-- Lua (modo claro ativo) -->
+      <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 0111.21 3a7 7 0 108.58 8.58 8.96 8.96 0 011.21 1.21z"/></svg>
+    </button>
+
+    <button class="menu-button" onclick="toggleMenu()" aria-label="Abrir menu">
+      <div></div><div></div><div></div>
+    </button>
+  </div>
+
+  <nav id="sidebar" class="sidebar" role="navigation" aria-label="Menu principal">
+    <a href="#about" onclick="toggleMenu()">Sobre</a>
+    <a href="#features" onclick="toggleMenu()">Recursos</a>
+    <a href="#how-to-use" onclick="toggleMenu()">Como Usar</a>
+    <a href="https://github.com/Llucs/SpeedCool-Magisk-Module" target="_blank" rel="noopener noreferrer">GitHub Oficial</a>
+    <a href="https://t.me/SpeedCool_Releases" target="_blank" rel="noopener noreferrer">Grupo no Telegram</a>
+    <a href="#" onclick="changeLanguage('pt')">Português</a>
+    <a href="#" onclick="changeLanguage('en')">English</a>
+  </nav>
+
+  <header id="about">
+    <h1 data-i18n="title">SpeedCool</h1>
+    <p data-i18n="subtitle">Resfriamento inteligente. Desempenho adaptativo. Total controle térmico no seu Android.</p>
+  </header>
+
+  <section>
+    <h2 data-i18n="about_title">Sobre o SpeedCool</h2>
+    <p data-i18n="about_text">
+      SpeedCool é um módulo Magisk feito para melhorar o desempenho do seu celular sem deixar ele esquentar demais.  
+      Com inteligência térmica, modos por aplicativo e perfis que se adaptam ao uso, ele entrega mais fluidez, menor aquecimento e mais controle sobre o sistema.
+    </p>
+  </section>
+
+  <section id="features">
+    <h2 data-i18n="features_title">Recursos principais</h2>
+    <ul>
+      <li data-i18n="feature1">Perfis adaptativos: Eco, Desempenho, Balanceado e Aprendizado</li>
+      <li data-i18n="feature2">Modo automático por app em tempo real</li>
+      <li data-i18n="feature3">Controle de temperatura com sensores reais</li>
+      <li data-i18n="feature4">Motor de aprendizado baseado em horário, uso e carga do sistema</li>
+      <li data-i18n="feature5">Backup/restauração de perfis e histórico de desempenho</li>
+      <li data-i18n="feature6">Menu interativo via shell/Termux com design amigável</li>
+      <li data-i18n="feature7">Sistema anti-conflito que detecta e corrige problemas automaticamente</li>
+    </ul>
+  </section>
+
+  <section id="how-to-use">
+    <h2 data-i18n="how_to_use_title">Como Usar o SpeedCool</h2>
+    
+    <div class="step">
+      <span class="step-number">1</span>
+      <span data-i18n="step1">Baixe e instale o Termux na Play Store ou F-Droid</span>
+    </div>
+    
+    <div class="step">
+      <span class="step-number">2</span>
+      <span data-i18n="step2">Abra o Termux e digite os seguintes comandos:</span>
+      <div class="terminal-code">
+        <code>su</code>
+        <code>sh /data/adb/modules/speedcool/scripts/menu.sh</code>
+      </div>
+    </div>
+    
+    <div class="step">
+      <span class="step-number">3</span>
+      <span data-i18n="step3">Navegue pelo menu interativo usando os números e siga as instruções</span>
+    </div>
+    
+    <div class="step">
+      <span class="step-number">4</span>
+      <span data-i18n="step4">Configure seus perfis preferidos e ative o modo automático se desejar</span>
+    </div>
+    
+    <p data-i18n="how_to_use_note">
+      Nota: Você precisa ter root e o Magisk instalado para usar o SpeedCool. O módulo deve ser instalado via Magisk Manager antes de usar esses comandos.
+    </p>
+  </section>
+
+  <section>
+    <h2 data-i18n="warning_title">Aviso sobre Auto Update</h2>
+    <p data-i18n="warning_text">
+      O recurso de atualização automática está disponível, mas ainda é instável e pode falhar em alguns dispositivos.  
+      Para garantir confiabilidade, recomendamos que você baixe manualmente as novas versões pelo botão abaixo.
+    </p>
+  </section>
+
+  <div class="download">
+    <a href="https://github.com/Llucs/SpeedCool-Magisk-Module/releases" target="_blank" rel="noopener noreferrer" data-i18n="download_button">
+      Baixar SpeedCool
+    </a>
+  </div>
+
+  <footer data-i18n="footer_text">
+    Criado com dedicação por Llucs — leve, eficiente e sempre gelado.
+  </footer>
+
+  <button id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+  <script>
+    // Configurações de idioma
+    const translations = {
+      pt: {
+        title: "SpeedCool",
+        subtitle: "Resfriamento inteligente. Desempenho adaptativo. Total controle térmico no seu Android.",
+        about_title: "Sobre o SpeedCool",
+        about_text: "SpeedCool é um módulo Magisk feito para melhorar o desempenho do seu celular sem deixar ele esquentar demais. Com inteligência térmica, modos por aplicativo e perfis que se adaptam ao uso, ele entrega mais fluidez, menor aquecimento e mais controle sobre o sistema.",
+        features_title: "Recursos principais",
+        feature1: "Perfis adaptativos: Eco, Desempenho, Balanceado e Aprendizado",
+        feature2: "Modo automático por app em tempo real",
+        feature3: "Controle de temperatura com sensores reais",
+        feature4: "Motor de aprendizado baseado em horário, uso e carga do sistema",
+        feature5: "Backup/restauração de perfis e histórico de desempenho",
+        feature6: "Menu interativo via shell/Termux com design amigável",
+        feature7: "Sistema anti-conflito que detecta e corrige problemas automaticamente",
+        how_to_use_title: "Como Usar o SpeedCool",
+        step1: "Baixe e instale o Termux na Play Store ou F-Droid",
+        step2: "Abra o Termux e digite os seguintes comandos:",
+        step3: "Navegue pelo menu interativo usando os números e siga as instruções",
+        step4: "Configure seus perfis preferidos e ative o modo automático se desejar",
+        how_to_use_note: "Nota: Você precisa ter root e o Magisk instalado para usar o SpeedCool. O módulo deve ser instalado via Magisk Manager antes de usar esses comandos.",
+        warning_title: "Aviso sobre Auto Update",
+        warning_text: "O recurso de atualização automática está disponível, mas ainda é instável e pode falhar em alguns dispositivos. Para garantir confiabilidade, recomendamos que você baixe manualmente as novas versões pelo botão abaixo.",
+        download_button: "Baixar SpeedCool",
+        footer_text: "Criado com dedicação por Llucs — leve, eficiente e sempre gelado."
+      },
+      en: {
+        title: "SpeedCool",
+        subtitle: "Smart cooling. Adaptive performance. Complete thermal control for your Android.",
+        about_title: "About SpeedCool",
+        about_text: "SpeedCool is a Magisk module designed to improve your phone's performance without letting it overheat. With thermal intelligence, per-app modes and adaptive profiles, it delivers more fluidity, less heating and more system control.",
+        features_title: "Main Features",
+        feature1: "Adaptive profiles: Eco, Performance, Balanced and Learning",
+        feature2: "Real-time automatic app mode",
+        feature3: "Temperature control with real sensors",
+        feature4: "Learning engine based on time, usage and system load",
+        feature5: "Profile backup/restore and performance history",
+        feature6: "Interactive shell/Termux menu with friendly design",
+        feature7: "Anti-conflict system that detects and fixes issues automatically",
+        how_to_use_title: "How to Use SpeedCool",
+        step1: "Download and install Termux from Play Store or F-Droid",
+        step2: "Open Termux and type the following commands:",
+        step3: "Navigate the interactive menu using numbers and follow instructions",
+        step4: "Configure your preferred profiles and enable auto mode if desired",
+        how_to_use_note: "Note: You need root and Magisk installed to use SpeedCool. The module must be installed via Magisk Manager before using these commands.",
+        warning_title: "Auto Update Warning",
+        warning_text: "The auto-update feature is available but still unstable and may fail on some devices. For reliability, we recommend manually downloading new versions using the button below.",
+        download_button: "Download SpeedCool",
+        footer_text: "Created with dedication by Llucs — lightweight, efficient and always cool."
+      }
+    };
+
+    // Detecta o idioma do navegador
+    function detectLanguage() {
+      const userLang = navigator.language || navigator.userLanguage;
+      const supportedLangs = ['pt', 'pt-BR', 'pt-PT'];
+      
+      if (supportedLangs.includes(userLang)) {
+        return 'pt';
+      } else {
+        return 'en'; // padrão para inglês
+      }
+    }
+
+    // Muda o idioma do site
+    function changeLanguage(lang) {
+      document.documentElement.lang = lang === 'pt' ? 'pt-br' : 'en';
+      localStorage.setItem('language', lang);
+      
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
+
+    // Configuração inicial do tema e idioma
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const htmlTag = document.documentElement;
+
+    function setInitialTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        htmlTag.setAttribute('data-theme', savedTheme);
+      } else {
+        htmlTag.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      }
+    }
+
+    function toggleTheme() {
+      const current = htmlTag.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      
+      htmlTag.style.transition = 'background 0.5s ease, color 0.5s ease';
+      htmlTag.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      
+      setTimeout(() => {
+        htmlTag.style.transition = '';
+      }, 500);
+    }
+
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("open");
+    }
+
+    // Fecha o menu ao clicar em links
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById("sidebar").classList.remove("open");
+      });
+    });
+
+    // Botão voltar ao topo
+    window.addEventListener('scroll', () => {
+      const backToTop = document.getElementById('back-to-top');
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    document.getElementById('back-to-top').addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Inicialização
+    setInitialTheme();
+    
+    // Configura idioma inicial
+    const savedLang = localStorage.getItem('language') || detectLanguage();
+    changeLanguage(savedLang);
+  </script>
+</body>
+</html>

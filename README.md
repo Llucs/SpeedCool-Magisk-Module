@@ -115,6 +115,12 @@ Want to help? Test it on your device and send feedback via the group!
 
 ---
 
+[Website 🌐](https://llucs.github.io/SpeedCool-Magisk-Module/)
+
+
+
+---
+
 ❗ Common Errors
 
 🔸 Error:

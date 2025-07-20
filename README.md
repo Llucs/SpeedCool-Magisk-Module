@@ -10,6 +10,10 @@
 
 ---
 
+## ⚠️ Stable version: 2.1
+
+---
+
 README LANGUAGES:
 
 [Português](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-pt-br.md) 
@@ -24,10 +28,6 @@ README LANGUAGES:
 - ❄️ Reduce CPU and GPU overheating
 - 🧠 Free up RAM for a lighter experience
 - ⚡ Make the system faster, smoother, and more responsive
-
----
-
-# ⚠️ SpeedCool version 2.2 is not working, for now use version 2.1
 
 ---
 

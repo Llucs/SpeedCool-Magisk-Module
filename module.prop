@@ -1,9 +1,9 @@
 id=speedcool
 name=SpeedCool
-version=v2.2
-versionCode=13
+version=v2.3
+versionCode=14
 author=Llucs
-description=SpeedCool v2.2: adaptive thermal and performance optimization with new features — per-app profiles, efficiency scoring, profile export, weekly scheduling, Stealth and Hardcore modes, modular system, and smart updates via GitHub. The ultimate evolution of shell modules.
+description=SpeedCool v2.3: adaptive thermal and performance optimization with new features — per‑app profiles, efficiency scoring, profile export, weekly scheduling, Stealth and Hardcore modes, modular system, and intelligent updates via GitHub. The ultimate evolution of shell modules.
 support=module
 support=post-fs-data
 support=late_start_service

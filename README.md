@@ -97,20 +97,6 @@ README LANGUAGES:
 
 ---
 
-📱 Tested Devices
-
-Moto G8 Play ✅
-
-Galaxy A15 ✅
-
-Galaxy A10 ✅
-
-
-Want to help? Test it on your device and send feedback via the group!
-
-
----
-
 [Website 🌐](https://llucs.github.io/SpeedCool-Magisk-Module/)
 
 

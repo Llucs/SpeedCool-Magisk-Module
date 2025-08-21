@@ -10,10 +10,6 @@
 
 ---
 
-## ⚠️ Stable version: 2.1
-
----
-
 README LANGUAGES:
 
 [Português](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-pt-br.md) 

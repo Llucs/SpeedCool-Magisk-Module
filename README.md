@@ -2,7 +2,13 @@
   <img src="https://raw.githubusercontent.com/Llucs/SpeedCool-Modulo-Magisk/main/banner.png" alt="SpeedCool Banner" />
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/Llucs/SpeedCool-Magisk-Module/total) ![GitHub Repo stars](https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=social)
+<p align="center">
+  ![Magisk](https://img.shields.io/badge/Magisk-Compatible-brightgreen?style=for-the-badge&logo=magisk&logoColor=white)
+  ![Termux](https://img.shields.io/badge/Termux-Compatible-blue?style=for-the-badge&logo=termux&logoColor=white)
+  ![GitHub Stars](https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=for-the-badge)
+  ![Downloads](https://img.shields.io/github/downloads/Llucs/SpeedCool-Magisk-Module/total?style=for-the-badge)
+  ![Android](https://img.shields.io/badge/Android-6%20to%2016-green?style=for-the-badge&logo=android&logoColor=white)
+</p>
 
 # 🔥 SpeedCool - Magisk Module
 

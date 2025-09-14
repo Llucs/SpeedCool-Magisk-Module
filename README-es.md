@@ -131,6 +131,6 @@ SpeedCool © 2025 — Hecho con ❤️ por @Llucs
 
 > Hecho por quienes saben, para quienes quieren control de verdad.
 
-## Star History
+## Historia Estelar
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Llucs/SpeedCool-Magisk-Module&type=Date)](https://www.star-history.com/#Llucs/SpeedCool-Magisk-Module&Date)

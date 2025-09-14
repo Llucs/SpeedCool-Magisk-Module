@@ -140,3 +140,7 @@ Se persistir, pode haver conflito com outro módulo ou incompatibilidade.
 SpeedCool © 2025 — Feito com ❤️ por @Llucs
 
 > Feito por quem entende, pra quem quer controle de verdade.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Llucs/SpeedCool-Magisk-Module&type=Date)](https://www.star-history.com/#Llucs/SpeedCool-Magisk-Module&Date)

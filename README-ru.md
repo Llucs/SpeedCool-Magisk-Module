@@ -135,3 +135,7 @@ Galaxy A10 ✅
 SpeedCool © 2025 — Сделано с ❤️ @Llucs
 
 > Сделано теми, кто понимает, для тех, кто хочет полный контроль.
+ 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Llucs/SpeedCool-Magisk-Module&type=Date)](https://www.star-history.com/#Llucs/SpeedCool-Magisk-Module&Date)

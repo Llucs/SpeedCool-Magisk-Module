@@ -132,3 +132,7 @@ If the issue persists, there may be a conflict with another module or an incompa
 SpeedCool © 2025 — Made with ❤️ by @Llucs
 
 > Made by those who get it, for those who want true control.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Llucs/SpeedCool-Magisk-Module&type=Date)](https://www.star-history.com/#Llucs/SpeedCool-Magisk-Module&Date)

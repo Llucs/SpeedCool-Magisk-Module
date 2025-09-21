@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-theme="auto">
+<html lang="pt-br" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SpeedCool - Otimização e Resfriamento para Android</title>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap"></noscript>
   <meta name="description" content="Módulo Magisk para otimização de desempenho e controle térmico avançado em dispositivos Android.">
   <meta property="og:title" content="SpeedCool - Otimização e Resfriamento para Android">
@@ -16,15 +16,17 @@
       --azul-claro: #00b4d8;
       --azul-escuro: #03045e;
       --cor-texto: #f1f1f1;
-      --cor-fundo: #121212; /* Fundo mais escuro para um visual moderno */
-      --cor-caixa: rgba(255, 255, 255, 0.08); /* Caixas mais sutis */
-      --sombra-caixa: 0 8px 30px rgba(0,0,0,0.4); /* Sombra mais pronunciada */
+      --cor-fundo: #0a0a0a;
+      --cor-caixa: rgba(255, 255, 255, 0.08);
+      --sombra-caixa: 0 8px 30px rgba(0,0,0,0.4);
       --borda-caixa: 1px solid rgba(255, 255, 255, 0.1);
+      --gradiente-principal: linear-gradient(135deg, #00b4d8, #0077b6);
+      --gradiente-hover: linear-gradient(135deg, #0077b6, #023e8a);
     }
 
     [data-theme="light"] {
       --cor-texto: #222;
-      --cor-fundo: #f0f2f5; /* Fundo claro */
+      --cor-fundo: #f8f9fa;
       --cor-caixa: rgba(0, 0, 0, 0.05);
       --sombra-caixa: 0 8px 30px rgba(0,0,0,0.1);
       --borda-caixa: 1px solid rgba(0, 0, 0, 0.05);
@@ -35,7 +37,7 @@
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
-      font-family: \'Outfit\', sans-serif;
+      font-family: 'Outfit', sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -47,15 +49,19 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 1rem;
+      padding: 0 1rem;
       flex-grow: 1;
+      width: 100%;
     }
 
+    /* Navegação */
     .top-bar {
       position: fixed;
       top: 0;
@@ -64,76 +70,110 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 0.8rem 1.5rem;
       z-index: 1001;
       background: var(--cor-fundo);
       box-shadow: var(--sombra-caixa);
+      backdrop-filter: blur(10px);
+      border-bottom: var(--borda-caixa);
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 800;
       color: var(--azul-claro);
       text-decoration: none;
       display: flex;
       align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
     }
 
     .logo img {
-      height: 30px;
-      margin-right: 10px;
+      height: 40px;
+      width: 40px;
+      margin-right: 12px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .theme-button, .menu-button {
-      width: 40px;
-      height: 40px;
-      background: none;
-      border: none;
+      width: 44px;
+      height: 44px;
+      background: var(--cor-caixa);
+      border: var(--borda-caixa);
       cursor: pointer;
       color: var(--azul-claro);
       outline: none;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
+      border-radius: 12px;
+      transition: all 0.3s ease;
     }
 
     .theme-button:hover, .menu-button:hover {
-      background-color: rgba(0, 180, 216, 0.1);
+      background-color: rgba(0, 180, 216, 0.2);
+      transform: scale(1.05);
     }
 
     .theme-button svg {
       fill: var(--azul-claro) !important;
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       display: block;
-      filter: drop-shadow(0 0 2px rgba(0, 180, 216, 0.7));
       transition: 0.3s ease;
     }
 
-    .menu-button div {
-      height: 3px;
-      background-color: var(--azul-claro);
-      margin: 4px 0;
-      border-radius: 2px;
-      transition: 0.4s;
-      width: 25px;
+    .menu-button {
+      flex-direction: column;
+      gap: 3px;
     }
 
+    .menu-button div {
+      height: 2px;
+      background-color: var(--azul-claro);
+      border-radius: 1px;
+      transition: 0.4s;
+      width: 18px;
+    }
+
+    .menu-button.active div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-button.active div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-button.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Sidebar */
     .sidebar {
       position: fixed;
       top: 0;
-      right: -300px; /* Ajustado para um pouco mais largo */
-      width: 300px;
+      right: -320px;
+      width: 320px;
       height: 100%;
       background-color: var(--cor-fundo);
       color: var(--cor-texto);
       transition: right 0.4s ease;
-      padding-top: 80px; /* Ajustado para a nova altura da top-bar */
+      padding-top: 80px;
       z-index: 1000;
       border-left: var(--borda-caixa);
       box-shadow: var(--sombra-caixa);
+      backdrop-filter: blur(10px);
     }
 
     .sidebar.open {
@@ -146,7 +186,7 @@
       color: var(--cor-texto);
       text-decoration: none;
       font-size: 1.1rem;
-      transition: 0.3s;
+      transition: all 0.3s ease;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
@@ -160,7 +200,16 @@
       color: var(--azul-claro);
     }
 
+    /* Tema */
     .theme-button svg.sun {
+      display: none;
+    }
+
+    [data-theme="light"] .theme-button .sun {
+      display: inline;
+    }
+
+    [data-theme="light"] .theme-button .moon {
       display: none;
     }
 
@@ -172,54 +221,85 @@
       display: none;
     }
 
+    /* Animações */
     section, header, footer {
       animation: fadeIn 1s ease;
     }
 
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header */
     header {
       text-align: center;
-      padding: 8rem 1rem 4rem; /* Ajustado para a nova top-bar */
+      padding: 6rem 1rem 3rem;
       position: relative;
     }
 
     header h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       color: var(--azul-claro);
       margin-bottom: 1rem;
       text-shadow: 0 0 15px rgba(0, 180, 216, 0.6);
+      background: var(--gradiente-principal);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     header p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       margin-top: 1rem;
       color: #adb5bd;
-      max-width: 800px;
+      max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
 
+    /* Seções */
     section {
       max-width: 900px;
-      margin: 3rem auto;
-      padding: 2.5rem;
+      margin: 2rem auto;
+      padding: 2rem;
       background: var(--cor-caixa);
-      border-radius: 20px;
+      border-radius: 16px;
       box-shadow: var(--sombra-caixa);
       backdrop-filter: blur(10px);
       border: var(--borda-caixa);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
     }
 
     section h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #90e0ef;
       margin-bottom: 1.5rem;
       text-align: center;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: var(--gradiente-principal);
+      border-radius: 2px;
     }
 
     section p {
       margin-bottom: 1rem;
-      line-height: 1.8;
-      font-size: 1.1rem;
+      line-height: 1.7;
+      font-size: 1rem;
     }
 
     section ul {
@@ -229,31 +309,38 @@
 
     section ul li {
       margin: 0.8rem 0;
-      padding-left: 2rem;
+      padding-left: 1.8rem;
       position: relative;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+
+    section ul li:hover {
+      transform: translateX(5px);
     }
 
     section ul li::before {
-      content: \'✅\'; /* Ícone mais moderno */
+      content: '✅';
       position: absolute;
       left: 0;
       color: #00d9ff;
+      font-size: 1rem;
     }
 
+    /* Botão de Download */
     .download {
       text-align: center;
-      margin: 5rem 0 3rem 0;
+      margin: 3rem 0 2rem 0;
     }
 
     .download a {
       position: relative;
-      background: linear-gradient(45deg, #00b4d8, #0077b6); /* Gradiente */
+      background: var(--gradiente-principal);
       color: #fff;
-      padding: 1.5rem 3rem;
+      padding: 1.2rem 2.5rem;
       border-radius: 50px;
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       text-decoration: none;
       box-shadow: 0 0 20px rgba(0, 180, 216, 0.7);
       transition: all 0.4s ease;
@@ -261,144 +348,133 @@
       border: none;
       outline: none;
       display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .download a::after {
-      content: \'\';
+    .download a::before {
+      content: '';
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.3);
+      background: var(--gradiente-hover);
       transition: 0.6s;
-      transform: skewX(-45deg);
+      z-index: -1;
     }
 
     .download a:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 5px 25px rgba(0, 180, 216, 0.9);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(0, 180, 216, 0.9);
     }
 
-    .download a:hover::after {
-      left: 100%;
+    .download a:hover::before {
+      left: 0;
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: #bbb;
-      margin-top: 5rem;
+      margin-top: 3rem;
       padding: 2rem 1rem;
       border-top: var(--borda-caixa);
+      background: var(--cor-caixa);
     }
 
+    /* Botão Voltar ao Topo */
     #back-to-top {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 55px;
-      height: 55px;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      background: var(--azul-claro);
+      background: var(--gradiente-principal);
       color: white;
       border: none;
       cursor: pointer;
       opacity: 0;
-      transition: opacity 0.3s, transform 0.3s;
+      transition: all 0.3s ease;
       z-index: 999;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       outline: none;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    
+
     #back-to-top.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    #back-to-top:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 180, 216, 0.6);
     }
 
-    @media (max-width: 768px) {
-      .top-bar {
-        padding: 0.8rem 1rem;
-      }
-      header {
-        padding: 6rem 1rem 3rem;
-      }
-      header h1 {
-        font-size: 3rem;
-      }
-      header p {
-        font-size: 1.2rem;
-      }
-      section {
-        padding: 1.5rem;
-        margin: 2rem auto;
-      }
-      section h2 {
-        font-size: 2rem;
-      }
-      .download a {
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-      }
-      .sidebar {
-        width: 250px;
-      }
-      #back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-      }
-    }
-
-    /* Estilo para código de terminal */
+    /* Código Terminal */
     .terminal-code {
-      background: rgba(0, 0, 0, 0.3); /* Mais escuro */
-      padding: 1.2rem;
-      border-radius: 10px;
-      font-family: \'Fira Code\', monospace; /* Fonte mais moderna */
+      background: rgba(0, 0, 0, 0.4);
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
       overflow-x: auto;
-      margin: 1.5rem 0;
+      margin: 1rem 0;
       border: 1px solid rgba(0, 180, 216, 0.3);
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .terminal-code::before {
+      content: '$ ';
+      color: var(--azul-claro);
+      font-weight: bold;
     }
 
     .terminal-code code {
       display: block;
-      white-space: pre-wrap; /* Permite quebra de linha */
-      color: #e0e0e0; /* Cor de texto mais clara */
+      white-space: pre-wrap;
+      color: #e0e0e0;
+      font-size: 0.85rem;
     }
 
+    /* Steps */
     .step {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: flex-start;
+      padding: 1rem;
+      background: rgba(0, 180, 216, 0.05);
+      border-radius: 8px;
+      border-left: 4px solid var(--azul-claro);
+      transition: all 0.3s ease;
+    }
+
+    .step:hover {
+      background: rgba(0, 180, 216, 0.1);
+      transform: translateX(5px);
     }
 
     .step-number {
       flex-shrink: 0;
       display: inline-flex;
-      width: 30px;
-      height: 30px;
-      background: var(--azul-claro);
+      width: 28px;
+      height: 28px;
+      background: var(--gradiente-principal);
       color: white;
       border-radius: 50%;
       text-align: center;
       align-items: center;
       justify-content: center;
-      margin-right: 15px;
+      margin-right: 12px;
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 0.9rem;
       box-shadow: 0 2px 8px rgba(0, 180, 216, 0.4);
     }
 
@@ -406,11 +482,12 @@
       flex-grow: 1;
     }
 
+    /* Seletor de Idioma */
     .language-selector {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin-top: 2rem;
+      gap: 10px;
+      margin-top: 1.5rem;
       flex-wrap: wrap;
     }
 
@@ -418,55 +495,198 @@
       background: var(--cor-caixa);
       color: var(--cor-texto);
       border: var(--borda-caixa);
-      padding: 0.7rem 1.5rem;
-      border-radius: 25px;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     .language-selector button:hover {
       background: var(--azul-claro);
       color: white;
       box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+      transform: translateY(-2px);
     }
 
     .language-selector button.active {
-      background: var(--azul-claro);
+      background: var(--gradiente-principal);
       color: white;
       box-shadow: 0 0 15px rgba(0, 180, 216, 0.7);
       border-color: var(--azul-claro);
     }
+
+    /* Responsividade Mobile */
+    @media (max-width: 768px) {
+      .top-bar {
+        padding: 0.6rem 1rem;
+      }
+      
+      .logo {
+        font-size: 1.3rem;
+      }
+      
+      .logo img {
+        height: 35px;
+        width: 35px;
+        margin-right: 8px;
+      }
+      
+      header {
+        padding: 5rem 1rem 2rem;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header p {
+        font-size: 1.1rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+      }
+      
+      section h2 {
+        font-size: 1.8rem;
+      }
+      
+      .download a {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+      
+      .sidebar {
+        width: 280px;
+        right: -280px;
+      }
+      
+      #back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+      }
+      
+      .step {
+        flex-direction: column;
+        text-align: left;
+      }
+      
+      .step-number {
+        margin-bottom: 8px;
+        margin-right: 0;
+        align-self: flex-start;
+      }
+      
+      .container {
+        padding: 0 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      section {
+        padding: 1.2rem;
+        margin: 1rem auto;
+      }
+      
+      .download a {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+      }
+      
+      .top-bar {
+        padding: 0.5rem 0.8rem;
+      }
+      
+      .logo {
+        font-size: 1.2rem;
+      }
+      
+      .logo img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    /* Overlay para fechar menu */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--cor-fundo);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--azul-claro);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0077b6;
+    }
   </style>
 </head>
 <body>
+
+  <div class="overlay" id="overlay"></div>
 
   <div class="top-bar">
     <a href="#" class="logo">
       <img src="logo.png" alt="SpeedCool Logo">
       SpeedCool
     </a>
-    <button class="theme-button" onclick="toggleTheme()" aria-label="Alternar tema">
-      <svg class="sun" viewBox="0 0 24 24"><path d="M6.76 4.84l-1.8-1.79L3.5 4.5l1.79 1.8 1.47-1.46zm10.45 0l1.47 1.46 1.79-1.8-1.46-1.47-1.8 1.79zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zm8-10h3v-1h-3v1zM1 13h3v-1H1v1zm16.24 6.76l1.8 1.79 1.46-1.46-1.79-1.8-1.47 1.47zM4.84 17.24l-1.79 1.8 1.46 1.46 1.8-1.79-1.47-1.47zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>
-      <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 0111.21 3a7 7 0 108.58 8.58 8.96 8.96 0 011.21 1.21z"/></svg>
-    </button>
+    <div class="nav-controls">
+      <button class="theme-button" onclick="toggleTheme()" aria-label="Alternar tema">
+        <svg class="sun" viewBox="0 0 24 24"><path d="M6.76 4.84l-1.8-1.79L3.5 4.5l1.79 1.8 1.47-1.46zm10.45 0l1.47 1.46 1.79-1.8-1.46-1.47-1.8 1.79zM12 4V1h-1v3h1zm0 19v-3h-1v3h1zm8-10h3v-1h-3v1zM1 13h3v-1H1v1zm16.24 6.76l1.8 1.79 1.46-1.46-1.79-1.8-1.47 1.47zM4.84 17.24l-1.79 1.8 1.46 1.46 1.8-1.79-1.47-1.47zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>
+        <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 0111.21 3a7 7 0 108.58 8.58 8.96 8.96 0 011.21 1.21z"/></svg>
+      </button>
 
-    <button class="menu-button" onclick="toggleMenu()" aria-label="Abrir menu">
-      <div></div><div></div><div></div>
-    </button>
+      <button class="menu-button" onclick="toggleMenu()" aria-label="Abrir menu" id="menuButton">
+        <div></div><div></div><div></div>
+      </button>
+    </div>
   </div>
 
   <nav id="sidebar" class="sidebar" role="navigation" aria-label="Menu principal">
-    <a href="#about" onclick="toggleMenu()">Sobre</a>
-    <a href="#features" onclick="toggleMenu()">Recursos</a>
-    <a href="#how-to-use" onclick="toggleMenu()">Como Usar</a>
+    <a href="#about" onclick="closeMenu()">Sobre</a>
+    <a href="#features" onclick="closeMenu()">Recursos</a>
+    <a href="#how-to-use" onclick="closeMenu()">Como Usar</a>
     <a href="https://github.com/Llucs/SpeedCool-Magisk-Module" target="_blank" rel="noopener noreferrer">GitHub Oficial</a>
     <a href="https://t.me/SpeedCool_Releases" target="_blank" rel="noopener noreferrer">Grupo no Telegram</a>
     <div class="language-selector">
-      <button onclick="changeLanguage(\'pt\')" id="lang-pt">Português</button>
-      <button onclick="changeLanguage(\'en\')" id="lang-en">English</button>
-      <button onclick="changeLanguage(\'es\')" id="lang-es">Español</button>
-      <button onclick="changeLanguage(\'ru\')" id="lang-ru">Русский</button>
+      <button onclick="changeLanguage('pt')" id="lang-pt">Português</button>
+      <button onclick="changeLanguage('en')" id="lang-en">English</button>
+      <button onclick="changeLanguage('es')" id="lang-es">Español</button>
+      <button onclick="changeLanguage('ru')" id="lang-ru">Русский</button>
     </div>
   </nav>
 
@@ -511,8 +731,10 @@
         <span class="step-number">2</span>
         <div class="step-content">
           <span data-i18n="step2">Abra o Termux e digite os seguintes comandos:</span>
-          <div class="terminal-code">
+          <div class="terminal-code" onclick="copyCommand('su')">
             <code>su</code>
+          </div>
+          <div class="terminal-code" onclick="copyCommand('sh /data/adb/modules/speedcool/scripts/menu.sh')">
             <code>sh /data/adb/modules/speedcool/scripts/menu.sh</code>
           </div>
         </div>
@@ -559,6 +781,7 @@
   <button id="back-to-top" aria-label="Voltar ao topo">↑</button>
 
   <script>
+    // Configurações de idioma
     const translations = {
       pt: {
         title: "SpeedCool",
@@ -588,7 +811,7 @@
         title: "SpeedCool",
         subtitle: "Smart cooling. Adaptive performance. Complete thermal control for your Android.",
         about_title: "About SpeedCool",
-        about_text: "SpeedCool is a Magisk module designed to improve your phone\'s performance without letting it overheat. With thermal intelligence, per-app modes and adaptive profiles, it delivers more fluidity, less heating and more system control.",
+        about_text: "SpeedCool is a Magisk module designed to improve your phone's performance without letting it overheat. With thermal intelligence, per-app modes and adaptive profiles, it delivers more fluidity, less heating and more system control.",
         features_title: "Main Features",
         feature1: "Adaptive profiles: Eco, Performance, Balanced and Learning",
         feature2: "Real-time automatic app mode",
@@ -658,73 +881,165 @@
       }
     };
 
+    // Detecta o idioma do navegador
     function detectLanguage() {
       const userLang = navigator.language || navigator.userLanguage;
-      const supportedLangs = [\'pt\', \'pt-BR\', \'pt-PT\'];
+      const supportedLangs = ['pt', 'pt-BR', 'pt-PT'];
       
       if (supportedLangs.includes(userLang)) {
-        return \'pt\';
-      } else if (userLang.startsWith(\'es\')) {
-        return \'es\';
-      } else if (userLang.startsWith(\'ru\')) {
-        return \'ru\';
+        return 'pt';
+      } else if (userLang.startsWith('es')) {
+        return 'es';
+      } else if (userLang.startsWith('ru')) {
+        return 'ru';
       } else {
-        return \'en\';
+        return 'en';
       }
     }
 
+    // Muda o idioma do site
     function changeLanguage(lang) {
       document.documentElement.lang = lang;
-      localStorage.setItem(\'language\', lang);
+      localStorage.setItem('language', lang);
       
-      const elements = document.querySelectorAll(\'[data-i18n]\');
+      const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach(el => {
-        const key = el.getAttribute(\'data-i18n\');
+        const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
           el.textContent = translations[lang][key];
         }
       });
 
-      document.querySelectorAll(\".language-selector button\").forEach(btn => {
-        btn.classList.remove(\"active\");
+      // Atualiza botões de idioma
+      document.querySelectorAll(".language-selector button").forEach(btn => {
+        btn.classList.remove("active");
       });
-      document.getElementById(`lang-${lang}`).classList.add(\"active\");
+      const langBtn = document.getElementById(`lang-${lang}`);
+      if (langBtn) {
+        langBtn.classList.add("active");
+      }
     }
 
+    // Alterna tema
     function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute(\'data-theme\');
-      const newTheme = currentTheme === \'dark\' ? \'light\' : \'dark\';
-      document.documentElement.setAttribute(\'data-theme\', newTheme);
-      localStorage.setItem(\'theme\', newTheme);
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
     }
 
+    // Alterna menu
     function toggleMenu() {
-      const sidebar = document.getElementById(\'sidebar\');
-      sidebar.classList.toggle(\'open\');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      const menuButton = document.getElementById('menuButton');
+      
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+      menuButton.classList.toggle('active');
     }
 
-    window.addEventListener(\'scroll\', () => {
-      const backToTopButton = document.getElementById(\'back-to-top\');
+    // Fecha menu
+    function closeMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      const menuButton = document.getElementById('menuButton');
+      
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+      menuButton.classList.remove('active');
+    }
+
+    // Fecha menu ao clicar no overlay
+    document.getElementById('overlay').addEventListener('click', closeMenu);
+
+    // Controle do botão "voltar ao topo"
+    window.addEventListener('scroll', () => {
+      const backToTopButton = document.getElementById('back-to-top');
       if (window.scrollY > 300) {
-        backToTopButton.classList.add(\'visible\');
+        backToTopButton.classList.add('visible');
       } else {
-        backToTopButton.classList.remove(\'visible\');
+        backToTopButton.classList.remove('visible');
       }
     });
 
-    document.getElementById(\'back-to-top\').addEventListener(\'click\', () => {
-      window.scrollTo({ top: 0, behavior: \'smooth\' });
-    });
+    // Função para voltar ao topo
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    document.addEventListener(\'DOMContentLoaded\', () => {
-      const savedTheme = localStorage.getItem(\'theme\') || \'dark\'; // Padrão para dark
-      document.documentElement.setAttribute(\'data-theme\', savedTheme);
+    // Função para copiar comando do terminal
+    function copyCommand(command) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(command).then(() => {
+          showNotification('Comando copiado!');
+        });
+      } else {
+        // Fallback para navegadores mais antigos
+        const textArea = document.createElement('textarea');
+        textArea.value = command;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showNotification('Comando copiado!');
+      }
+    }
 
-      const savedLang = localStorage.getItem(\'language\') || detectLanguage();
+    // Mostra notificação
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.textContent = message;
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--azul-claro);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+      `;
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.remove();
+      }, 2000);
+    }
+
+    // Inicialização quando o DOM estiver carregado
+    document.addEventListener('DOMContentLoaded', () => {
+      // Configuração inicial do tema
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+
+      // Configuração inicial do idioma
+      const savedLang = localStorage.getItem('language') || detectLanguage();
       changeLanguage(savedLang);
+
+      // Adiciona event listeners
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', scrollToTop);
+      }
+
+      // Smooth scroll para links internos
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            closeMenu(); // Fecha o menu após clicar em um link
+          }
+        });
+      });
     });
   </script>
 </body>
-</html>
 </html>
 

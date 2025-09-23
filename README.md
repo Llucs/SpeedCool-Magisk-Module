@@ -135,5 +135,3 @@ SpeedCool © 2025 — Feito com ❤️ por @Llucs
 ## Histórico de Estrelas
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Llucs/SpeedCool-Magisk-Module&type=Date)](https://www.star-history.com/#Llucs/SpeedCool-Magisk-Module&Date)
-
-

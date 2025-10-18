@@ -1,0 +1,125 @@
+**v1.0**
+- Initial commit
+
+**v1.1**
+- Automatic temperature control
+- Profiles for apps and games
+- Intelligent RAM cleaning
+- CPU/GPU core control
+- Storage optimization
+- Intelligent battery saver
+- More compatible and lightweight  
+
+**v1.2**
+- Android 6 to 16+ Support — Works on any Android.
+- Brand Detection — Tailored adjustments for each device.
+- Brand-specific Optimizations — Better performance and stability.
+- Improved Scripts — More efficient monitoring.
+- Better Fallbacks — Works on more phones.
+- Intelligent ZRAM — Adjusts based on RAM.
+- Enhanced Thermal Control — Less overheating.
+- Safe RAM Cleaning — Frees memory without risk.
+- Per-app Profiles — Max CPU/GPU in selected apps.
+- Optimized CPU — Adjusts frequency and governor.
+- Improved I/O — Faster storage.
+- Battery Saver — Less drain when low.
+- core_control.sh — Turns CPU cores on/off.
+
+**v1.3**
+- Three Operating Modes:
+ • Eco Mode: For maximum battery savings.
+ • Performance Mode: For full performance in games and heavy tasks
+ • Learning Mode: An intelligent mode that adapts to your usage in real time, automatically adjusting optimizations.
+- SpeedCool MENU (via Termux): An interface in Termux for you to easily select modes and view system information.
+- Real-Time Monitoring: The menu option allows you to view data such as CPU usage, GPU (if available), RAM, and current temperatures.
+- Super Intelligent Cooling: A system that monitors temperatures and applies cooling more efficiently to avoid overheating without losing much performance.
+- Better RAM Management: Enhanced techniques to clean unnecessary processes, optimize RAM usage, and intelligently configure ZRAM, aiming for more fluidity.
+
+**v1.4**
+- Bug fixes
+- Better RAM management
+
+**v1.5**
+- Now compatible with Aionix (IT MAY REDUCE SPEEDCOOL'S OPTIMIZATION; FOR BETTER OPTIMIZATION, DISABLE AIONIX)
+- Learning engine: The module adapts to your phone's hardware, applying the best optimizations.
+
+**v1.6**
+- Replacement of seq with native shell loops
+- Robust fallback fixes for CPU governor and I/O scheduler
+- Adjustments to error suppression and addition of detailed logs
+- Verification of actual application of settings
+- Root check implemented
+- Safe detection of CPU core count
+- Optional user-controlled logging system
+- Enhanced cleanup of variables and temporary files
+- Automatic separation of configurations by chipset
+- Removal of Aionix logic and use of getprop for chipset identification
+- Custom configurations via user_config.prop
+- Modularized structure to avoid conflicts
+- Removal of non-universal tweaks for greater portability
+- Better integration with post-fs-data.sh and service.sh
+- Complete refactoring for clarity, readability, and maintenance
+- Creation of a detailed and accessible README.md
+
+**v1.7**
+- Script execution permission bug fix.
+
+**v1.8**
+- Full support for KSU
+- Improved learning engine
+- New anti-conflict system
+- Other bug fixes
+- Alternative English version (previously only available in Portuguese).
+
+**v1.9**
+- Enhanced chipset detection (Tensor, Kirin, and others)
+- Full compatibility with Android 14 and 15
+- Redesigned interactive menu with numbered options
+- Performance optimizations for GPU and network (TCP tuning)
+- Faster startup and smarter learning engine
+- Bootloop protection and stricter file permissions
+- status.sh now displays I/O latency and power usage
+- Log export and automated stability testing
+
+**v2.0**
+- Full support for KSU Next with automatic detection
+- All scripts now use MODDIR (more stability and accuracy)
+- Improved conflict management system for Magisk and KernelSU
+- Updated module.prop with new description and co-authorship
+- Optimized and more efficient chipset detection
+- More consistent logs and error handling.
+
+**v2.1**
+- Smart engine that learns usage patterns and auto-adjusts performance.
+- Eco Mode activates automatically after 1 AM during idle times.
+- Modern, colorful interface designed for Termux.
+- Real-time stats for CPU, RAM, GPU, battery, and more.
+- Full support for both Portuguese and English.
+- Improvements:
+Better support for non-standard sensors and commands.
+- Smarter and more accurate temperature control.
+- Improved conflict detection with modules and governors.
+- Safer boot process to prevent errors or duplication.
+- Clean uninstall that restores original settings.
+
+**v2.2BETA**
+- What's New in SpeedCool v2.2
+- Automatic App-Based Profiles: app_monitor.sh detects the foreground app and switches performance profiles automatically based on defined rules.
+- Full Auto-Update via GitHub: SpeedCool checks for updates, downloads the .zip, and installs it automatically using auto_update.sh.
+- Profile Backup & Import: Use profile_tools.sh export to save settings and import to restore them—directly in Termux.
+- Extended Device Compatibility: Improved support for rare chipsets (Unisoc, Rockchip, HiSilicon, Tensor, etc.); Automatic fallback if governors/schedulers are unavailable; Safety checks in compatibility.sh prevent risky settings.
+- Bootloop Recovery System (Safe Restore): Detects repeated reboots and automatically restores the safe “eco” profile.
+- Modular Script Design: Separate scripts for performance, cooling, learning, app monitoring, updates, backups, etc.; Each can run or restart independently if needed.
+- Improved Interactive Menu: New: “Check for Update Now”; Better visual feedback with icons like ✓, ⚠️, and real-time status; Integrated backup and refined log options.
+- Smarter Conflict Detection: Enhanced scan for governors, thermal zones, and modules; Applies fixes with minimal interference and shows alerts in Termux.
+- Detailed Logs & Debugging: Logs adaptive engine decisions, write attempts, and sensor data; Ensures proper permissions and verifies directories at boot.
+- More Sensitive Thermal Optimizer (cooling.sh): Reads real temps from multiple sensors; Acts quickly when overheating is detected, even outside “Learning” mode.
+
+**v2.2**
+- What was new in the v2.2 beta release: Smart engine that learns usage patterns and automatically adjusts performance; Eco Mode activates automatically after 1 AM during idle periods; Modern, colorful interface designed for Termux; Real-time stats for CPU, RAM, GPU, battery, and more; Full support for both Portuguese and English.
+- What changed from the beta to the final release: Real sensor validation: only functional sensors are used, preventing false readings and unnecessary loops; Safer backup system: the script checks if the .tar.gz file is intact before importing — if it's corrupted, it aborts; Refined permissions: scripts can now be executed manually with secure permissions (0755); configs remain protected (0700); Final release flag: added an internal marker (final_release.flag) to identify this version as stable; Robust auto-update: validates the .zip before applying, restarts services, and cleans up temp files — all automatically; Clearer logs and notifications: messages now explain each step more transparently.
+
+**v2.3**
+- Fixed MANY bugs
+- Fixed temperature reading (Now it can read correctly on all devices
+- Some useless stuff removed  

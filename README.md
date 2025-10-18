@@ -11,72 +11,77 @@
   <img src="https://img.shields.io/badge/Android-6%20to%2016-green?style=for-the-badge&logo=android&logoColor=white" alt="Android">
 </p>
 
-# 🔥 SpeedCool - Otimize seu Android ao Máximo!
+# 🔥 SpeedCool: Unleash Your Android's Full Potential
 
-> **SpeedCool** é o módulo Magisk definitivo para transformar seu dispositivo Android. Diga adeus ao lag, superaquecimento e lentidão. Com otimizações inteligentes, seu celular ficará mais rápido, fluido e com a temperatura ideal para qualquer tarefa, desde jogos intensos até o uso diário.
-
----
-
-## 🌐 Outros Idiomas
-
-[Português](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-pt-br.md) | [Español](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-es.md) | [Русский](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-ru.md)
+> **SpeedCool** is the ultimate Magisk module engineered to transform your Android device. Bid farewell to lag, overheating, and sluggishness. With intelligent optimizations, your phone will run faster, smoother, and maintain optimal temperatures for any task, from intense gaming to daily use.
 
 ---
 
-## 🚀 Recursos Principais
+## 🌐 Other Languages
 
-**SpeedCool** vai além da otimização básica, oferecendo:
-
--   **Desempenho Aprimorado:** Melhora a performance geral e em jogos, garantindo uma experiência mais fluida.
--   **Controle Térmico Inteligente:** Reduz o superaquecimento da CPU e GPU, prolongando a vida útil do seu hardware.
--   **Gerenciamento de RAM Eficiente:** Libera memória RAM para um sistema mais leve e responsivo.
--   **Sistema Adaptativo:** Otimizações que se ajustam ao seu uso, garantindo sempre o melhor desempenho sem comprometer a bateria.
--   **Menu Interativo:** Controle total via Termux com um menu amigável para personalizar as configurações.
--   **Compatibilidade Ampla:** Funciona em uma vasta gama de dispositivos e chips (MediaTek, Tensor, Kirin, Qualcomm, Exynos, etc.).
+[Portuguese](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-pt-br.md) | [Spanish](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-es.md) | [Russian](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/README-ru.md)
 
 ---
 
-## 📱 Compatibilidade
+## ✨ Key Features
 
--   **Versões Android:** Do Android 6 ao Android 16.
--   **Processadores:** Compatível com **MediaTek, Tensor, Kirin, Qualcomm, Exynos** (outros também podem funcionar).
--   **ROMs:** Funciona em qualquer ROM que suporte Magisk.
--   **Otimização Adaptativa:** Adapta-se à marca e modelo do seu dispositivo para máxima eficiência.
+SpeedCool goes beyond basic optimization, offering a comprehensive suite of enhancements:
 
-> 💡 **Ideal para todos os tipos de dispositivos:** desde os de entrada até os flagships, SpeedCool garante uma melhoria notável.
-
----
-
-## 🏗️ Como Funciona
-
-SpeedCool utiliza scripts avançados que otimizam em tempo real:
-
--   **CPU e GPU:** Ajustes finos para desempenho e temperatura.
--   **I/O (Entrada/Saída):** Acelera a leitura e escrita de dados.
--   **RAM:** Gerenciamento inteligente para evitar gargalos.
--   **Serviços em Segundo Plano:** Otimiza processos para economizar recursos.
-
-**Tudo isso acontece automaticamente na inicialização, sem interface gráfica para manter o módulo leve e eficiente.** Para controle manual, utilize o menu via Termux.
+*   **Enhanced Performance:** Boosts overall performance and gaming experience, ensuring a fluid and responsive system.
+*   **Intelligent Thermal Control:** Significantly reduces CPU and GPU overheating, extending your hardware's lifespan and maintaining peak performance.
+*   **Efficient RAM Management:** Frees up RAM for a lighter, more responsive, and stable system.
+*   **Adaptive System:** Optimizations that dynamically adjust to your usage patterns, guaranteeing optimal performance without compromising battery life.
+*   **Interactive Menu:** Full control via Termux with a user-friendly menu to customize settings and profiles.
+*   **Broad Compatibility:** Works across a wide range of devices and chipsets, including **MediaTek, Tensor, Kirin, Qualcomm, Exynos**, and more.
+*   **Automatic App-Based Profiles (v2.2+):** Detects foreground apps and automatically switches performance profiles based on your defined rules [1].
+*   **Full Auto-Update via GitHub (v2.2+):** SpeedCool checks for updates, downloads the `.zip`, and installs it automatically [1].
+*   **Profile Backup & Import (v2.2+):** Easily save and restore your settings directly in Termux [1].
+*   **Bootloop Recovery System (v2.2+):** Detects repeated reboots and automatically restores a safe "eco" profile, preventing system instability [1].
+*   **Modular Script Design (v2.2+):** Separate scripts for performance, cooling, learning, app monitoring, updates, and backups, allowing independent operation and restart [1].
 
 ---
 
-## 📦 Instalação
+## 📱 Compatibility
 
-Siga estes passos simples para instalar o SpeedCool:
+*   **Android Versions:** From Android 6 to Android 16.
+*   **Processors:** Compatible with **MediaTek, Tensor, Kirin, Qualcomm, Exynos** (other chipsets may also work).
+*   **ROMs:** Functions on any ROM that supports Magisk.
+*   **Adaptive Optimization:** Adapts to your device's brand and model for maximum efficiency.
 
-1.  Abra o **Magisk Manager**.
-2.  Vá para a aba **Módulos**.
-3.  Toque em **Instalar do armazenamento**.
-4.  Selecione o arquivo `SpeedCool_Vx.x.zip` (certifique-se de baixar a versão mais recente).
-5.  **Reinicie seu dispositivo** para aplicar as otimizações.
+> 💡 **Ideal for all types of devices:** from entry-level to flagships, SpeedCool ensures a noticeable improvement.
 
-### ➕ Acessando o Menu de Controle (via Termux)
+---
 
-Para acessar as configurações avançadas e perfis do SpeedCool:
+## 🏗️ How It Works
 
-1.  Abra o **Termux**.
-2.  Digite `su` e conceda permissão de superusuário.
-3.  Execute o comando:
+SpeedCool utilizes advanced scripts that optimize in real-time:
+
+*   **CPU and GPU:** Fine-tuned adjustments for performance and temperature.
+*   **I/O (Input/Output):** Accelerates data reading and writing.
+*   **RAM:** Intelligent management to prevent bottlenecks.
+*   **Background Services:** Optimizes processes to conserve resources.
+
+**All this happens automatically at startup, without a graphical interface to keep the module light and efficient.** For manual control, use the Termux menu.
+
+---
+
+## 📦 Installation
+
+Follow these simple steps to install SpeedCool:
+
+1.  Open **Magisk Manager**.
+2.  Go to the **Modules** tab.
+3.  Tap on **Install from storage**.
+4.  Select the `SpeedCool_Vx.x.zip` file (ensure you download the latest version).
+5.  **Reboot your device** to apply the optimizations.
+
+### ➕ Accessing the Control Menu (via Termux)
+
+To access SpeedCool's advanced settings and profiles:
+
+1.  Open **Termux**.
+2.  Type `su` and grant superuser permission.
+3.  Execute the command:
 
     ```bash
     sh /data/adb/modules/speedcool/scripts/menu.sh
@@ -84,54 +89,76 @@ Para acessar as configurações avançadas e perfis do SpeedCool:
 
 ---
 
-⚠️ **Avisos Importantes**
+⚠️ **Important Warnings**
 
--   💾 **Sempre faça um backup** do seu sistema antes de instalar qualquer módulo Magisk.
--   🚫 **Evite conflitos:** Não use SpeedCool junto com outros módulos de otimização de desempenho (como FDE.AI ou Aionix), pois podem ocorrer instabilidades. **Recomendamos usar apenas o SpeedCool para evitar problemas.**
--   ✅ **Desinstalação Fácil:** Você pode desinstalar o SpeedCool a qualquer momento via Magisk Manager.
--   ⚠️ **Uso por sua conta e risco:** Embora testado e funcional, o comportamento pode variar ligeiramente dependendo do dispositivo e da ROM.
-
----
-
-## 🚀 Próximas Atualizações
-
-Estamos sempre buscando melhorar o SpeedCool! Suas sugestões são muito bem-vindas em nosso grupo de atualizações. Junte-se a nós para moldar o futuro do módulo!
+*   💾 **Always back up** your system before installing any Magisk module.
+*   🚫 **Avoid Conflicts:** Do not use SpeedCool with other performance optimization modules (like FDE.AI or Aionix), as instabilities may occur. **We recommend using only SpeedCool to prevent issues.**
+*   ✅ **Easy Uninstallation:** You can uninstall SpeedCool at any time via Magisk Manager.
+*   ⚠️ **Use at Your Own Risk:** Although tested and functional, behavior may vary slightly depending on the device and ROM.
 
 ---
 
-## 📢 Canal de Atualizações
+## 🚀 Upcoming Updates
 
-Fique por dentro das últimas novidades e versões:
-
-🔗 [SpeedCool Releases no Telegram](https://t.me/SpeedCool_Releases)
+We are always looking to improve SpeedCool! Your suggestions are very welcome in our update group. Join us to shape the future of the module!
 
 ---
 
-## 🌐 Website Oficial
+## 📢 Update Channel
 
-Visite nossa página para mais informações e novidades:
+Stay informed about the latest news and versions:
+
+🔗 [SpeedCool Releases on Telegram](https://t.me/SpeedCool_Releases)
+
+---
+
+## 🌐 Official Website
+
+Visit our page for more information and news:
 
 [Website 🌐](https://llucs.github.io/SpeedCool-Magisk-Module/)
 
 ---
 
-## ❗ Erros Comuns e Soluções
+## ❗ Common Errors and Solutions
 
--   **Erro: "This is not a valid Magisk module"**
-    -   **Causa:** Versão desatualizada do Magisk.
-    -   **Solução:** Atualize o Magisk para a versão 29.0 ou superior.
-    -   Se o problema persistir, pode haver um conflito com outro módulo ou incompatibilidade.
+*   **Error: "This is not a valid Magisk module"**
+    *   **Cause:** Outdated Magisk version.
+    *   **Solution:** Update Magisk to version 29.0 or higher.
+    *   If the problem persists, there may be a conflict with another module or incompatibility.
 
 ---
 
-## 👨‍💻 Desenvolvedor
+## 🤝 Contribute to SpeedCool
+
+SpeedCool thrives on community contributions! We welcome developers, testers, and enthusiasts to help us make this module even better. Here's how you can contribute:
+
+*   **Report Bugs:** Found an issue? Open a detailed issue on GitHub with steps to reproduce.
+*   **Suggest Features:** Have an idea for a new feature or improvement? Share it in the issues or our Telegram group.
+*   **Submit Pull Requests:** Want to contribute code? Fork the repository, make your changes, and submit a pull request. Please follow our coding style and include clear commit messages.
+*   **Improve Documentation:** Help us refine the READMEs, add translations, or create guides.
+*   **Spread the Word:** Share SpeedCool with others! Your support helps our community grow.
+
+---
+
+## ⭐ Show Your Support
+
+If you find SpeedCool useful, please consider giving us a star ⭐ on GitHub! It helps increase visibility and motivates us to continue improving the module.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Llucs/SpeedCool-Magisk-Module&type=Date)](https://www.star-history.com/#Llucs/SpeedCool-Magisk-Module&Date)
+
+---
+
+## 👨‍💻 Developer
 
 🔥 **Llucs (Leandro Lucas)**
 
-SpeedCool © 2025 — Feito com ❤️ por @Llucs
+SpeedCool © 2025 — Made with ❤️ by @Llucs
 
-> Criado por quem entende, para quem busca o controle verdadeiro.
+> Created by those who understand, for those who seek true control.
 
-## Histórico de Estrelas
+---
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Llucs/SpeedCool-Magisk-Module&type=Date)](https://www.star-history.com/#Llucs/SpeedCool-Magisk-Module&Date)
+## 📚 References
+
+[1] Llucs/SpeedCool-Magisk-Module. `changelog.txt`. Available at: [https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/changelog.txt](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/changelog.txt)

@@ -1,14 +1,14 @@
 **v1.0**
-- Initial commit
+- Initial commit.
 
 **v1.1**
-- Automatic temperature control
-- Profiles for apps and games
-- Intelligent RAM cleaning
-- CPU/GPU core control
-- Storage optimization
-- Intelligent battery saver
-- More compatible and lightweight  
+- Automatic temperature control.
+- Profiles for apps and games.
+- Intelligent RAM cleaning.
+- CPU/GPU core control.
+- Storage optimization.
+- Intelligent battery saver.
+- More compatible and lightweight.  
 
 **v1.2**
 - Android 6 to 16+ Support — Works on any Android.
@@ -36,57 +36,57 @@
 - Better RAM Management: Enhanced techniques to clean unnecessary processes, optimize RAM usage, and intelligently configure ZRAM, aiming for more fluidity.
 
 **v1.4**
-- Bug fixes
-- Better RAM management
+- Bug fixes.
+- Better RAM management.
 
 **v1.5**
-- Now compatible with Aionix (IT MAY REDUCE SPEEDCOOL'S OPTIMIZATION; FOR BETTER OPTIMIZATION, DISABLE AIONIX)
+- Now compatible with Aionix (IT MAY REDUCE SPEEDCOOL'S OPTIMIZATION; FOR BETTER OPTIMIZATION, DISABLE AIONIX).
 - Learning engine: The module adapts to your phone's hardware, applying the best optimizations.
 
 **v1.6**
-- Replacement of seq with native shell loops
-- Robust fallback fixes for CPU governor and I/O scheduler
-- Adjustments to error suppression and addition of detailed logs
-- Verification of actual application of settings
-- Root check implemented
-- Safe detection of CPU core count
-- Optional user-controlled logging system
-- Enhanced cleanup of variables and temporary files
-- Automatic separation of configurations by chipset
-- Removal of Aionix logic and use of getprop for chipset identification
-- Custom configurations via user_config.prop
-- Modularized structure to avoid conflicts
-- Removal of non-universal tweaks for greater portability
-- Better integration with post-fs-data.sh and service.sh
-- Complete refactoring for clarity, readability, and maintenance
-- Creation of a detailed and accessible README.md
+- Replacement of seq with native shell loops.
+- Robust fallback fixes for CPU governor and I/O scheduler.
+- Adjustments to error suppression and addition of detailed logs.
+- Verification of actual application of settings.
+- Root check implemented.
+- Safe detection of CPU core count.
+- Optional user-controlled logging system.
+- Enhanced cleanup of variables and temporary files.
+- Automatic separation of configurations by chipset.
+- Removal of Aionix logic and use of getprop for chipset identification.
+- Custom configurations via user_config.prop.
+- Modularized structure to avoid conflicts.
+- Removal of non-universal tweaks for greater portability.
+- Better integration with post-fs-data.sh and service.sh.
+- Complete refactoring for clarity, readability, and maintenance.
+- Creation of a detailed and accessible README.md.
 
 **v1.7**
 - Script execution permission bug fix.
 
 **v1.8**
-- Full support for KSU
-- Improved learning engine
-- New anti-conflict system
-- Other bug fixes
+- Full support for KSU.
+- Improved learning engine.
+- New anti-conflict system.
+- Other bug fixes.
 - Alternative English version (previously only available in Portuguese).
 
 **v1.9**
-- Enhanced chipset detection (Tensor, Kirin, and others)
+- Enhanced chipset detection (Tensor, Kirin, and others).
 - Full compatibility with Android 14 and 15
-- Redesigned interactive menu with numbered options
-- Performance optimizations for GPU and network (TCP tuning)
-- Faster startup and smarter learning engine
-- Bootloop protection and stricter file permissions
-- status.sh now displays I/O latency and power usage
-- Log export and automated stability testing
+- Redesigned interactive menu with numbered options.
+- Performance optimizations for GPU and network (TCP tuning).
+- Faster startup and smarter learning engine.
+- Bootloop protection and stricter file permissions.
+- status.sh now displays I/O latency and power usage.
+- Log export and automated stability testing.
 
 **v2.0**
-- Full support for KSU Next with automatic detection
-- All scripts now use MODDIR (more stability and accuracy)
-- Improved conflict management system for Magisk and KernelSU
-- Updated module.prop with new description and co-authorship
-- Optimized and more efficient chipset detection
+- Full support for KSU Next with automatic detection.
+- All scripts now use MODDIR (more stability and accuracy).
+- Improved conflict management system for Magisk and KernelSU.
+- Updated module.prop with new description and co-authorship.
+- Optimized and more efficient chipset detection.
 - More consistent logs and error handling.
 
 **v2.1**
@@ -120,6 +120,18 @@ Better support for non-standard sensors and commands.
 - What changed from the beta to the final release: Real sensor validation: only functional sensors are used, preventing false readings and unnecessary loops; Safer backup system: the script checks if the .tar.gz file is intact before importing — if it's corrupted, it aborts; Refined permissions: scripts can now be executed manually with secure permissions (0755); configs remain protected (0700); Final release flag: added an internal marker (final_release.flag) to identify this version as stable; Robust auto-update: validates the .zip before applying, restarts services, and cleans up temp files — all automatically; Clearer logs and notifications: messages now explain each step more transparently.
 
 **v2.3**
-- Fixed MANY bugs
-- Fixed temperature reading (Now it can read correctly on all devices
-- Some useless stuff removed  
+- Fixed MANY bugs.
+- Fixed temperature reading (Now it can read correctly on all devices.
+- Some useless stuff removed.
+
+**v2.4** (New stuff so far, in development.)
+
+- Language now changes automatically based on the phone's language or region.
+- Typing "speedcool" in Termux opens the main menu.
+- Smarter and more stable automatic mode.
+- Internal fixes and script improvements.
+- Better sensor detection and clearer error messages.
+- Improved compatibility with different devices and ROMs.
+
+
+

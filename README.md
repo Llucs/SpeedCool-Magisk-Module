@@ -68,8 +68,6 @@ SpeedCool utilizes advanced scripts that optimize in real-time:
 ## 📦 Installation
 
 > [!TIP]
-> Follow these simple steps to install SpeedCool:
-
 > 1.  Open **Magisk Manager**.
 > 2.  Go to the **Modules** tab.
 > 3.  Tap on **Install from storage**.

@@ -67,13 +67,14 @@ SpeedCool utilizes advanced scripts that optimize in real-time:
 
 ## 📦 Installation
 
-Follow these simple steps to install SpeedCool:
+> [!TIP]
+> Follow these simple steps to install SpeedCool:
 
-1.  Open **Magisk Manager**.
-2.  Go to the **Modules** tab.
-3.  Tap on **Install from storage**.
-4.  Select the `SpeedCool_Vx.x.zip` file (ensure you download the latest version).
-5.  **Reboot your device** to apply the optimizations.
+> 1.  Open **Magisk Manager**.
+> 2.  Go to the **Modules** tab.
+> 3.  Tap on **Install from storage**.
+> 4.  Select the `SpeedCool_Vx.x.zip` file (ensure you download the latest version).
+> 5.  **Reboot your device** to apply the optimizations.
 
 ### ➕ Accessing the Control Menu (via Termux)
 

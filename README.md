@@ -91,10 +91,11 @@ To access SpeedCool's advanced settings and profiles:
 
 ⚠️ **Important Warnings**
 
-*   💾 **Always back up** your system before installing any Magisk module.
-*   🚫 **Avoid Conflicts:** Do not use SpeedCool with other performance optimization modules (like FDE.AI or Aionix), as instabilities may occur. **We recommend using only SpeedCool to prevent issues.**
-*   ✅ **Easy Uninstallation:** You can uninstall SpeedCool at any time via Magisk Manager.
-*   ⚠️ **Use at Your Own Risk:** Although tested and functional, behavior may vary slightly depending on the device and ROM.
+> [!TIP]
+> *   💾 **Always back up** your system before installing any Magisk module.
+> *   🚫 **Avoid Conflicts:** Do not use SpeedCool with other performance optimization modules (like FDE.AI or Aionix), as instabilities may occur. **We recommend using only SpeedCool to prevent issues.**
+> *   ✅ **Easy Uninstallation:** You can uninstall SpeedCool at any time via Magisk Manager.
+> *   ⚠️ **Use at Your Own Risk:** Although tested and functional, behavior may vary slightly depending on the device and ROM.
 
 ---
 

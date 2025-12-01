@@ -162,3 +162,8 @@ SpeedCool © 2025 — Feito com ❤️ por @Llucs
 ## 📚 Referências
 
 [1] Llucs/SpeedCool-Magisk-Module. `changelog.txt`. Disponível em: [https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/changelog.txt](https://github.com/Llucs/SpeedCool-Magisk-Module/blob/main/changelog.txt)
+
+<p align="center">
+  <b>Desenvolvido sozinho por <a href="#">Llucs</a> — do zero, com cuidado e precisão.</b><br>
+  <sub>Se funciona, é porque alguém trabalhou duro. 😉</sub>
+</p>

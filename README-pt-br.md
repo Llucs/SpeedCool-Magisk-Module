@@ -9,6 +9,10 @@
 </p>
 
 <p align="center">
+  <img src="https://i.imgur.com/30YpXtl.gif" width="600" />
+</p>
+
+<p align="center">
   <!-- Badges -->
   <img src="https://img.shields.io/badge/Magisk-Compat%C3%ADvel-brightgreen?style=for-the-badge&logo=magisk&logoColor=white" alt="Magisk">
   <img src="https://img.shields.io/badge/Termux-Compat%C3%ADvel-blue?style=for-the-badge&logo=termux&logoColor=white" alt="Termux">

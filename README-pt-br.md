@@ -1,3 +1,9 @@
+<h1 align="center">🚀 SpeedCool — Estabilidade que você sente, não só vê.</h1>
+
+<p align="center">
+  Módulo otimizado, limpo e construído com precisão — criado para trazer calma térmica e desempenho consistente.
+</p>
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/Llucs/SpeedCool-Magisk-Module/main/banner.png" alt="SpeedCool Logo" width="400"/>
 </p>

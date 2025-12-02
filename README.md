@@ -2,6 +2,8 @@
   <img src="https://raw.githubusercontent.com/Llucs/SpeedCool-Magisk-Module/main/banner.png" alt="SpeedCool Banner" width="400"/>
 </p>
 
+<img src="https://readme-typing-svg.herokuapp.com?size=22&duration=3200&color=4DA3FF&center=true&vCenter=true&width=500&lines=Smart.+Minimal.+Reliable.;Cooling+Done+Right.;Performance+Without+Chaos." />
+
 <p align="center">
   <!-- Badges -->
   <img src="https://img.shields.io/badge/Magisk-Compatible-brightgreen?style=for-the-badge&logo=magisk&logoColor=white" alt="Magisk">

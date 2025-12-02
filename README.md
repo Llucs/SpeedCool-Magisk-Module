@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/Android-6%20to%2016-green?style=for-the-badge&logo=android&logoColor=white" alt="Android">
 </p>
 
-# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Weather/Snowflake.webp" width="25" height="25"/> SpeedCool reduz a temperatura SpeedCool: Unleash Your Android's Full Potential
+# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/Snowflake.webp" width="20" alt="Snowflake"/> SpeedCool reduz a temperatura SpeedCool: Unleash Your Android's Full Potential
 
 > **SpeedCool** is the ultimate Magisk module engineered to transform your Android device. Bid farewell to lag, overheating, and sluggishness. With intelligent optimizations, your phone will run faster, smoother, and maintain optimal temperatures for any task, from intense gaming to daily use.
 

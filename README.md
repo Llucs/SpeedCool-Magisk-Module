@@ -27,7 +27,7 @@
   <img src="https://img.shields.io/github/downloads/Llucs/SpeedCool-Magisk-Module/total?style=for-the-badge&color=00BCD4&logoColor=white&labelColor=000000" />
 
   <!-- License -->
-  <img src="https://img.shields.io/badge/License-MIT-9C27B0?style=for-the-badge&labelColor=000000" />
+  <img src="https://img.shields.io/badge/MIT-Custom License-9C27B0?style=for-the-badge&labelColor=000000" />
 
   <!-- Architecture -->
   <img src="https://img.shields.io/badge/Arch-ARM%20%7C%20ARM64-546E7A?style=for-the-badge&labelColor=000000" />

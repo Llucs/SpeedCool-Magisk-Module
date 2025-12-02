@@ -5,12 +5,34 @@
 <img src="https://readme-typing-svg.herokuapp.com?size=22&duration=3200&color=4DA3FF&center=true&vCenter=true&width=500&lines=Smart.+Minimal.+Reliable.;Cooling+Done+Right.;Performance+Without+Chaos." />
 
 <p align="center">
-  <!-- Badges -->
-  <img src="https://img.shields.io/badge/Magisk-Compatible-brightgreen?style=for-the-badge&logo=magisk&logoColor=white" alt="Magisk">
-  <img src="https://img.shields.io/badge/Termux-Compatible-blue?style=for-the-badge&logo=termux&logoColor=white" alt="Termux">
-  <img src="https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=for-the-badge" alt="GitHub Stars">
-  <img src="https://img.shields.io/github/downloads/Llucs/SpeedCool-Magisk-Module/total?style=for-the-badge" alt="Downloads">
-  <img src="https://img.shields.io/badge/Android-6%20to%2016-green?style=for-the-badge&logo=android&logoColor=white" alt="Android">
+ <!-- Badges -->
+<p align="center">
+
+  <!-- Status -->
+  <img src="https://img.shields.io/badge/Status-Stable-00C853?style=for-the-badge&labelColor=000000" />
+
+  <!-- Magisk -->
+  <img src="https://img.shields.io/badge/Magisk-Compatible-00E676?style=for-the-badge&logo=magisk&logoColor=white&labelColor=000000" />
+
+  <!-- Termux -->
+  <img src="https://img.shields.io/badge/Termux-Compatible-2196F3?style=for-the-badge&logo=termux&logoColor=white&labelColor=000000" />
+
+  <!-- Android versions -->
+  <img src="https://img.shields.io/badge/Android-6%20→%2016-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=000000" />
+
+  <!-- GitHub Stars -->
+  <img src="https://img.shields.io/github/stars/Llucs/SpeedCool-Magisk-Module?style=for-the-badge&logo=github&color=FFD700&logoColor=white&labelColor=000000" />
+
+  <!-- Downloads -->
+  <img src="https://img.shields.io/github/downloads/Llucs/SpeedCool-Magisk-Module/total?style=for-the-badge&color=00BCD4&logoColor=white&labelColor=000000" />
+
+  <!-- License -->
+  <img src="https://img.shields.io/badge/License-MIT-9C27B0?style=for-the-badge&labelColor=000000" />
+
+  <!-- Architecture -->
+  <img src="https://img.shields.io/badge/Arch-ARM%20%7C%20ARM64-546E7A?style=for-the-badge&labelColor=000000" />
+
+</p>
 </p>
 
 # <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/Snowflake.webp" width="20" alt="Snowflake"/> SpeedCool reduz a temperatura SpeedCool: Unleash Your Android's Full Potential

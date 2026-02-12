@@ -32,29 +32,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Gradle (JDK 17 + cache + wrapper validation)
-        uses: gradle/actions/setup-gradle@v5
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'
           distribution: temurin
-          cache-read-only: ${{ github.ref != 'refs/heads/app' }}  # cache write só no branch principal
+          java-version: '17'
+          cache: gradle  # cache Gradle aqui ajuda, mas setup-gradle cuida do resto
+
+      - name: Setup Gradle (cache + wrapper validation automática)
+        uses: gradle/actions/setup-gradle@v5
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Make Gradle wrapper executable (se necessário)
+      - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      # Wrapper validation agora é automática no setup-gradle — sem step separado!
-
-      - name: Cache Android SDK extras (opcional, mas ajuda)
+      - name: Cache Android SDK extras (opcional)
         uses: actions/cache@v4
         with:
-          path: |
-            \~/.android
+          path: \~/.android
           key: \( {{ runner.os }}-android-sdk- \){{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-android-sdk-
+          restore-keys: ${{ runner.os }}-android-sdk-
 
       - name: Run lint & unit tests
         run: ./gradlew lintDebug testDebugUnitTest --stacktrace --info
@@ -73,19 +72,22 @@ jobs:
   build-release-unsigned:
     name: Build Release (unsigned)
     runs-on: ubuntu-latest
-    # needs: build-debug  # Comente se quiser paralelo
+    # needs: build-debug  # Comente para builds paralelos se quiser mais velocidade
     timeout-minutes: 25
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Gradle (JDK 17 + cache + wrapper validation)
-        uses: gradle/actions/setup-gradle@v5
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'
           distribution: temurin
-          cache-read-only: ${{ github.ref != 'refs/heads/app' }}
+          java-version: '17'
+          cache: gradle
+
+      - name: Setup Gradle (cache + wrapper validation automática)
+        uses: gradle/actions/setup-gradle@v5
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
@@ -96,11 +98,9 @@ jobs:
       - name: Cache Android SDK extras
         uses: actions/cache@v4
         with:
-          path: |
-            \~/.android
+          path: \~/.android
           key: \( {{ runner.os }}-android-sdk- \){{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-android-sdk-
+          restore-keys: ${{ runner.os }}-android-sdk-
 
       - name: Build Release APK (unsigned)
         run: ./gradlew :app:assembleRelease --stacktrace --info

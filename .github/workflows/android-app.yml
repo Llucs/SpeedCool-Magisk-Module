@@ -1,63 +1,122 @@
 name: Android CI (SpeedCool App)
 
-on: workflow_dispatch: push: branches: - app paths: - "app/" - "gradle/" - "gradlew" - "gradlew.bat" - "build.gradle.kts" - "settings.gradle.kts" - "gradle.properties" - ".github/workflows/android-app.yml" pull_request: branches: - app
+on:
+  workflow_dispatch:          
+  push:
+    branches:
+      - app                  
+    paths:
+      - 'app/**'
+      - 'gradle/**'
+      - 'gradlew'
+      - 'gradlew.bat'
+      - 'build.gradle.kts'
+      - 'settings.gradle.kts'
+      - 'gradle.properties'
+      - '.github/workflows/android-app.yml'
+  pull_request:
+    branches:
+      - app                  
 
-concurrency: group: speedcool-app-${{ github.ref }} cancel-in-progress: true
+concurrency:
+  group: speedcool-app-${{ github.ref }}
+  cancel-in-progress: true
 
-jobs: build-debug: name: Build Debug APK runs-on: ubuntu-latest
+jobs:
+  build-debug:
+    name: Build & Check Debug
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
 
-steps:
-  - name: Checkout
-    uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  - name: Set up JDK 21
-    uses: actions/setup-java@v4
-    with:
-      distribution: temurin
-      java-version: "21"
-      cache: gradle
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
 
-  - name: Make Gradle wrapper executable
-    run: chmod +x ./gradlew
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
 
-  - name: Validate Gradle wrapper
-    uses: gradle/actions/wrapper-validation@v3
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
 
-  - name: Build Debug APK
-    run: ./gradlew :app:assembleDebug
+      - name: Validate Gradle Wrapper
+        uses: gradle/actions/wrapper-validation@v3
 
-  - name: Upload Debug APK
-    uses: actions/upload-artifact@v4
-    with:
-      name: SpeedCoolApp-Debug
-      path: app/build/outputs/apk/debug/app-debug.apk
-      if-no-files-found: error
+      - name: Cache Gradle & Android dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            \~/.gradle/caches
+            \~/.gradle/wrapper
+            \~/.android
+          key: \( {{ runner.os }}-gradle- \){{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
 
-build-release-unsigned: name: Build Release APK (unsigned) runs-on: ubuntu-latest needs: build-debug
+      - name: Run lint & unit tests (optional but recommended)
+        run: ./gradlew lintDebug testDebugUnitTest --stacktrace
 
-steps:
-  - name: Checkout
-    uses: actions/checkout@v4
+      - name: Build Debug APK
+        run: ./gradlew :app:assembleDebug --stacktrace
 
-  - name: Set up JDK 21
-    uses: actions/setup-java@v4
-    with:
-      distribution: temurin
-      java-version: "21"
-      cache: gradle
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpeedCoolApp-Debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 7
 
-  - name: Make Gradle wrapper executable
-    run: chmod +x ./gradlew
+  build-release-unsigned:
+    name: Build Release (unsigned)
+    runs-on: ubuntu-latest
+    needs: build-debug           # opcional — remove se quiser builds paralelos
+    timeout-minutes: 25
 
-  - name: Validate Gradle wrapper
-    uses: gradle/actions/wrapper-validation@v3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  - name: Build Release APK
-    run: ./gradlew :app:assembleRelease
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
 
-  - name: Upload Release APK (unsigned)
-    uses: actions/upload-artifact@v4
-    with:
-      name: SpeedCoolApp-Release-Unsigned
-      path: app/build/outputs/apk/release/app-release.apk
-      if-no-files-found: error
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/actions/wrapper-validation@v3
+
+      - name: Cache Gradle & Android dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            \~/.gradle/caches
+            \~/.gradle/wrapper
+            \~/.android
+          key: \( {{ runner.os }}-gradle- \){{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Build Release APK (unsigned)
+        run: ./gradlew :app:assembleRelease --stacktrace
+
+      - name: Upload Release APK (unsigned)
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpeedCoolApp-Release-Unsigned
+          path: app/build/outputs/apk/release/app-release-unsigned.apk   # ← note o -unsigned no nome real do arquivo
+          if-no-files-found: error
+          retention-days: 7

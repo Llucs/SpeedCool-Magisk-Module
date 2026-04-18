@@ -8,7 +8,7 @@
 - CPU/GPU core control.
 - Storage optimization.
 - Intelligent battery saver.
-- More compatible and lightweight.  
+- More compatible and lightweight.
 
 **v1.2**
 - Android 6 to 16+ Support — Works on any Android.
@@ -28,7 +28,7 @@
 **v1.3**
 - Three Operating Modes:
  • Eco Mode: For maximum battery savings.
- • Performance Mode: For full performance in games and heavy tasks
+ • Performance Mode: For full performance in games and heavy tasks.
  • Learning Mode: An intelligent mode that adapts to your usage in real time, automatically adjusting optimizations.
 - SpeedCool MENU (via Termux): An interface in Termux for you to easily select modes and view system information.
 - Real-Time Monitoring: The menu option allows you to view data such as CPU usage, GPU (if available), RAM, and current temperatures.
@@ -73,7 +73,7 @@
 
 **v1.9**
 - Enhanced chipset detection (Tensor, Kirin, and others).
-- Full compatibility with Android 14 and 15
+- Full compatibility with Android 14 and 15.
 - Redesigned interactive menu with numbered options.
 - Performance optimizations for GPU and network (TCP tuning).
 - Faster startup and smarter learning engine.
@@ -95,43 +95,35 @@
 - Modern, colorful interface designed for Termux.
 - Real-time stats for CPU, RAM, GPU, battery, and more.
 - Full support for both Portuguese and English.
-- Improvements:
-Better support for non-standard sensors and commands.
+- Better support for non-standard sensors and commands.
 - Smarter and more accurate temperature control.
 - Improved conflict detection with modules and governors.
 - Safer boot process to prevent errors or duplication.
 - Clean uninstall that restores original settings.
 
-**v2.2BETA**
-- What's New in SpeedCool v2.2
-- Automatic App-Based Profiles: app_monitor.sh detects the foreground app and switches performance profiles automatically based on defined rules.
+**v2.2 BETA**
+- Automatic App-Based Profiles: app_monitor.sh detects the foreground app and switches performance profiles automatically.
 - Full Auto-Update via GitHub: SpeedCool checks for updates, downloads the .zip, and installs it automatically using auto_update.sh.
 - Profile Backup & Import: Use profile_tools.sh export to save settings and import to restore them—directly in Termux.
-- Extended Device Compatibility: Improved support for rare chipsets (Unisoc, Rockchip, HiSilicon, Tensor, etc.); Automatic fallback if governors/schedulers are unavailable; Safety checks in compatibility.sh prevent risky settings.
+- Extended Device Compatibility: Improved support for rare chipsets (Unisoc, Rockchip, HiSilicon, Tensor, etc.).
+- Automatic fallback if governors/schedulers are unavailable.
+- Safety checks in compatibility.sh prevent risky settings.
 - Bootloop Recovery System (Safe Restore): Detects repeated reboots and automatically restores the safe “eco” profile.
-- Modular Script Design: Separate scripts for performance, cooling, learning, app monitoring, updates, backups, etc.; Each can run or restart independently if needed.
-- Improved Interactive Menu: New: “Check for Update Now”; Better visual feedback with icons like ✓, ⚠️, and real-time status; Integrated backup and refined log options.
-- Smarter Conflict Detection: Enhanced scan for governors, thermal zones, and modules; Applies fixes with minimal interference and shows alerts in Termux.
-- Detailed Logs & Debugging: Logs adaptive engine decisions, write attempts, and sensor data; Ensures proper permissions and verifies directories at boot.
-- More Sensitive Thermal Optimizer (cooling.sh): Reads real temps from multiple sensors; Acts quickly when overheating is detected, even outside “Learning” mode.
+- Modular Script Design: Separate scripts for performance, cooling, learning, app monitoring, updates, backups, etc.
+- Improved Interactive Menu: New “Check for Update Now” option and better visual feedback with icons.
+- Smarter Conflict Detection: Enhanced scan for governors, thermal zones, and modules.
+- Detailed Logs & Debugging: Logs adaptive engine decisions, write attempts, and sensor data.
+- More Sensitive Thermal Optimizer (cooling.sh): Reads real temps from multiple sensors and acts quickly when overheating is detected.
 
 **v2.2**
-- What was new in the v2.2 beta release: Smart engine that learns usage patterns and automatically adjusts performance; Eco Mode activates automatically after 1 AM during idle periods; Modern, colorful interface designed for Termux; Real-time stats for CPU, RAM, GPU, battery, and more; Full support for both Portuguese and English.
-- What changed from the beta to the final release: Real sensor validation: only functional sensors are used, preventing false readings and unnecessary loops; Safer backup system: the script checks if the .tar.gz file is intact before importing — if it's corrupted, it aborts; Refined permissions: scripts can now be executed manually with secure permissions (0755); configs remain protected (0700); Final release flag: added an internal marker (final_release.flag) to identify this version as stable; Robust auto-update: validates the .zip before applying, restarts services, and cleans up temp files — all automatically; Clearer logs and notifications: messages now explain each step more transparently.
+- Real sensor validation: only functional sensors are used, preventing false readings and unnecessary loops.
+- Safer backup system: the script checks if the .tar.gz file is intact before importing.
+- Refined permissions: scripts can now be executed manually with secure permissions (0755); configs remain protected (0700).
+- Final release flag: added an internal marker (final_release.flag) to identify this version as stable.
+- Robust auto-update: validates the .zip before applying, restarts services, and cleans up temp files automatically.
+- Clearer logs and notifications: messages now explain each step more transparently.
 
 **v2.3**
 - Fixed MANY bugs.
-- Fixed temperature reading (Now it can read correctly on all devices.
+- Fixed temperature reading (Now it can read correctly on all devices).
 - Some useless stuff removed.
-
-**v2.4** (New stuff so far, in development.)
-
-- Language now changes automatically based on the phone's language or region.
-- Typing "speedcool" in Termux opens the main menu.
-- Smarter and more stable automatic mode.
-- Internal fixes and script improvements.
-- Better sensor detection and clearer error messages.
-- Improved compatibility with different devices and ROMs.
-
-
-

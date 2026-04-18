@@ -153,7 +153,7 @@ Se você considera o SpeedCool útil, por favor, considere nos dar uma estrela �
 
 🔥 **Llucs (Leandro Lucas)**
 
-SpeedCool © 2025 — Feito com ❤️ por @Llucs
+SpeedCool © 2026 — Feito com ❤️ por @Llucs
 
 > Criado por quem entende, para quem busca o controle verdadeiro.
 

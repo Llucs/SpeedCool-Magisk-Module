@@ -153,7 +153,7 @@ Si encuentras útil SpeedCool, ¡considera darnos una estrella ⭐ en GitHub! Ay
 
 🔥 **Llucs (Leandro Lucas)**
 
-SpeedCool © 2025 — Hecho con ❤️ por @Llucs
+SpeedCool © 2026 — Hecho con ❤️ por @Llucs
 
 > Creado por quienes entienden, para quienes buscan el verdadero control.
 

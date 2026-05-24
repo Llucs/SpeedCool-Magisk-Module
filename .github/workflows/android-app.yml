@@ -1,4 +1,4 @@
-Name: Android CI (SpeedCool App)
+name: Android CI (SpeedCool App)
 
 on:
   workflow_dispatch:

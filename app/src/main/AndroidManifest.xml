@@ -7,8 +7,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <uses-permission android:name="moe.shizuku.manager.permission.API_V23" />
-    <uses-permission android:name="moe.shizuku.manager.permission.API_V33" />
+    <uses-permission android:name="dev.rikka.shizuku.manager.permission.API_V23" />
+    <uses-permission android:name="dev.rikka.shizuku.manager.permission.API_V33" />
 
     <application
         android:name=".SpeedCoolApp"
@@ -35,11 +35,11 @@
             android:exported="false" />
 
         <service
-            android:name="moe.shizuku.api.ShizukuService"
+            android:name="dev.rikka.shizuku.api.ShizukuService"
             android:exported="true"
-            android:permission="moe.shizuku.manager.permission.API_V23">
+            android:permission="dev.rikka.shizuku.manager.permission.API_V23">
             <intent-filter>
-                <action android:name="moe.shizuku.api.ACTION_START_SERVICE" />
+                <action android:name="dev.rikka.shizuku.api.ACTION_START_SERVICE" />
             </intent-filter>
         </service>
 

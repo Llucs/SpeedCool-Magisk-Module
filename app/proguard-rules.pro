@@ -1,0 +1,4 @@
+-keep class dev.rikka.shizuku.** { *; }
+-keep class com.speedcool.app.** { *; }
+-keepclassmembers class * extends androidx.lifecycle.ViewModel { *; }
+-dontwarn dev.rikka.shizuku.**

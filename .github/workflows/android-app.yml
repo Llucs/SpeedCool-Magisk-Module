@@ -12,17 +12,13 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    - run: |
-        mkdir -p $HOME/android-sdk
-        curl -sL https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -o cmdline.zip
-        unzip -q cmdline.zip -d $HOME/android-sdk
-        export ANDROID_HOME=$HOME/android-sdk
-        export PATH=$ANDROID_HOME/cmdline-tools/bin:$PATH
-        yes | sdkmanager --licenses > /dev/null 2>&1 || true
-        sdkmanager "platforms;android-34" "build-tools;34.0.0" > /dev/null 2>&1
+    - uses: android-actions/setup-android@v3
+    - name: Build APK
+      run: |
         chmod +x gradlew
-        ANDROID_HOME=$HOME/android-sdk ./gradlew assembleDebug
+        ./gradlew :app:assembleDebug --no-daemon
     - uses: actions/upload-artifact@v4
+      if: success()
       with:
-        name: SpeedCoolApp
+        name: SpeedCoolApp-Debug
         path: app/build/outputs/apk/debug/app-debug.apk

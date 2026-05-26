@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.speedcool.app"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 34
         versionCode = 15
         versionName = "2.4"

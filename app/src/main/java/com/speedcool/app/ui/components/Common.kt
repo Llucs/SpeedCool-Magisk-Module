@@ -51,6 +51,7 @@ fun StatCard(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileSelector(
     currentProfile: Profile,

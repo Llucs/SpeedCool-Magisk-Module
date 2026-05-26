@@ -8,11 +8,10 @@ import android.content.Intent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.speedcool.app.MainActivity
-import com.speedcool.app.R
 import com.speedcool.app.SpeedCoolApp
+import com.speedcool.app.data.Profile
 import com.speedcool.app.engine.OptimizationEngine
 import kotlinx.coroutines.*
-import moe.shizuku.api.Shizuku
 
 class SpeedCoolService : Service() {
 
@@ -39,9 +38,9 @@ class SpeedCoolService : Service() {
                     val status = it.collectStatus()
                     it.applyProfile(
                         when {
-                            status.cpuUsage > 70 -> com.speedcool.app.data.Profile.PERFORMANCE
-                            status.cpuUsage > 35 -> com.speedcool.app.data.Profile.BALANCED
-                            else -> com.speedcool.app.data.Profile.ECO
+                            status.cpuUsage > 70 -> Profile.PERFORMANCE
+                            status.cpuUsage > 35 -> Profile.BALANCED
+                            else -> Profile.ECO
                         }
                     )
                     if (status.ramUsagePercent > 85) {

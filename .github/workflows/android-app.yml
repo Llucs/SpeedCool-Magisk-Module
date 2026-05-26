@@ -1,5 +1,8 @@
 name: Build SpeedCool App
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "app-v2.4" ]
 jobs:
   build:
     runs-on: ubuntu-latest

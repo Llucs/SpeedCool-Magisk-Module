@@ -129,7 +129,7 @@ private fun StatusItem(label: String, value: String, color: androidx.compose.ui.
         Text(label, color = OnSurfaceVariant, fontSize = 14.sp)
         Text(value, color = color, fontWeight = FontWeight.Medium, fontSize = 14.sp)
     }
-    androidx.compose.material3.HorizontalDivider(color = DividerColor, thickness = 0.5.dp)
+    Divider(color = DividerColor, thickness = 0.5.dp)
 }
 
 private fun executorModeDisplay(profile: Profile): String = when (profile) {

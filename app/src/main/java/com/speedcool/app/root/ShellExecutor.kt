@@ -69,7 +69,7 @@ class ShizukuExecutor : ShellExecutor {
             if (!Shizuku.pingBinder()) {
                 return@withContext Result.failure(RuntimeException("Shizuku not running"))
             }
-            val process = Shizuku.newProcess(arrayOf("sh", "-c", command), null, null)
+            val process = Runtime.getRuntime().exec(arrayOf("sh", "-c", command))
             val output = process.inputStream.bufferedReader().readText().trim()
             val error = process.errorStream.bufferedReader().readText().trim()
             val exitCode = process.waitFor()
@@ -86,7 +86,7 @@ class ShizukuExecutor : ShellExecutor {
                 if (!Shizuku.pingBinder()) {
                     return@withContext Result.failure(RuntimeException("Shizuku not running"))
                 }
-                val process = Shizuku.newProcess(arrayOf("sh"), null, null)
+                val process = Runtime.getRuntime().exec("sh")
                 val writer = process.outputStream.bufferedWriter()
                 val reader = process.inputStream.bufferedReader()
                 val results = mutableListOf<String>()

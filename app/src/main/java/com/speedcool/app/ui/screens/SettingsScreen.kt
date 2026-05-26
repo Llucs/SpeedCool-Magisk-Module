@@ -179,5 +179,5 @@ private fun SettingsSwitch(
         }
         Switch(checked = checked, onCheckedChange = onCheckedChange)
     }
-    HorizontalDivider(color = DividerColor, thickness = 0.5.dp)
+    androidx.compose.material3.HorizontalDivider(color = DividerColor, thickness = 0.5.dp)
 }

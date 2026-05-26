@@ -3,7 +3,7 @@ package com.speedcool.app.root
 import android.os.Build
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import dev.rikka.shizuku.api.Shizuku
+import rikka.shizuku.Shizuku
 
 interface ShellExecutor {
     suspend fun execute(command: String): Result<String>

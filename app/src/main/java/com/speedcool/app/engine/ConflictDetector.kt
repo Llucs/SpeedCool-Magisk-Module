@@ -23,7 +23,7 @@ class ConflictDetector(private val executor: ShellExecutor) {
 
         val moduleCheck = executor.execute(
             "ls $modulesDir 2>/dev/null; ls $ksuDir 2>/dev/null"
-        ).getOrElse("")
+        ).getOrDefault("")
 
         for (conflict in KNOWN_CONFLICTING) {
             if (moduleCheck.contains(conflict, ignoreCase = true)) {
@@ -33,7 +33,7 @@ class ConflictDetector(private val executor: ShellExecutor) {
 
         val govCheck = executor.execute(
             "for cpu in /sys/devices/system/cpu/cpu[0-9]*/cpufreq/scaling_governor; do [ -f \"\$cpu\" ] && cat \"\$cpu\"; done"
-        ).getOrElse("")
+        ).getOrDefault("")
 
         for (gov in govCheck.lines().filter { it.isNotBlank() }) {
             if (gov !in SAFE_GOVERNORS) suspiciousGovernors.add(gov)
@@ -41,7 +41,7 @@ class ConflictDetector(private val executor: ShellExecutor) {
 
         val thermalCheck = executor.execute(
             "for t in /sys/class/thermal/thermal_zone*/mode; do [ -f \"\$t\" ] && echo \"\$(cat \"\$t\"):\$t\"; done"
-        ).getOrElse("")
+        ).getOrDefault("")
 
         for (line in thermalCheck.lines().filter { it.isNotBlank() }) {
             if (line.startsWith("disabled")) thermalZonesOff.add(line.substringAfter(":"))

@@ -1,0 +1,4 @@
+-keep class moe.shizuku.** { *; }
+-keep class com.speedcool.app.** { *; }
+-keepclassmembers class * extends androidx.lifecycle.ViewModel { *; }
+-dontwarn moe.shizuku.**

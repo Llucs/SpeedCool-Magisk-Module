@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SpeedCool</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="profiles">Perfis</string>
+    <string name="status">Status</string>
+    <string name="settings">Configurações</string>
+    <string name="eco_mode">Eco</string>
+    <string name="balanced_mode">Equilibrado</string>
+    <string name="performance_mode">Performance</string>
+    <string name="learning_mode">Aprendizado</string>
+    <string name="root_mode">Root</string>
+    <string name="shizuku_mode">Shizuku</string>
+    <string name="no_root">Sem Root</string>
+    <string name="service_running">SpeedCool está otimizando seu dispositivo</string>
+    <string name="apply_profile">Aplicar Perfil</string>
+</resources>

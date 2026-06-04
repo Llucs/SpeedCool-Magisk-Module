@@ -8,7 +8,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Werror -DSPEEDCOOL_VERSION="${PROJECT_VERSION}")
 
-# Try C++26 if compiler supports it
 include(CheckCXXCompilerFlag)
 check_cxx_compiler_flag("-std=c++26" CXX26_OK)
 if(CXX26_OK)
@@ -21,79 +20,81 @@ if(HAS_CONTRACTS)
     add_compile_options(-fcontracts)
 endif()
 
-# Dependencies: try CMake config, then pkg-config, then find_path/find_library
-find_package(PkgConfig QUIET)
+# --- Dependencies ---
 
-function(find_dep VAR header lib)
-    # 1. Try CMake config (works with vcpkg on Windows)
-    find_package(${VAR} CONFIG QUIET)
-    if(${VAR}_FOUND OR TARGET ${VAR}::${VAR})
-        set(${VAR}_FOUND TRUE PARENT_SCOPE)
-        if(TARGET ${VAR}::${VAR})
-            get_target_property(_inc ${VAR}::${VAR} INTERFACE_INCLUDE_DIRECTORIES)
-            if(_inc)
-                set(${VAR}_INCLUDE_DIRS "${_inc}" PARENT_SCOPE)
-            endif()
-            set(${VAR}_LIBRARIES ${VAR}::${VAR} PARENT_SCOPE)
-        endif()
-        message(STATUS "Found ${VAR} via CMake config")
-        return()
-    endif()
-
-    # 2. Try pkg-config
+# spdlog: try CMake config, then pkg-config, then find_path
+if(MSVC)
+    find_package(spdlog CONFIG REQUIRED)
+    set(SPDLOG_INCLUDE_DIRS "")
+    set(SPDLOG_LIBRARIES spdlog::spdlog)
+else()
+    find_package(PkgConfig QUIET)
     if(PkgConfig_FOUND)
-        pkg_check_modules(PC_${VAR} ${VAR} QUIET)
-        if(PC_${VAR}_FOUND)
-            set(${VAR}_INCLUDE_DIRS ${PC_${VAR}_INCLUDE_DIRS} PARENT_SCOPE)
-            set(${VAR}_LIBRARIES ${PC_${VAR}_LIBRARIES} PARENT_SCOPE)
-            set(${VAR}_FOUND TRUE PARENT_SCOPE)
-            message(STATUS "Found ${VAR} via pkg-config")
-            return()
-        endif()
+        pkg_check_modules(PC_SPDLOG spdlog IMPORTED_TARGET)
     endif()
-
-    # 3. Fallback to find_path/find_library
-    find_path(${VAR}_INCLUDE_DIR ${header})
-    if(NOT "${lib}" STREQUAL "")
-        find_library(${VAR}_LIBRARY ${lib})
-    endif()
-    if(${VAR}_INCLUDE_DIR)
-        set(${VAR}_INCLUDE_DIRS ${${VAR}_INCLUDE_DIR} PARENT_SCOPE)
-        if(${VAR}_LIBRARY)
-            set(${VAR}_LIBRARIES ${${VAR}_LIBRARY} PARENT_SCOPE)
-        endif()
-        set(${VAR}_FOUND TRUE PARENT_SCOPE)
-        message(STATUS "Found ${VAR} via find_path: ${${VAR}_INCLUDE_DIR}")
+    if(PC_SPDLOG_FOUND)
+        set(SPDLOG_INCLUDE_DIRS ${PC_SPDLOG_INCLUDE_DIRS})
+        set(SPDLOG_LIBRARIES PkgConfig::PC_SPDLOG)
     else()
-        message(FATAL_ERROR "Required dependency ${VAR} not found (${header})")
+        find_path(SPDLOG_INCLUDE_DIR spdlog/spdlog.h REQUIRED)
+        find_library(SPDLOG_LIBRARY spdlog REQUIRED)
+        set(SPDLOG_INCLUDE_DIRS ${SPDLOG_INCLUDE_DIR})
+        set(SPDLOG_LIBRARIES ${SPDLOG_LIBRARY})
     endif()
-endfunction()
+endif()
+message(STATUS "spdlog: ${SPDLOG_INCLUDE_DIRS}")
 
-find_dep(spdlog spdlog/spdlog.h spdlog)
-find_dep(fmt fmt/core.h fmt)
-find_dep(toml11 toml.hpp "")
+# fmt: try CMake config, then pkg-config, then find_path
+if(MSVC)
+    find_package(fmt CONFIG REQUIRED)
+    set(FMT_INCLUDE_DIRS "")
+    set(FMT_LIBRARIES fmt::fmt)
+else()
+    if(PkgConfig_FOUND)
+        pkg_check_modules(PC_FMT fmt IMPORTED_TARGET)
+    endif()
+    if(PC_FMT_FOUND)
+        set(FMT_INCLUDE_DIRS ${PC_FMT_INCLUDE_DIRS})
+        set(FMT_LIBRARIES PkgConfig::PC_FMT)
+    else()
+        find_path(FMT_INCLUDE_DIR fmt/core.h REQUIRED)
+        find_library(FMT_LIBRARY fmt REQUIRED)
+        set(FMT_INCLUDE_DIRS ${FMT_INCLUDE_DIR})
+        set(FMT_LIBRARIES ${FMT_LIBRARY})
+    endif()
+endif()
+message(STATUS "fmt: ${FMT_INCLUDE_DIRS}")
 
-# FTXUI is optional
+# toml11 (header-only): find_path or download
+find_path(TOML11_INCLUDE_DIR toml.hpp)
+if(NOT TOML11_INCLUDE_DIR)
+    message(STATUS "Downloading toml11 header...")
+    file(DOWNLOAD https://raw.githubusercontent.com/toruniina/toml11/v3.8.1/toml.hpp
+         ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp TLS_VERIFY ON)
+    set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11)
+endif()
+message(STATUS "toml11: ${TOML11_INCLUDE_DIR}")
+
+# FTXUI (optional)
 find_path(FTXUI_INCLUDE_DIR ftxui/dom/elements.hpp)
 find_library(FTXUI_LIB ftxui-dom)
 if(FTXUI_INCLUDE_DIR AND FTXUI_LIB)
-    set(FTXUI_FOUND TRUE)
+    add_compile_definitions(SPEEDCOOL_HAS_TUI=1)
+    message(STATUS "Found ftxui: ${FTXUI_INCLUDE_DIR}")
     set(FTXUI_INCLUDE_DIRS ${FTXUI_INCLUDE_DIR})
     set(FTXUI_LIBRARIES ${FTXUI_LIB})
-    add_compile_definitions(SPEEDCOOL_HAS_TUI=1)
-    message(STATUS "Found ftxui")
 else()
     message(STATUS "ftxui not found, TUI disabled")
 endif()
 
-# nlohmann-json is optional (for telemetry)
+# nlohmann-json (optional)
 find_path(NLOHMANN_INCLUDE_DIR nlohmann/json.hpp)
 if(NLOHMANN_INCLUDE_DIR)
     add_compile_definitions(SPEEDCOOL_HAS_JSON=1)
-    message(STATUS "Found nlohmann-json")
+    message(STATUS "Found nlohmann-json: ${NLOHMANN_INCLUDE_DIR}")
 endif()
 
-# Core library
+# --- Core library ---
 add_library(speedcool_core STATIC
     src/common/logging.cpp
     src/core/config.cpp
@@ -117,24 +118,21 @@ add_library(speedcool_core STATIC
 )
 
 target_include_directories(speedcool_core PUBLIC src
-    ${spdlog_INCLUDE_DIRS}
-    ${fmt_INCLUDE_DIRS}
-    ${toml11_INCLUDE_DIRS}
+    ${SPDLOG_INCLUDE_DIRS}
+    ${FMT_INCLUDE_DIRS}
+    ${TOML11_INCLUDE_DIR}
     ${FTXUI_INCLUDE_DIRS}
     ${NLOHMANN_INCLUDE_DIR}
 )
 
-target_link_libraries(speedcool_core PUBLIC
-    ${spdlog_LIBRARIES}
-    ${fmt_LIBRARIES}
-)
+target_link_libraries(speedcool_core PUBLIC ${SPDLOG_LIBRARIES} ${FMT_LIBRARIES})
 
 if(WIN32)
     target_sources(speedcool_core PRIVATE src/pal/platform_windows.cpp)
     target_link_libraries(speedcool_core PRIVATE advapi32 powrprof pdh)
 endif()
 
-# Main binary
+# --- Main binary ---
 add_executable(speedcool
     src/main.cpp
     src/core/daemon.cpp
@@ -144,7 +142,7 @@ add_executable(speedcool
 
 target_link_libraries(speedcool PRIVATE speedcool_core ${FTXUI_LIBRARIES})
 
-# Tests
+# --- Tests ---
 function(add_speedcool_test name)
     add_executable(${name} ${ARGN})
     target_link_libraries(${name} PRIVATE speedcool_core)

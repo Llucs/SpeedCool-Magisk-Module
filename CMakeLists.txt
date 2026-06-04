@@ -197,10 +197,10 @@ add_library(speedcool_core STATIC
 target_include_directories(speedcool_core PUBLIC src
     ${SPDLOG_INCLUDE_DIRS}
     ${FMT_INCLUDE_DIRS}
-    ${TOML11_INCLUDE_DIR}
     ${FTXUI_INCLUDE_DIRS}
     ${NLOHMANN_INCLUDE_DIRS}
 )
+target_include_directories(speedcool_core SYSTEM PUBLIC ${TOML11_INCLUDE_DIR})
 
 target_link_libraries(speedcool_core PUBLIC ${SPDLOG_LIBRARIES} ${FMT_LIBRARIES})
 

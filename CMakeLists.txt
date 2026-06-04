@@ -60,7 +60,13 @@ if(NOT FMT_FOUND)
     message(FATAL_ERROR "fmt is required. Install libfmt-dev")
 endif()
 
-add_compile_options(-Wall -Wextra -Wpedantic -Werror -fcontracts -DSPEEDCOOL_VERSION="${PROJECT_VERSION}")
+include(CheckCXXCompilerFlag)
+check_cxx_compiler_flag(-fcontracts HAS_CONTRACTS)
+if(HAS_CONTRACTS)
+    add_compile_options(-fcontracts)
+endif()
+
+add_compile_options(-Wall -Wextra -Wpedantic -Werror -DSPEEDCOOL_VERSION="${PROJECT_VERSION}")
 include_directories(${TOML11_INCLUDE_DIRS} ${SPDLOG_INCLUDE_DIRS} ${FMT_INCLUDE_DIRS} ${FTXUI_INCLUDE_DIRS})
 
 add_library(speedcool_core STATIC

@@ -118,13 +118,17 @@ jobs:
           git clone https://github.com/Microsoft/vcpkg.git C:\vcpkg
           C:\vcpkg\bootstrap-vcpkg.bat -disableMetrics
           C:\vcpkg\vcpkg install spdlog fmt nlohmann-json --triplet x64-windows
+          REM Install toml11 (header-only) directly
+          if not exist "C:\vcpkg\installed\x64-windows\include\toml.hpp" (
+            curl -L -o C:\vcpkg\installed\x64-windows\include\toml.hpp ^
+              https://raw.githubusercontent.com/toruniina/toml11/v3.8.1/toml.hpp
+          )
         shell: cmd
 
       - name: Configure CMake
         run: |
           cmake -B build -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=Release ^
-            -DCMAKE_TOOLCHAIN_FILE="C:\vcpkg\scripts\buildsystems\vcpkg.cmake" ^
-            -DTOML11_INCLUDE_DIR="C:\vcpkg\packages\toml11_x64-windows\include" 2>&1
+            -DCMAKE_TOOLCHAIN_FILE="C:\vcpkg\scripts\buildsystems\vcpkg.cmake"
           echo "Exit code: %ERRORLEVEL%"
         shell: cmd
 

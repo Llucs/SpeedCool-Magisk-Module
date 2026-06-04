@@ -8,18 +8,27 @@
 #include "pal/gpu/gpu_info.h"
 #include "monitor/metrics_collector.h"
 
+#include <thread>
+#include <chrono>
+#include <print>
+
+#ifdef SPEEDCOOL_HAS_TUI
 #include <ftxui/dom/elements.hpp>
 #include <ftxui/screen/screen.hpp>
 #include <ftxui/component/screen_interactive.hpp>
 #include <ftxui/component/component.hpp>
 #include <ftxui/component/component_options.hpp>
-#include <thread>
-#include <chrono>
-
 using namespace ftxui;
+#endif
 
 namespace speedcool::cli {
 
+#ifndef SPEEDCOOL_HAS_TUI
+void run_tui() {
+    log_warn("TUI not available: FTXUI was not found at build time");
+    std::println("TUI requires FTXUI library. Rebuild with FTXUI installed.");
+}
+#else
 auto format_bar(Percent value, int width = 20) -> Element {
     int filled = static_cast<int>(value * width / 100.0);
     filled = std::clamp(filled, 0, width);
@@ -109,5 +118,6 @@ void run_tui() {
     screen.Loop(renderer);
     refresh_thread.detach();
 }
+#endif
 
 } // namespace speedcool::cli

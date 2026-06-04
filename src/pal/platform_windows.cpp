@@ -1,5 +1,6 @@
 #include "common/types.h"
 #include "common/logging.h"
+#include "pal/platform.h"
 
 namespace speedcool::pal {
 

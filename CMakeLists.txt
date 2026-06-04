@@ -147,12 +147,8 @@ if(MSVC)
         GIT_REPOSITORY https://github.com/ToruNiina/toml11.git
         GIT_TAG v3.8.1
         GIT_SHALLOW TRUE
-        SOURCE_SUBDIR none
     )
-    FetchContent_GetProperties(toml11)
-    if(NOT toml11_POPULATED)
-        FetchContent_Populate(toml11)
-    endif()
+    FetchContent_MakeAvailable(toml11)
     set(TOML11_INCLUDE_DIR ${toml11_SOURCE_DIR}/include)
 else()
     find_path(TOML11_INCLUDE_DIR toml.hpp)
@@ -162,12 +158,8 @@ else()
             GIT_REPOSITORY https://github.com/ToruNiina/toml11.git
             GIT_TAG v3.8.1
             GIT_SHALLOW TRUE
-            SOURCE_SUBDIR none
         )
-        FetchContent_GetProperties(toml11)
-        if(NOT toml11_POPULATED)
-            FetchContent_Populate(toml11)
-        endif()
+        FetchContent_MakeAvailable(toml11)
         set(TOML11_INCLUDE_DIR ${toml11_SOURCE_DIR}/include)
     endif()
 endif()

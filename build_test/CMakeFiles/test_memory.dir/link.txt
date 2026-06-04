@@ -1,0 +1,1 @@
+/usr/bin/c++ -O2 -g -DNDEBUG CMakeFiles/test_memory.dir/tests/unit/test_memory.cpp.o -o test_memory  libspeedcool_core.a -lspdlog -lfmt

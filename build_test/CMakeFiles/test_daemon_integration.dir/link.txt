@@ -1,0 +1,1 @@
+/usr/bin/c++ -O2 -g -DNDEBUG CMakeFiles/test_daemon_integration.dir/tests/integration/test_daemon_integration.cpp.o CMakeFiles/test_daemon_integration.dir/src/core/daemon.cpp.o -o test_daemon_integration  libspeedcool_core.a -lspdlog -lfmt

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/tmp/SpeedCool-Magisk-Module/build_test/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

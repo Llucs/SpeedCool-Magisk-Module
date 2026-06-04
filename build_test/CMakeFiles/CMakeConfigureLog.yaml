@@ -1,0 +1,1851 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/uname"
+      - "/root/.opencode/bin/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+      - "/usr/sbin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Android - 33 - aarch64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/gmake"
+      - "/root/.opencode/bin/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/sbin/gmake"
+    found: "/usr/bin/gmake"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "c++"
+      - "CC"
+      - "g++"
+      - "aCC"
+      - "cl"
+      - "bcc"
+      - "xlC"
+      - "icpx"
+      - "icx"
+      - "clang++"
+    candidate_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/c++"
+      - "/root/.opencode/bin/c++"
+      - "/usr/local/sbin/c++"
+      - "/usr/local/bin/c++"
+      - "/usr/sbin/c++"
+    found: "/usr/bin/c++"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/"
+    found: "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/4.3.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/usr/bin/ar"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/usr/bin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/usr/bin/ld"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/usr/bin/nm"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/usr/bin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/usr/bin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/usr/bin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/usr/bin/dlltool"
+      - "/root/.sdkman/candidates/gradle/current/bin/dlltool"
+      - "/root/.opencode/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/sbin/dlltool"
+      - "/bin/dlltool"
+      - "/usr/local/games/dlltool"
+      - "/usr/games/dlltool"
+      - "/system/bin/dlltool"
+      - "/system/xbin/dlltool"
+    found: "/data/data/com.termux/files/usr/bin/dlltool"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/usr/bin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/root/.sdkman/candidates/gradle/current/bin/tapi"
+      - "/root/.opencode/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/sbin/tapi"
+      - "/sbin/tapi"
+      - "/bin/tapi"
+      - "/usr/local/games/tapi"
+      - "/usr/games/tapi"
+      - "/system/bin/tapi"
+      - "/system/xbin/tapi"
+      - "/data/data/com.termux/files/usr/bin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-15.2"
+      - "gcc-ar-15"
+      - "gcc-ar15"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-15.2"
+      - "/root/.sdkman/candidates/gradle/current/bin/gcc-ar-15.2"
+      - "/root/.opencode/bin/gcc-ar-15.2"
+      - "/usr/local/sbin/gcc-ar-15.2"
+      - "/usr/local/bin/gcc-ar-15.2"
+      - "/usr/sbin/gcc-ar-15.2"
+      - "/sbin/gcc-ar-15.2"
+      - "/bin/gcc-ar-15.2"
+      - "/usr/local/games/gcc-ar-15.2"
+      - "/usr/games/gcc-ar-15.2"
+      - "/system/bin/gcc-ar-15.2"
+      - "/system/xbin/gcc-ar-15.2"
+      - "/data/data/com.termux/files/usr/bin/gcc-ar-15.2"
+    found: "/usr/bin/gcc-ar-15"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-15.2"
+      - "gcc-ranlib-15"
+      - "gcc-ranlib15"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-15.2"
+      - "/root/.sdkman/candidates/gradle/current/bin/gcc-ranlib-15.2"
+      - "/root/.opencode/bin/gcc-ranlib-15.2"
+      - "/usr/local/sbin/gcc-ranlib-15.2"
+      - "/usr/local/bin/gcc-ranlib-15.2"
+      - "/usr/sbin/gcc-ranlib-15.2"
+      - "/sbin/gcc-ranlib-15.2"
+      - "/bin/gcc-ranlib-15.2"
+      - "/usr/local/games/gcc-ranlib-15.2"
+      - "/usr/games/gcc-ranlib-15.2"
+      - "/system/bin/gcc-ranlib-15.2"
+      - "/system/xbin/gcc-ranlib-15.2"
+      - "/data/data/com.termux/files/usr/bin/gcc-ranlib-15.2"
+    found: "/usr/bin/gcc-ranlib-15"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-AR0Z56"
+      binary: "/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-AR0Z56"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-AR0Z56'
+        
+        Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_91c1d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_91c1d.dir/build.make CMakeFiles/cmTC_91c1d.dir/build
+        gmake[1]: Entering directory '/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-AR0Z56'
+        Building CXX object CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -O2 -g -DNDEBUG   -v -o CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o -c /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: aarch64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 15.2.0-4ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-15/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust,cobol,algol68 --prefix=/usr --with-gcc-major-version-only --program-suffix=-15 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-15-oiPJSz/gcc-15-15.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=4
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (Ubuntu 15.2.0-4ubuntu4) 
+        COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_91c1d.dir/'
+         /usr/libexec/gcc/aarch64-linux-gnu/15/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE -D NDEBUG /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -D_FORTIFY_SOURCE=3 -quiet -dumpdir CMakeFiles/cmTC_91c1d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -g -O2 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fzero-init-padding-bits=all -Wbidi-chars=any -o /tmp/ccmgn6a9.s
+        GNU C++17 (Ubuntu 15.2.0-4ubuntu4) version 15.2.0 (aarch64-linux-gnu)
+        	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/aarch64-linux-gnu/c++/15"
+        ignoring nonexistent directory "/usr/local/include/aarch64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/include-fixed/aarch64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/include/c++/15
+         /usr/include/aarch64-linux-gnu/c++/15
+         /usr/include/c++/15/backward
+         /usr/lib/gcc/aarch64-linux-gnu/15/include
+         /usr/local/include
+         /usr/include/aarch64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 091fe14dc6f3f0030f2e5c8e18699f51
+        COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_91c1d.dir/'
+         /usr/bin/aarch64-linux-gnu-as -v --gdwarf-5 -EL -mabi=lp64 -o CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccmgn6a9.s
+        GNU assembler version 2.45 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.45
+        COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/15/:/usr/libexec/gcc/aarch64-linux-gnu/15/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/15/:/usr/lib/gcc/aarch64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/15/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_91c1d
+        /data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91c1d.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/15/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: aarch64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 15.2.0-4ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-15/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust,cobol,algol68 --prefix=/usr --with-gcc-major-version-only --program-suffix=-15 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-15-oiPJSz/gcc-15-15.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=4
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.0 (Ubuntu 15.2.0-4ubuntu4) 
+        COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/15/:/usr/libexec/gcc/aarch64-linux-gnu/15/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/15/:/usr/lib/gcc/aarch64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/15/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'cmTC_91c1d' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_91c1d.'
+         /usr/libexec/gcc/aarch64-linux-gnu/15/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCGmWvN.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_91c1d /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/15 -L/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/15/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/15/../../.. -L/lib -L/usr/lib CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'cmTC_91c1d' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_91c1d.'
+        /usr/bin/c++ -O2 -g -DNDEBUG  -v CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_91c1d
+        gmake[1]: Leaving directory '/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-AR0Z56'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/include/c++/15]
+          add: [/usr/include/aarch64-linux-gnu/c++/15]
+          add: [/usr/include/c++/15/backward]
+          add: [/usr/lib/gcc/aarch64-linux-gnu/15/include]
+          add: [/usr/local/include]
+          add: [/usr/include/aarch64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/include/c++/15] ==> [/usr/include/c++/15]
+        collapse include dir [/usr/include/aarch64-linux-gnu/c++/15] ==> [/usr/include/aarch64-linux-gnu/c++/15]
+        collapse include dir [/usr/include/c++/15/backward] ==> [/usr/include/c++/15/backward]
+        collapse include dir [/usr/lib/gcc/aarch64-linux-gnu/15/include] ==> [/usr/lib/gcc/aarch64-linux-gnu/15/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/aarch64-linux-gnu] ==> [/usr/include/aarch64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/15;/usr/include/aarch64-linux-gnu/c++/15;/usr/include/c++/15/backward;/usr/lib/gcc/aarch64-linux-gnu/15/include;/usr/local/include;/usr/include/aarch64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-AR0Z56']
+        ignore line: []
+        ignore line: [Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_91c1d/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_91c1d.dir/build.make CMakeFiles/cmTC_91c1d.dir/build]
+        ignore line: [gmake[1]: Entering directory '/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-AR0Z56']
+        ignore line: [Building CXX object CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -O2 -g -DNDEBUG   -v -o CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o -c /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: aarch64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 15.2.0-4ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-15/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust cobol algol68 --prefix=/usr --with-gcc-major-version-only --program-suffix=-15 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-15-oiPJSz/gcc-15-15.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=4]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (Ubuntu 15.2.0-4ubuntu4) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_91c1d.dir/']
+        ignore line: [ /usr/libexec/gcc/aarch64-linux-gnu/15/cc1plus -quiet -v -imultiarch aarch64-linux-gnu -D_GNU_SOURCE -D NDEBUG /data/data/com.termux/files/usr/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -D_FORTIFY_SOURCE=3 -quiet -dumpdir CMakeFiles/cmTC_91c1d.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -g -O2 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fzero-init-padding-bits=all -Wbidi-chars=any -o /tmp/ccmgn6a9.s]
+        ignore line: [GNU C++17 (Ubuntu 15.2.0-4ubuntu4) version 15.2.0 (aarch64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/aarch64-linux-gnu/c++/15"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/aarch64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/include-fixed/aarch64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/aarch64-linux-gnu/15/../../../../aarch64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/include/c++/15]
+        ignore line: [ /usr/include/aarch64-linux-gnu/c++/15]
+        ignore line: [ /usr/include/c++/15/backward]
+        ignore line: [ /usr/lib/gcc/aarch64-linux-gnu/15/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/aarch64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 091fe14dc6f3f0030f2e5c8e18699f51]
+        ignore line: [COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_91c1d.dir/']
+        ignore line: [ /usr/bin/aarch64-linux-gnu-as -v --gdwarf-5 -EL -mabi=lp64 -o CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccmgn6a9.s]
+        ignore line: [GNU assembler version 2.45 (aarch64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.45]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/15/:/usr/libexec/gcc/aarch64-linux-gnu/15/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/15/:/usr/lib/gcc/aarch64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/15/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_91c1d]
+        ignore line: [/data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91c1d.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/15/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: aarch64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 15.2.0-4ubuntu4' --with-bugurl=file:///usr/share/doc/gcc-15/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust cobol algol68 --prefix=/usr --with-gcc-major-version-only --program-suffix=-15 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/gcc-15-oiPJSz/gcc-15-15.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=4]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.0 (Ubuntu 15.2.0-4ubuntu4) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/aarch64-linux-gnu/15/:/usr/libexec/gcc/aarch64-linux-gnu/15/:/usr/libexec/gcc/aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/15/:/usr/lib/gcc/aarch64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/aarch64-linux-gnu/15/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../../lib/:/lib/aarch64-linux-gnu/:/lib/../lib/:/usr/lib/aarch64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/aarch64-linux-gnu/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'cmTC_91c1d' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_91c1d.']
+        link line: [ /usr/libexec/gcc/aarch64-linux-gnu/15/collect2 -plugin /usr/libexec/gcc/aarch64-linux-gnu/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCGmWvN.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu --as-needed -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux --fix-cortex-a53-843419 -pie -z now -z relro -o cmTC_91c1d /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o /usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/aarch64-linux-gnu/15 -L/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu -L/usr/lib/gcc/aarch64-linux-gnu/15/../../../../lib -L/lib/aarch64-linux-gnu -L/lib/../lib -L/usr/lib/aarch64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/aarch64-linux-gnu/15/../../.. -L/lib -L/usr/lib CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o /usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/aarch64-linux-gnu/15/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/aarch64-linux-gnu/15/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/aarch64-linux-gnu/15/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccCGmWvN.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+          arg [-X] ==> ignore
+          arg [-EL] ==> ignore
+          arg [-maarch64linux] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_91c1d] ==> ignore
+          arg [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/15] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/15]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/15/../../../../lib] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/15/../../../../lib]
+          arg [-L/lib/aarch64-linux-gnu] ==> dir [/lib/aarch64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/aarch64-linux-gnu] ==> dir [/usr/lib/aarch64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/aarch64-linux-gnu/15/../../..] ==> dir [/usr/lib/gcc/aarch64-linux-gnu/15/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o]
+          arg [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-O2' '-g' '-D' 'NDEBUG' '-v' '-o' 'cmTC_91c1d' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_91c1d.']
+        ignore line: [/usr/bin/c++ -O2 -g -DNDEBUG  -v CMakeFiles/cmTC_91c1d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_91c1d]
+        ignore line: [gmake[1]: Leaving directory '/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-AR0Z56']
+        ignore line: []
+        ignore line: []
+        collapse obj [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/Scrt1.o] ==> [/usr/lib/aarch64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crti.o] ==> [/usr/lib/aarch64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu/crtn.o] ==> [/usr/lib/aarch64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/15] ==> [/usr/lib/gcc/aarch64-linux-gnu/15]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/15/../../../aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/15/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/aarch64-linux-gnu] ==> [/lib/aarch64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/aarch64-linux-gnu] ==> [/usr/lib/aarch64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/aarch64-linux-gnu/15/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/aarch64-linux-gnu/Scrt1.o;/usr/lib/aarch64-linux-gnu/crti.o;/usr/lib/gcc/aarch64-linux-gnu/15/crtbeginS.o;/usr/lib/gcc/aarch64-linux-gnu/15/crtendS.o;/usr/lib/aarch64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/aarch64-linux-gnu/15;/usr/lib/aarch64-linux-gnu;/usr/lib;/lib/aarch64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/FindPkgConfig.cmake:517 (find_program)"
+      - "CMakeLists.txt:10 (find_package)"
+    mode: "program"
+    variable: "PKG_CONFIG_EXECUTABLE"
+    description: "pkg-config executable"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "pkg-config"
+      - "pkgconf"
+    candidate_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+      - "/data/data/com.termux/files/usr/sbin/"
+      - "/data/data/com.termux/files/usr/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/pkg-config"
+      - "/root/.sdkman/candidates/gradle/current/bin/pkgconf"
+      - "/root/.opencode/bin/pkg-config"
+      - "/root/.opencode/bin/pkgconf"
+      - "/usr/local/sbin/pkg-config"
+      - "/usr/local/sbin/pkgconf"
+      - "/usr/local/bin/pkg-config"
+      - "/usr/local/bin/pkgconf"
+      - "/usr/sbin/pkg-config"
+      - "/usr/sbin/pkgconf"
+      - "/usr/bin/pkg-config"
+      - "/usr/bin/pkgconf"
+      - "/sbin/pkg-config"
+      - "/sbin/pkgconf"
+      - "/bin/pkg-config"
+      - "/bin/pkgconf"
+      - "/usr/local/games/pkg-config"
+      - "/usr/local/games/pkgconf"
+      - "/usr/games/pkg-config"
+      - "/usr/games/pkgconf"
+      - "/system/bin/pkg-config"
+      - "/system/bin/pkgconf"
+      - "/system/xbin/pkg-config"
+      - "/system/xbin/pkgconf"
+    found: "/data/data/com.termux/files/usr/bin/pkg-config"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/data/data/com.termux/files/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "CMakeLists.txt:26 (find_path)"
+    mode: "path"
+    variable: "SPDLOG_INCLUDE_DIRS"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "spdlog/spdlog.h"
+    candidate_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+      - "/usr/local/include/aarch64-linux-gnu/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/aarch64-linux-gnu/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/aarch64-linux-gnu/"
+      - "/include/"
+      - "/data/data/com.termux/files/usr/include/aarch64-linux-gnu/"
+      - "/data/data/com.termux/files/usr/include/"
+      - "/data/data/com.termux/files/usr/"
+      - "/usr/X11R6/include/aarch64-linux-gnu/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/aarch64-linux-gnu/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/aarch64-linux-gnu/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+    searched_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/spdlog/spdlog.h"
+      - "/root/.opencode/bin/spdlog/spdlog.h"
+      - "/usr/local/sbin/spdlog/spdlog.h"
+      - "/usr/local/bin/spdlog/spdlog.h"
+      - "/usr/sbin/spdlog/spdlog.h"
+      - "/usr/bin/spdlog/spdlog.h"
+      - "/sbin/spdlog/spdlog.h"
+      - "/bin/spdlog/spdlog.h"
+      - "/usr/local/games/spdlog/spdlog.h"
+      - "/usr/games/spdlog/spdlog.h"
+      - "/system/bin/spdlog/spdlog.h"
+      - "/system/xbin/spdlog/spdlog.h"
+      - "/data/data/com.termux/files/usr/bin/spdlog/spdlog.h"
+      - "/usr/local/include/aarch64-linux-gnu/spdlog/spdlog.h"
+      - "/usr/local/include/spdlog/spdlog.h"
+      - "/usr/local/spdlog/spdlog.h"
+      - "/usr/include/aarch64-linux-gnu/spdlog/spdlog.h"
+    found: "/usr/include/"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/data/data/com.termux/files/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "CMakeLists.txt:36 (find_path)"
+    mode: "path"
+    variable: "FMT_INCLUDE_DIRS"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "fmt/core.h"
+    candidate_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+      - "/usr/local/include/aarch64-linux-gnu/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/aarch64-linux-gnu/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/aarch64-linux-gnu/"
+      - "/include/"
+      - "/data/data/com.termux/files/usr/include/aarch64-linux-gnu/"
+      - "/data/data/com.termux/files/usr/include/"
+      - "/data/data/com.termux/files/usr/"
+      - "/usr/X11R6/include/aarch64-linux-gnu/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/aarch64-linux-gnu/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/aarch64-linux-gnu/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+    searched_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/fmt/core.h"
+      - "/root/.opencode/bin/fmt/core.h"
+      - "/usr/local/sbin/fmt/core.h"
+      - "/usr/local/bin/fmt/core.h"
+      - "/usr/sbin/fmt/core.h"
+      - "/usr/bin/fmt/core.h"
+      - "/sbin/fmt/core.h"
+      - "/bin/fmt/core.h"
+      - "/usr/local/games/fmt/core.h"
+      - "/usr/games/fmt/core.h"
+      - "/system/bin/fmt/core.h"
+      - "/system/xbin/fmt/core.h"
+      - "/data/data/com.termux/files/usr/bin/fmt/core.h"
+      - "/usr/local/include/aarch64-linux-gnu/fmt/core.h"
+      - "/usr/local/include/fmt/core.h"
+      - "/usr/local/fmt/core.h"
+      - "/usr/include/aarch64-linux-gnu/fmt/core.h"
+    found: "/usr/include/"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/data/data/com.termux/files/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "CMakeLists.txt:46 (find_path)"
+    mode: "path"
+    variable: "FTXUI_INCLUDE_DIRS"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ftxui/dom/elements.hpp"
+    candidate_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+      - "/usr/local/include/aarch64-linux-gnu/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/aarch64-linux-gnu/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/aarch64-linux-gnu/"
+      - "/include/"
+      - "/data/data/com.termux/files/usr/include/aarch64-linux-gnu/"
+      - "/data/data/com.termux/files/usr/include/"
+      - "/data/data/com.termux/files/usr/"
+      - "/usr/X11R6/include/aarch64-linux-gnu/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/aarch64-linux-gnu/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/aarch64-linux-gnu/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+    searched_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/ftxui/dom/elements.hpp"
+      - "/root/.opencode/bin/ftxui/dom/elements.hpp"
+      - "/usr/local/sbin/ftxui/dom/elements.hpp"
+      - "/usr/local/bin/ftxui/dom/elements.hpp"
+      - "/usr/sbin/ftxui/dom/elements.hpp"
+      - "/usr/bin/ftxui/dom/elements.hpp"
+      - "/sbin/ftxui/dom/elements.hpp"
+      - "/bin/ftxui/dom/elements.hpp"
+      - "/usr/local/games/ftxui/dom/elements.hpp"
+      - "/usr/games/ftxui/dom/elements.hpp"
+      - "/system/bin/ftxui/dom/elements.hpp"
+      - "/system/xbin/ftxui/dom/elements.hpp"
+      - "/data/data/com.termux/files/usr/bin/ftxui/dom/elements.hpp"
+      - "/usr/local/include/aarch64-linux-gnu/ftxui/dom/elements.hpp"
+      - "/usr/local/include/ftxui/dom/elements.hpp"
+      - "/usr/local/ftxui/dom/elements.hpp"
+      - "/usr/include/aarch64-linux-gnu/ftxui/dom/elements.hpp"
+    found: "/usr/include/"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/data/data/com.termux/files/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "CMakeLists.txt:47 (find_library)"
+    mode: "library"
+    variable: "FTXUI_LIBRARIES"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ftxui-dom"
+    candidate_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+      - "/usr/local/lib/aarch64-linux-gnu/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/aarch64-linux-gnu/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/lib/aarch64-linux-gnu/"
+      - "/lib/"
+      - "/data/data/com.termux/files/usr/lib/aarch64-linux-gnu/"
+      - "/data/data/com.termux/files/usr/lib/"
+      - "/data/data/com.termux/files/usr/"
+      - "/usr/X11R6/lib/aarch64-linux-gnu/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/lib/aarch64-linux-gnu/"
+      - "/usr/pkg/lib/"
+      - "/usr/pkg/"
+      - "/opt/lib/aarch64-linux-gnu/"
+      - "/opt/lib/"
+      - "/opt/"
+      - "/usr/lib/X11/"
+    searched_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+      - "/usr/local/lib/aarch64-linux-gnu/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+    found: "/usr/lib/aarch64-linux-gnu/libftxui-dom.so"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/data/data/com.termux/files/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "CMakeLists.txt:54 (find_path)"
+    mode: "path"
+    variable: "TOML11_INCLUDE_DIRS"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "toml.hpp"
+    candidate_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/"
+      - "/root/.opencode/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/games/"
+      - "/usr/games/"
+      - "/system/bin/"
+      - "/system/xbin/"
+      - "/data/data/com.termux/files/usr/bin/"
+      - "/usr/local/include/aarch64-linux-gnu/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/aarch64-linux-gnu/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/aarch64-linux-gnu/"
+      - "/include/"
+      - "/data/data/com.termux/files/usr/include/aarch64-linux-gnu/"
+      - "/data/data/com.termux/files/usr/include/"
+      - "/data/data/com.termux/files/usr/"
+      - "/usr/X11R6/include/aarch64-linux-gnu/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/aarch64-linux-gnu/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/aarch64-linux-gnu/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+    searched_directories:
+      - "/root/.sdkman/candidates/gradle/current/bin/toml.hpp"
+      - "/root/.opencode/bin/toml.hpp"
+      - "/usr/local/sbin/toml.hpp"
+      - "/usr/local/bin/toml.hpp"
+      - "/usr/sbin/toml.hpp"
+      - "/usr/bin/toml.hpp"
+      - "/sbin/toml.hpp"
+      - "/bin/toml.hpp"
+      - "/usr/local/games/toml.hpp"
+      - "/usr/games/toml.hpp"
+      - "/system/bin/toml.hpp"
+      - "/system/xbin/toml.hpp"
+      - "/data/data/com.termux/files/usr/bin/toml.hpp"
+      - "/usr/local/include/aarch64-linux-gnu/toml.hpp"
+      - "/usr/local/include/toml.hpp"
+      - "/usr/local/toml.hpp"
+      - "/usr/include/aarch64-linux-gnu/toml.hpp"
+    found: "/usr/include/"
+    search_context:
+      ENV{PATH}:
+        - "/root/.sdkman/candidates/gradle/current/bin"
+        - "/root/.opencode/bin"
+        - "/root/.opencode/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/games"
+        - "/usr/games"
+        - "/system/bin"
+        - "/system/xbin"
+        - "/data/data/com.termux/files/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/data/data/com.termux/files/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.3/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:64 (check_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAS_CONTRACTS"
+    directories:
+      source: "/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-Nx0wNa"
+      binary: "/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-Nx0wNa"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAS_CONTRACTS"
+      cached: true
+      stdout: |
+        Change Dir: '/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-Nx0wNa'
+        
+        Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8d688/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8d688.dir/build.make CMakeFiles/cmTC_8d688.dir/build
+        gmake[1]: Entering directory '/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-Nx0wNa'
+        Building CXX object CMakeFiles/cmTC_8d688.dir/src.cxx.o
+        /usr/bin/c++ -DHAS_CONTRACTS  -O2 -g -DNDEBUG -std=c++26   -fcontracts -o CMakeFiles/cmTC_8d688.dir/src.cxx.o -c /tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-Nx0wNa/src.cxx
+        Linking CXX executable cmTC_8d688
+        /data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d688.dir/link.txt --verbose=1
+        /usr/bin/c++ -O2 -g -DNDEBUG CMakeFiles/cmTC_8d688.dir/src.cxx.o -o cmTC_8d688
+        gmake[1]: Leaving directory '/tmp/SpeedCool-Magisk-Module/build_test/CMakeFiles/CMakeScratch/TryCompile-Nx0wNa'
+        
+      exitCode: 0
+...

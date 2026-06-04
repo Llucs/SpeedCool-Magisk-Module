@@ -26,7 +26,7 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq g++-14 cmake ninja-build \
             libspdlog-dev libfmt-dev pkg-config curl 2>&1 | tail -10
-          # toml11
+          # toml11 (deprecated, FetchContent handles it)
           sudo apt-get install -y -qq libtoml11-dev 2>&1 | tail -5 || echo "toml11 not in apt"
           # ftxui
           sudo apt-get install -y -qq libftxui-dev 2>&1 | tail -5 || echo "ftxui not in apt"
@@ -35,7 +35,6 @@ jobs:
           echo "=== Versions ==="
           g++-14 --version | head -1
           cmake --version | head -1
-          dpkg -l | grep -E "(spdlog|fmt|toml|ftxui|json)" || true
 
       - name: Configure CMake
         run: |
@@ -100,26 +99,11 @@ jobs:
       - name: Setup VC++ env
         uses: ilammy/msvc-dev-cmd@v1
 
-      - name: Install vcpkg and dependencies
-        run: |
-          git clone https://github.com/Microsoft/vcpkg.git C:\vcpkg
-          C:\vcpkg\bootstrap-vcpkg.bat -disableMetrics
-          C:\vcpkg\vcpkg install spdlog fmt nlohmann-json --triplet x64-windows
-          REM Install toml11 (header-only) directly
-          if not exist "C:\vcpkg\installed\x64-windows\include\toml.hpp" (
-            curl -L -o C:\vcpkg\installed\x64-windows\include\toml.hpp ^
-              https://raw.githubusercontent.com/toruniina/toml11/v3.8.1/toml.hpp
-          )
-        shell: cmd
-
       - name: Configure CMake
-        env:
-          VCPKG_ROOT: C:\vcpkg
-        run: |
-          cmake -B build -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=Release ^
-            -DCMAKE_TOOLCHAIN_FILE="C:\vcpkg\scripts\buildsystems\vcpkg.cmake"
-          if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
         shell: cmd
+        run: |
+          cmake -B build -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=Release
+          if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
       - name: Build
         run: cmake --build build --config Release 2>&1

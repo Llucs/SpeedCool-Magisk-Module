@@ -172,8 +172,10 @@ endif()
 find_path(NLOHMANN_INCLUDE_DIR nlohmann/json.hpp)
 if(NLOHMANN_INCLUDE_DIR)
     add_compile_definitions(SPEEDCOOL_HAS_JSON=1)
+    set(NLOHMANN_INCLUDE_DIRS ${NLOHMANN_INCLUDE_DIR})
     message(STATUS "Found nlohmann-json: ${NLOHMANN_INCLUDE_DIR}")
 endif()
+unset(NLOHMANN_INCLUDE_DIR CACHE)
 
 # === Core library ===
 add_library(speedcool_core STATIC
@@ -203,7 +205,7 @@ target_include_directories(speedcool_core PUBLIC src
     ${FMT_INCLUDE_DIRS}
     ${TOML11_INCLUDE_DIR}
     ${FTXUI_INCLUDE_DIRS}
-    ${NLOHMANN_INCLUDE_DIR}
+    ${NLOHMANN_INCLUDE_DIRS}
 )
 
 target_link_libraries(speedcool_core PUBLIC ${SPDLOG_LIBRARIES} ${FMT_LIBRARIES})

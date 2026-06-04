@@ -99,14 +99,16 @@ jobs:
       - name: Setup VC++ env
         uses: ilammy/msvc-dev-cmd@v1
 
-      - name: Install vcpkg and dependencies
+      - name: Download dependencies
         shell: cmd
         run: |
-          if not exist "C:\vcpkg" (
-            git clone https://github.com/Microsoft/vcpkg.git C:\vcpkg
-            C:\vcpkg\bootstrap-vcpkg.bat -disableMetrics
+          mkdir %CD%\build\_deps\toml11\toml
+          curl -L -o %CD%\build\_deps\toml11\toml.hpp ^
+            https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml.hpp
+          for %%f in (parser combinator exception lexer literal parser_fwd region result serializer storage types value) do (
+            curl -L -o %CD%\build\_deps\toml11\toml\%%f.hpp ^
+              https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml/%%f.hpp
           )
-          C:\vcpkg\vcpkg install spdlog fmt --triplet x64-windows
 
       - name: Configure CMake
         env:
@@ -115,7 +117,8 @@ jobs:
         run: |
           cmake -B build -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=Release ^
             -DCMAKE_TOOLCHAIN_FILE="C:\vcpkg\scripts\buildsystems\vcpkg.cmake" ^
-            -DVCPKG_ROOT="C:\vcpkg"
+            -DVCPKG_ROOT="C:\vcpkg" ^
+            -DTOML11_INCLUDE_DIR="%CD%\build\_deps\toml11"
           if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
       - name: Build

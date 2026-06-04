@@ -99,10 +99,23 @@ jobs:
       - name: Setup VC++ env
         uses: ilammy/msvc-dev-cmd@v1
 
-      - name: Configure CMake
+      - name: Install vcpkg and dependencies
         shell: cmd
         run: |
-          cmake -B build -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=Release
+          if not exist "C:\vcpkg" (
+            git clone https://github.com/Microsoft/vcpkg.git C:\vcpkg
+            C:\vcpkg\bootstrap-vcpkg.bat -disableMetrics
+          )
+          C:\vcpkg\vcpkg install spdlog fmt --triplet x64-windows
+
+      - name: Configure CMake
+        env:
+          VCPKG_ROOT: C:\vcpkg
+        shell: cmd
+        run: |
+          cmake -B build -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=Release ^
+            -DCMAKE_TOOLCHAIN_FILE="C:\vcpkg\scripts\buildsystems\vcpkg.cmake" ^
+            -DVCPKG_ROOT="C:\vcpkg"
           if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%
 
       - name: Build

@@ -113,8 +113,9 @@ jobs:
         shell: cmd
 
       - name: Configure CMake
+        env:
+          VCPKG_ROOT: C:\vcpkg
         run: |
-          set VCPKG_ROOT=C:\vcpkg
           cmake -B build -G "Visual Studio 17 2022" -DCMAKE_BUILD_TYPE=Release ^
             -DCMAKE_TOOLCHAIN_FILE="C:\vcpkg\scripts\buildsystems\vcpkg.cmake"
           if %ERRORLEVEL% neq 0 exit /b %ERRORLEVEL%

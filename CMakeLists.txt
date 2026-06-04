@@ -20,52 +20,92 @@ if(HAS_CONTRACTS)
     add_compile_options(-fcontracts)
 endif()
 
-# --- Dependencies ---
-
-# spdlog: try CMake config, then pkg-config, then find_path
-if(MSVC)
-    find_package(spdlog CONFIG REQUIRED)
-    set(SPDLOG_INCLUDE_DIRS "")
-    set(SPDLOG_LIBRARIES spdlog::spdlog)
-else()
+# === Dependency: spdlog ===
+find_package(spdlog CONFIG QUIET)
+if(NOT spdlog_FOUND)
     find_package(PkgConfig QUIET)
     if(PkgConfig_FOUND)
-        pkg_check_modules(PC_SPDLOG spdlog IMPORTED_TARGET)
+        pkg_check_modules(PC_spdlog spdlog IMPORTED_TARGET)
     endif()
-    if(PC_SPDLOG_FOUND)
-        set(SPDLOG_INCLUDE_DIRS ${PC_SPDLOG_INCLUDE_DIRS})
-        set(SPDLOG_LIBRARIES PkgConfig::PC_SPDLOG)
+    if(PC_spdlog_FOUND)
+        set(SPDLOG_INCLUDE_DIRS ${PC_spdlog_INCLUDE_DIRS})
+        set(SPDLOG_LIBRARIES PkgConfig::PC_spdlog)
+        message(STATUS "spdlog via pkg-config")
     else()
-        find_path(SPDLOG_INCLUDE_DIR spdlog/spdlog.h REQUIRED)
-        find_library(SPDLOG_LIBRARY spdlog REQUIRED)
-        set(SPDLOG_INCLUDE_DIRS ${SPDLOG_INCLUDE_DIR})
-        set(SPDLOG_LIBRARIES ${SPDLOG_LIBRARY})
+        find_path(SPDLOG_INCLUDE_DIR spdlog/spdlog.h)
+        if(SPDLOG_INCLUDE_DIR)
+            find_library(SPDLOG_LIBRARY spdlog)
+            if(SPDLOG_LIBRARY)
+                set(SPDLOG_INCLUDE_DIRS ${SPDLOG_INCLUDE_DIR})
+                set(SPDLOG_LIBRARIES ${SPDLOG_LIBRARY})
+                message(STATUS "spdlog via find_path: ${SPDLOG_INCLUDE_DIR}")
+            else()
+                message(STATUS "spdlog header found, lib not found - will FetchContent")
+                unset(SPDLOG_INCLUDE_DIR CACHE)
+            endif()
+        endif()
     endif()
 endif()
-message(STATUS "spdlog: ${SPDLOG_INCLUDE_DIRS}")
 
-# fmt: try CMake config, then pkg-config, then find_path
-if(MSVC)
-    find_package(fmt CONFIG REQUIRED)
-    set(FMT_INCLUDE_DIRS "")
-    set(FMT_LIBRARIES fmt::fmt)
-else()
+if(NOT spdlog_FOUND AND NOT SPDLOG_LIBRARIES)
+    message(STATUS "Fetching spdlog via FetchContent...")
+    include(FetchContent)
+    set(SPDLOG_BUILD_EXAMPLE OFF CACHE BOOL "" FORCE)
+    set(SPDLOG_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+    set(SPDLOG_BUILD_BENCH OFF CACHE BOOL "" FORCE)
+    FetchContent_Declare(spdlog
+        GIT_REPOSITORY https://github.com/gabime/spdlog.git
+        GIT_TAG v1.15.1
+        GIT_SHALLOW TRUE
+    )
+    FetchContent_MakeAvailable(spdlog)
+    set(SPDLOG_INCLUDE_DIRS ${spdlog_SOURCE_DIR}/include)
+    set(SPDLOG_LIBRARIES spdlog::spdlog)
+endif()
+
+# === Dependency: fmt ===
+find_package(fmt CONFIG QUIET)
+if(NOT fmt_FOUND)
+    find_package(PkgConfig QUIET)
     if(PkgConfig_FOUND)
-        pkg_check_modules(PC_FMT fmt IMPORTED_TARGET)
+        pkg_check_modules(PC_fmt fmt IMPORTED_TARGET)
     endif()
-    if(PC_FMT_FOUND)
-        set(FMT_INCLUDE_DIRS ${PC_FMT_INCLUDE_DIRS})
-        set(FMT_LIBRARIES PkgConfig::PC_FMT)
+    if(PC_fmt_FOUND)
+        set(FMT_INCLUDE_DIRS ${PC_fmt_INCLUDE_DIRS})
+        set(FMT_LIBRARIES PkgConfig::PC_fmt)
+        message(STATUS "fmt via pkg-config")
     else()
-        find_path(FMT_INCLUDE_DIR fmt/core.h REQUIRED)
-        find_library(FMT_LIBRARY fmt REQUIRED)
-        set(FMT_INCLUDE_DIRS ${FMT_INCLUDE_DIR})
-        set(FMT_LIBRARIES ${FMT_LIBRARY})
+        find_path(FMT_INCLUDE_DIR fmt/core.h)
+        if(FMT_INCLUDE_DIR)
+            find_library(FMT_LIBRARY fmt)
+            if(FMT_LIBRARY)
+                set(FMT_INCLUDE_DIRS ${FMT_INCLUDE_DIR})
+                set(FMT_LIBRARIES ${FMT_LIBRARY})
+                message(STATUS "fmt via find_path: ${FMT_INCLUDE_DIR}")
+            else()
+                message(STATUS "fmt header found, lib not found - will FetchContent")
+                unset(FMT_INCLUDE_DIR CACHE)
+            endif()
+        endif()
     endif()
 endif()
-message(STATUS "fmt: ${FMT_INCLUDE_DIRS}")
 
-# toml11 (header-only): find_path or download
+if(NOT fmt_FOUND AND NOT FMT_LIBRARIES)
+    message(STATUS "Fetching fmt via FetchContent...")
+    include(FetchContent)
+    set(FMT_TEST OFF CACHE BOOL "" FORCE)
+    set(FMT_DOC OFF CACHE BOOL "" FORCE)
+    FetchContent_Declare(fmt
+        GIT_REPOSITORY https://github.com/fmtlib/fmt.git
+        GIT_TAG 11.1.4
+        GIT_SHALLOW TRUE
+    )
+    FetchContent_MakeAvailable(fmt)
+    set(FMT_INCLUDE_DIRS ${fmt_SOURCE_DIR}/include)
+    set(FMT_LIBRARIES fmt::fmt)
+endif()
+
+# === Dependency: toml11 (header-only) ===
 find_path(TOML11_INCLUDE_DIR toml.hpp)
 if(NOT TOML11_INCLUDE_DIR)
     message(STATUS "Downloading toml11 header...")
@@ -75,7 +115,7 @@ if(NOT TOML11_INCLUDE_DIR)
 endif()
 message(STATUS "toml11: ${TOML11_INCLUDE_DIR}")
 
-# FTXUI (optional)
+# === FTXUI (optional) ===
 find_path(FTXUI_INCLUDE_DIR ftxui/dom/elements.hpp)
 find_library(FTXUI_LIB ftxui-dom)
 if(FTXUI_INCLUDE_DIR AND FTXUI_LIB)
@@ -87,14 +127,14 @@ else()
     message(STATUS "ftxui not found, TUI disabled")
 endif()
 
-# nlohmann-json (optional)
+# === nlohmann-json (optional) ===
 find_path(NLOHMANN_INCLUDE_DIR nlohmann/json.hpp)
 if(NLOHMANN_INCLUDE_DIR)
     add_compile_definitions(SPEEDCOOL_HAS_JSON=1)
     message(STATUS "Found nlohmann-json: ${NLOHMANN_INCLUDE_DIR}")
 endif()
 
-# --- Core library ---
+# === Core library ===
 add_library(speedcool_core STATIC
     src/common/logging.cpp
     src/core/config.cpp
@@ -132,7 +172,7 @@ if(WIN32)
     target_link_libraries(speedcool_core PRIVATE advapi32 powrprof pdh)
 endif()
 
-# --- Main binary ---
+# === Main binary ===
 add_executable(speedcool
     src/main.cpp
     src/core/daemon.cpp
@@ -142,7 +182,7 @@ add_executable(speedcool
 
 target_link_libraries(speedcool PRIVATE speedcool_core ${FTXUI_LIBRARIES})
 
-# --- Tests ---
+# === Tests ===
 function(add_speedcool_test name)
     add_executable(${name} ${ARGN})
     target_link_libraries(${name} PRIVATE speedcool_core)

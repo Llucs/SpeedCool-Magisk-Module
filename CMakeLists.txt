@@ -140,34 +140,11 @@ else()
     endif()
 endif()
 
-# === toml11 (header-only) ===
-if(MSVC)
-    if(NOT EXISTS ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp)
-        message(STATUS "MSVC: Downloading toml11 headers...")
-        file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/_deps/toml11/toml)
-        file(DOWNLOAD https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml.hpp
-             ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp TLS_VERIFY ON)
-        foreach(_tf parser combinator exception lexer literal parser_fwd region result serializer storage types value)
-            file(DOWNLOAD https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml/${_tf}.hpp
-                 ${CMAKE_BINARY_DIR}/_deps/toml11/toml/${_tf}.hpp TLS_VERIFY ON)
-        endforeach()
-    endif()
-    set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11)
-else()
+# === toml11 (header-only, vendored in third_party/) ===
+set(TOML11_VENDORED_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party/toml11)
+find_path(TOML11_INCLUDE_DIR toml.hpp PATHS ${TOML11_VENDORED_DIR} NO_DEFAULT_PATH)
+if(NOT TOML11_INCLUDE_DIR)
     find_path(TOML11_INCLUDE_DIR toml.hpp)
-    if(NOT TOML11_INCLUDE_DIR)
-        if(NOT EXISTS ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp)
-            message(STATUS "Linux: Downloading toml11 headers...")
-            file(DOWNLOAD https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml.hpp
-                 ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp TLS_VERIFY ON)
-            file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/_deps/toml11/toml)
-            foreach(_tf parser combinator exception lexer literal parser_fwd region result serializer storage types value)
-                file(DOWNLOAD https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml/${_tf}.hpp
-                     ${CMAKE_BINARY_DIR}/_deps/toml11/toml/${_tf}.hpp TLS_VERIFY ON)
-            endforeach()
-        endif()
-        set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11)
-    endif()
 endif()
 message(STATUS "toml11: ${TOML11_INCLUDE_DIR}")
 

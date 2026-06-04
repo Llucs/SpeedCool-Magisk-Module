@@ -51,7 +51,11 @@ auto MetricsCollector::collect() -> Metrics {
 
     auto now = std::chrono::system_clock::to_time_t(m.timestamp);
     std::tm tm{};
+#ifdef _WIN32
+    localtime_s(&tm, &now);
+#else
     localtime_r(&now, &tm);
+#endif
     m.hour = tm.tm_hour;
 
     return m;

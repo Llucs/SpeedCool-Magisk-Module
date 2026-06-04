@@ -2,9 +2,10 @@
 #include "common/logging.h"
 #include <fstream>
 #include <filesystem>
+#ifdef SPEEDCOOL_HAS_JSON
 #include <nlohmann/json.hpp>
-
 using json = nlohmann::json;
+#endif
 
 namespace fs = std::filesystem;
 
@@ -14,6 +15,7 @@ auto load_manifest(const std::string& path) -> Manifest {
     Manifest m{};
     if (!fs::exists(path)) return m;
 
+#ifdef SPEEDCOOL_HAS_JSON
     try {
         std::ifstream ifs(path);
         json j;
@@ -34,11 +36,16 @@ auto load_manifest(const std::string& path) -> Manifest {
     } catch (const std::exception& e) {
         log_warn("Error loading manifest: {}", e.what());
     }
+#else
+    (void)path;
+    log_warn("Manifest loading requires nlohmann-json");
+#endif
 
     return m;
 }
 
 auto save_manifest(const Manifest& m, const std::string& path) -> void {
+#ifdef SPEEDCOOL_HAS_JSON
     try {
         json j;
         j["version"] = m.version;
@@ -64,6 +71,11 @@ auto save_manifest(const Manifest& m, const std::string& path) -> void {
     } catch (const std::exception& e) {
         log_warn("Error saving manifest: {}", e.what());
     }
+#else
+    (void)m;
+    (void)path;
+    log_warn("Manifest saving requires nlohmann-json");
+#endif
 }
 
 } // namespace speedcool::update

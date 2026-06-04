@@ -142,17 +142,33 @@ endif()
 
 # === toml11 (header-only) ===
 if(MSVC)
-    message(STATUS "MSVC: Downloading toml11 header")
-    file(DOWNLOAD https://raw.githubusercontent.com/toruniina/toml11/v3.8.1/toml.hpp
-         ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp TLS_VERIFY ON)
-    set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11)
+    message(STATUS "MSVC: Fetching toml11 via FetchContent")
+    FetchContent_Declare(toml11
+        GIT_REPOSITORY https://github.com/ToruNiina/toml11.git
+        GIT_TAG v3.8.1
+        GIT_SHALLOW TRUE
+        SOURCE_SUBDIR none
+    )
+    FetchContent_GetProperties(toml11)
+    if(NOT toml11_POPULATED)
+        FetchContent_Populate(toml11)
+    endif()
+    set(TOML11_INCLUDE_DIR ${toml11_SOURCE_DIR}/include)
 else()
     find_path(TOML11_INCLUDE_DIR toml.hpp)
     if(NOT TOML11_INCLUDE_DIR)
-        message(STATUS "Linux: Downloading toml11 header")
-        file(DOWNLOAD https://raw.githubusercontent.com/toruniina/toml11/v3.8.1/toml.hpp
-             ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp TLS_VERIFY ON)
-        set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11)
+        message(STATUS "Linux: Fetching toml11 via FetchContent")
+        FetchContent_Declare(toml11
+            GIT_REPOSITORY https://github.com/ToruNiina/toml11.git
+            GIT_TAG v3.8.1
+            GIT_SHALLOW TRUE
+            SOURCE_SUBDIR none
+        )
+        FetchContent_GetProperties(toml11)
+        if(NOT toml11_POPULATED)
+            FetchContent_Populate(toml11)
+        endif()
+        set(TOML11_INCLUDE_DIR ${toml11_SOURCE_DIR}/include)
     endif()
 endif()
 message(STATUS "toml11: ${TOML11_INCLUDE_DIR}")

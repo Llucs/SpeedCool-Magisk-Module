@@ -142,32 +142,31 @@ endif()
 
 # === toml11 (header-only) ===
 if(MSVC)
-    if(NOT EXISTS ${CMAKE_BINARY_DIR}/_deps/toml11/include/toml.hpp)
-        message(STATUS "MSVC: Downloading toml11 archive...")
-        file(DOWNLOAD https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.1.tar.gz
-             ${CMAKE_BINARY_DIR}/_deps/toml11.tar.gz TLS_VERIFY ON)
-        file(ARCHIVE_EXTRACT INPUT ${CMAKE_BINARY_DIR}/_deps/toml11.tar.gz
-             DESTINATION ${CMAKE_BINARY_DIR}/_deps)
-        file(GLOB _toml11_dirs LIST_DIRECTORIES true ${CMAKE_BINARY_DIR}/_deps/toml11-*)
-        list(GET _toml11_dirs 0 _toml11_dir)
-        file(RENAME ${_toml11_dir} ${CMAKE_BINARY_DIR}/_deps/toml11)
+    if(NOT EXISTS ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp)
+        message(STATUS "MSVC: Downloading toml11 headers...")
+        file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/_deps/toml11/toml)
+        file(DOWNLOAD https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml.hpp
+             ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp TLS_VERIFY ON)
+        foreach(_tf parser combinator exception lexer literal parser_fwd region result serializer storage types value)
+            file(DOWNLOAD https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml/${_tf}.hpp
+                 ${CMAKE_BINARY_DIR}/_deps/toml11/toml/${_tf}.hpp TLS_VERIFY ON)
+        endforeach()
     endif()
-    set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11/include)
-    message(STATUS "toml11: ${TOML11_INCLUDE_DIR}")
+    set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11)
 else()
     find_path(TOML11_INCLUDE_DIR toml.hpp)
     if(NOT TOML11_INCLUDE_DIR)
-        if(NOT EXISTS ${CMAKE_BINARY_DIR}/_deps/toml11/include/toml.hpp)
-            message(STATUS "Linux: Downloading toml11 archive...")
-            file(DOWNLOAD https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.1.tar.gz
-                 ${CMAKE_BINARY_DIR}/_deps/toml11.tar.gz TLS_VERIFY ON)
-            file(ARCHIVE_EXTRACT INPUT ${CMAKE_BINARY_DIR}/_deps/toml11.tar.gz
-                 DESTINATION ${CMAKE_BINARY_DIR}/_deps)
-            file(GLOB _toml11_dirs LIST_DIRECTORIES true ${CMAKE_BINARY_DIR}/_deps/toml11-*)
-            list(GET _toml11_dirs 0 _toml11_dir)
-            file(RENAME ${_toml11_dir} ${CMAKE_BINARY_DIR}/_deps/toml11)
+        if(NOT EXISTS ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp)
+            message(STATUS "Linux: Downloading toml11 headers...")
+            file(DOWNLOAD https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml.hpp
+                 ${CMAKE_BINARY_DIR}/_deps/toml11/toml.hpp TLS_VERIFY ON)
+            file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/_deps/toml11/toml)
+            foreach(_tf parser combinator exception lexer literal parser_fwd region result serializer storage types value)
+                file(DOWNLOAD https://raw.githubusercontent.com/ToruNiina/toml11/v3.8.1/include/toml/${_tf}.hpp
+                     ${CMAKE_BINARY_DIR}/_deps/toml11/toml/${_tf}.hpp TLS_VERIFY ON)
+            endforeach()
         endif()
-        set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11/include)
+        set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11)
     endif()
 endif()
 message(STATUS "toml11: ${TOML11_INCLUDE_DIR}")

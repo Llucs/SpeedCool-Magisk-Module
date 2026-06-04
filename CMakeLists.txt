@@ -1,101 +1,79 @@
-cmake_minimum_required(VERSION 3.28)
+cmake_minimum_required(VERSION 3.22)
 project(speedcool VERSION 1.0.0 LANGUAGES CXX)
 
-include(CheckCXXCompilerFlag)
-
-check_cxx_compiler_flag("-std=c++26" CXX26_SUPPORTED)
-if(CXX26_SUPPORTED)
-    set(CMAKE_CXX_STANDARD 26)
-    message(STATUS "Using C++26 standard")
-else()
-    set(CMAKE_CXX_STANDARD 23)
-    message(STATUS "C++26 not supported by compiler, using C++23")
-endif()
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD_REQUIRED OFF)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-check_cxx_compiler_flag("-std=c++26" CXX26_SUPPORTED)
-if(NOT CXX26_SUPPORTED)
-    check_cxx_compiler_flag("-std=c++2c" CXX2C_SUPPORTED)
-    if(CXX2C_SUPPORTED)
-        set(CMAKE_CXX_STANDARD 23)
-        add_compile_options(-std=c++2c)
-        message(STATUS "C++26 not supported, using -std=c++2c")
-    else()
-        set(CMAKE_CXX_STANDARD 23)
-        message(STATUS "C++26 not supported, using C++23")
-    endif()
-endif()
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# --- Dependencies ---
-find_package(PkgConfig QUIET)
+add_compile_options(-Wall -Wextra -Wpedantic -Werror -DSPEEDCOOL_VERSION="${PROJECT_VERSION}")
 
-function(find_pkg_config VAR name)
-    if(PkgConfig_FOUND)
-        pkg_check_modules(${VAR} ${name})
-    endif()
-    if(${VAR}_FOUND)
-        set(${VAR}_INCLUDE_DIRS ${${VAR}_INCLUDE_DIRS} PARENT_SCOPE)
-        set(${VAR}_LIBRARIES ${${VAR}_LIBRARIES} PARENT_SCOPE)
-        set(${VAR}_FOUND TRUE PARENT_SCOPE)
-        return()
-    endif()
-endfunction()
-
-find_pkg_config(SPDLOG spdlog)
-if(NOT SPDLOG_FOUND)
-    find_path(SPDLOG_INCLUDE_DIRS spdlog/spdlog.h)
-    if(SPDLOG_INCLUDE_DIRS)
-        set(SPDLOG_FOUND TRUE)
-        set(SPDLOG_LIBRARIES spdlog)
-        message(STATUS "Found spdlog via find_path")
-    endif()
+# Try C++26 if compiler supports it
+include(CheckCXXCompilerFlag)
+check_cxx_compiler_flag("-std=c++26" CXX26_OK)
+if(CXX26_OK)
+    set(CMAKE_CXX_STANDARD 26)
+    message(STATUS "Using C++26")
 endif()
 
-find_pkg_config(FMT fmt)
-if(NOT FMT_FOUND)
-    find_path(FMT_INCLUDE_DIRS fmt/core.h)
-    if(FMT_INCLUDE_DIRS)
-        set(FMT_FOUND TRUE)
-        set(FMT_LIBRARIES fmt)
-        message(STATUS "Found fmt via find_path")
-    endif()
-endif()
-
-find_pkg_config(FTXUI ftxui)
-if(NOT FTXUI_FOUND)
-    find_path(FTXUI_INCLUDE_DIRS ftxui/dom/elements.hpp)
-    find_library(FTXUI_LIBRARIES ftxui-dom)
-    if(FTXUI_INCLUDE_DIRS AND FTXUI_LIBRARIES)
-        set(FTXUI_FOUND TRUE)
-        message(STATUS "Found ftxui via find_path")
-    endif()
-endif()
-
-find_path(TOML11_INCLUDE_DIRS toml.hpp)
-
-if(NOT SPDLOG_FOUND)
-    message(FATAL_ERROR "spdlog is required. Install libspdlog-dev")
-endif()
-if(NOT FMT_FOUND)
-    message(FATAL_ERROR "fmt is required. Install libfmt-dev")
-endif()
-
-check_cxx_compiler_flag(-fcontracts HAS_CONTRACTS)
+check_cxx_compiler_flag("-fcontracts" HAS_CONTRACTS)
 if(HAS_CONTRACTS)
     add_compile_options(-fcontracts)
 endif()
 
-add_compile_options(-Wall -Wextra -Wpedantic -Werror -DSPEEDCOOL_VERSION="${PROJECT_VERSION}")
-include_directories(${TOML11_INCLUDE_DIRS} ${SPDLOG_INCLUDE_DIRS} ${FMT_INCLUDE_DIRS} ${FTXUI_INCLUDE_DIRS})
+# Dependencies: prefer pkg-config, fallback to find_path/find_library
+find_package(PkgConfig QUIET)
 
+macro(find_dep VAR header lib)
+    if(PkgConfig_FOUND)
+        pkg_check_modules(PC_${VAR} ${VAR} QUIET)
+    endif()
+    if(PC_${VAR}_FOUND)
+        set(${VAR}_INCLUDE_DIRS ${PC_${VAR}_INCLUDE_DIRS})
+        set(${VAR}_LIBRARIES ${PC_${VAR}_LIBRARIES})
+        message(STATUS "Found ${VAR} via pkg-config")
+    else()
+        find_path(${VAR}_INCLUDE_DIR ${header})
+        find_library(${VAR}_LIBRARY ${lib})
+        if(${VAR}_INCLUDE_DIR)
+            set(${VAR}_INCLUDE_DIRS ${${VAR}_INCLUDE_DIR})
+            if(${VAR}_LIBRARY)
+                set(${VAR}_LIBRARIES ${${VAR}_LIBRARY})
+            endif()
+            message(STATUS "Found ${VAR} via find_path: ${${VAR}_INCLUDE_DIR}")
+        else()
+            message(FATAL_ERROR "Required dependency ${VAR} not found (${header})")
+        endif()
+    endif()
+endmacro()
+
+find_dep(spdlog spdlog/spdlog.h spdlog)
+find_dep(fmt fmt/core.h fmt)
+find_dep(toml11 toml.hpp "")
+
+# FTXUI is optional
+find_path(FTXUI_INCLUDE_DIR ftxui/dom/elements.hpp)
+find_library(FTXUI_LIB ftxui-dom)
+if(FTXUI_INCLUDE_DIR AND FTXUI_LIB)
+    set(FTXUI_FOUND TRUE)
+    set(FTXUI_INCLUDE_DIRS ${FTXUI_INCLUDE_DIR})
+    set(FTXUI_LIBRARIES ${FTXUI_LIB})
+    add_compile_definitions(SPEEDCOOL_HAS_TUI=1)
+    message(STATUS "Found ftxui")
+else()
+    message(STATUS "ftxui not found, TUI disabled")
+endif()
+
+# nlohmann-json is optional (for telemetry)
+find_path(NLOHMANN_INCLUDE_DIR nlohmann/json.hpp)
+if(NLOHMANN_INCLUDE_DIR)
+    add_compile_definitions(SPEEDCOOL_HAS_JSON=1)
+    message(STATUS "Found nlohmann-json")
+endif()
+
+# Core library
 add_library(speedcool_core STATIC
     src/common/logging.cpp
-    src/common/types.h
-    src/common/error.h
     src/core/config.cpp
     src/core/engine.cpp
     src/core/profile_manager.cpp
@@ -106,7 +84,6 @@ add_library(speedcool_core STATIC
     src/pal/memory/ram_info.cpp
     src/pal/memory/vm_tuning.cpp
     src/pal/io/io_scheduler.cpp
-
     src/pal/thermal/thermal.cpp
     src/pal/gpu/gpu_info.cpp
     src/pal/power/power.cpp
@@ -117,27 +94,17 @@ add_library(speedcool_core STATIC
     src/update/manifest.cpp
 )
 
-target_include_directories(speedcool_core PUBLIC src)
+target_include_directories(speedcool_core PUBLIC src
+    ${spdlog_INCLUDE_DIRS}
+    ${fmt_INCLUDE_DIRS}
+    ${toml11_INCLUDE_DIRS}
+    ${FTXUI_INCLUDE_DIRS}
+    ${NLOHMANN_INCLUDE_DIR}
+)
+
 target_link_libraries(speedcool_core PUBLIC
-    ${SPDLOG_LIBRARIES}
-    ${FMT_LIBRARIES}
-)
-
-add_executable(speedcool
-    src/main.cpp
-    src/core/daemon.cpp
-    src/cli/cli.cpp
-    src/cli/tui.cpp
-)
-
-if(FTXUI_FOUND)
-    target_compile_definitions(speedcool PRIVATE SPEEDCOOL_HAS_TUI=1)
-endif()
-
-target_link_libraries(speedcool PRIVATE speedcool_core
-    ${SPDLOG_LIBRARIES}
-    ${FMT_LIBRARIES}
-    ${FTXUI_LIBRARIES}
+    ${spdlog_LIBRARIES}
+    ${fmt_LIBRARIES}
 )
 
 if(WIN32)
@@ -145,12 +112,20 @@ if(WIN32)
     target_link_libraries(speedcool_core PRIVATE advapi32 powrprof pdh)
 endif()
 
+# Main binary
+add_executable(speedcool
+    src/main.cpp
+    src/core/daemon.cpp
+    src/cli/cli.cpp
+    src/cli/tui.cpp
+)
+
+target_link_libraries(speedcool PRIVATE speedcool_core ${FTXUI_LIBRARIES})
+
+# Tests
 function(add_speedcool_test name)
     add_executable(${name} ${ARGN})
-    target_link_libraries(${name} PRIVATE speedcool_core
-        ${SPDLOG_LIBRARIES}
-        ${FMT_LIBRARIES}
-    )
+    target_link_libraries(${name} PRIVATE speedcool_core)
     target_compile_options(${name} PRIVATE -DSCTEST)
 endfunction()
 

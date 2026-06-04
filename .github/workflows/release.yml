@@ -24,10 +24,10 @@ jobs:
             asset: speedcool-linux-arm64.tar.gz
             build: |
               sudo apt-get update -qq
-              sudo apt-get install -y -qq g++-15 cmake ninja-build \
+              sudo apt-get install -y -qq g++ cmake ninja-build \
                 libspdlog-dev libfmt-dev libtoml11-dev libftxui-dev \
                 nlohmann-json3-dev pkg-config curl
-              cmake -B build -G Ninja -DCMAKE_CXX_COMPILER=g++-15 -DCMAKE_BUILD_TYPE=Release
+              cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
               cmake --build build -j$(nproc)
               tar czf speedcool-linux-arm64.tar.gz \
                 build/speedcool build/libspeedcool_core.a \
@@ -37,10 +37,10 @@ jobs:
             asset: speedcool-linux-amd64.tar.gz
             build: |
               sudo apt-get update -qq
-              sudo apt-get install -y -qq g++-15 cmake ninja-build \
+              sudo apt-get install -y -qq g++ cmake ninja-build \
                 libspdlog-dev libfmt-dev libtoml11-dev libftxui-dev \
                 nlohmann-json3-dev pkg-config curl
-              cmake -B build -G Ninja -DCMAKE_CXX_COMPILER=g++-15 -DCMAKE_BUILD_TYPE=Release
+              cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
               cmake --build build -j$(nproc)
               tar czf speedcool-linux-amd64.tar.gz \
                 build/speedcool build/libspeedcool_core.a \

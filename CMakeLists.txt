@@ -142,25 +142,32 @@ endif()
 
 # === toml11 (header-only) ===
 if(MSVC)
-    message(STATUS "MSVC: Fetching toml11 via FetchContent")
-    FetchContent_Declare(toml11
-        GIT_REPOSITORY https://github.com/ToruNiina/toml11.git
-        GIT_TAG v3.8.1
-        GIT_SHALLOW TRUE
-    )
-    FetchContent_MakeAvailable(toml11)
-    set(TOML11_INCLUDE_DIR ${toml11_SOURCE_DIR}/include)
+    if(NOT EXISTS ${CMAKE_BINARY_DIR}/_deps/toml11/include/toml.hpp)
+        message(STATUS "MSVC: Downloading toml11 archive...")
+        file(DOWNLOAD https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.1.tar.gz
+             ${CMAKE_BINARY_DIR}/_deps/toml11.tar.gz TLS_VERIFY ON)
+        file(ARCHIVE_EXTRACT INPUT ${CMAKE_BINARY_DIR}/_deps/toml11.tar.gz
+             DESTINATION ${CMAKE_BINARY_DIR}/_deps)
+        file(GLOB _toml11_dirs LIST_DIRECTORIES true ${CMAKE_BINARY_DIR}/_deps/toml11-*)
+        list(GET _toml11_dirs 0 _toml11_dir)
+        file(RENAME ${_toml11_dir} ${CMAKE_BINARY_DIR}/_deps/toml11)
+    endif()
+    set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11/include)
+    message(STATUS "toml11: ${TOML11_INCLUDE_DIR}")
 else()
     find_path(TOML11_INCLUDE_DIR toml.hpp)
     if(NOT TOML11_INCLUDE_DIR)
-        message(STATUS "Linux: Fetching toml11 via FetchContent")
-        FetchContent_Declare(toml11
-            GIT_REPOSITORY https://github.com/ToruNiina/toml11.git
-            GIT_TAG v3.8.1
-            GIT_SHALLOW TRUE
-        )
-        FetchContent_MakeAvailable(toml11)
-        set(TOML11_INCLUDE_DIR ${toml11_SOURCE_DIR}/include)
+        if(NOT EXISTS ${CMAKE_BINARY_DIR}/_deps/toml11/include/toml.hpp)
+            message(STATUS "Linux: Downloading toml11 archive...")
+            file(DOWNLOAD https://github.com/ToruNiina/toml11/archive/refs/tags/v3.8.1.tar.gz
+                 ${CMAKE_BINARY_DIR}/_deps/toml11.tar.gz TLS_VERIFY ON)
+            file(ARCHIVE_EXTRACT INPUT ${CMAKE_BINARY_DIR}/_deps/toml11.tar.gz
+                 DESTINATION ${CMAKE_BINARY_DIR}/_deps)
+            file(GLOB _toml11_dirs LIST_DIRECTORIES true ${CMAKE_BINARY_DIR}/_deps/toml11-*)
+            list(GET _toml11_dirs 0 _toml11_dir)
+            file(RENAME ${_toml11_dir} ${CMAKE_BINARY_DIR}/_deps/toml11)
+        endif()
+        set(TOML11_INCLUDE_DIR ${CMAKE_BINARY_DIR}/_deps/toml11/include)
     endif()
 endif()
 message(STATUS "toml11: ${TOML11_INCLUDE_DIR}")

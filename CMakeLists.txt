@@ -24,18 +24,24 @@ include(FetchContent)
 
 # === Dependency: spdlog ===
 if(MSVC)
-    message(STATUS "MSVC: Fetching spdlog via FetchContent")
-    set(SPDLOG_BUILD_EXAMPLE OFF CACHE BOOL "" FORCE)
-    set(SPDLOG_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-    set(SPDLOG_BUILD_BENCH OFF CACHE BOOL "" FORCE)
-    FetchContent_Declare(spdlog
-        GIT_REPOSITORY https://github.com/gabime/spdlog.git
-        GIT_TAG v1.15.1
-        GIT_SHALLOW TRUE
-    )
-    FetchContent_MakeAvailable(spdlog)
-    set(SPDLOG_INCLUDE_DIRS ${spdlog_SOURCE_DIR}/include)
-    set(SPDLOG_LIBRARIES spdlog::spdlog)
+    find_package(spdlog CONFIG QUIET)
+    if(spdlog_FOUND)
+        set(SPDLOG_LIBRARIES spdlog::spdlog)
+        message(STATUS "spdlog via cmake config (vcpkg)")
+    else()
+        message(STATUS "MSVC: Fetching spdlog via FetchContent")
+        set(SPDLOG_BUILD_EXAMPLE OFF CACHE BOOL "" FORCE)
+        set(SPDLOG_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+        set(SPDLOG_BUILD_BENCH OFF CACHE BOOL "" FORCE)
+        FetchContent_Declare(spdlog
+            GIT_REPOSITORY https://github.com/gabime/spdlog.git
+            GIT_TAG v1.15.1
+            GIT_SHALLOW TRUE
+        )
+        FetchContent_MakeAvailable(spdlog)
+        set(SPDLOG_INCLUDE_DIRS ${spdlog_SOURCE_DIR}/include)
+        set(SPDLOG_LIBRARIES spdlog::spdlog)
+    endif()
 else()
     find_package(spdlog CONFIG QUIET)
     if(spdlog_FOUND)
@@ -77,17 +83,23 @@ endif()
 
 # === Dependency: fmt ===
 if(MSVC)
-    message(STATUS "MSVC: Fetching fmt via FetchContent")
-    set(FMT_TEST OFF CACHE BOOL "" FORCE)
-    set(FMT_DOC OFF CACHE BOOL "" FORCE)
-    FetchContent_Declare(fmt
-        GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-        GIT_TAG 11.1.4
-        GIT_SHALLOW TRUE
-    )
-    FetchContent_MakeAvailable(fmt)
-    set(FMT_INCLUDE_DIRS ${fmt_SOURCE_DIR}/include)
-    set(FMT_LIBRARIES fmt::fmt)
+    find_package(fmt CONFIG QUIET)
+    if(fmt_FOUND)
+        set(FMT_LIBRARIES fmt::fmt)
+        message(STATUS "fmt via cmake config (vcpkg)")
+    else()
+        message(STATUS "MSVC: Fetching fmt via FetchContent")
+        set(FMT_TEST OFF CACHE BOOL "" FORCE)
+        set(FMT_DOC OFF CACHE BOOL "" FORCE)
+        FetchContent_Declare(fmt
+            GIT_REPOSITORY https://github.com/fmtlib/fmt.git
+            GIT_TAG 11.1.4
+            GIT_SHALLOW TRUE
+        )
+        FetchContent_MakeAvailable(fmt)
+        set(FMT_INCLUDE_DIRS ${fmt_SOURCE_DIR}/include)
+        set(FMT_LIBRARIES fmt::fmt)
+    endif()
 else()
     find_package(fmt CONFIG QUIET)
     if(fmt_FOUND)

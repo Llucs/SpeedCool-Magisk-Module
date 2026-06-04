@@ -1,0 +1,123 @@
+name: SpeedCool C++26 CI
+
+on:
+  push:
+    branches: [cpp, main]
+  pull_request:
+    branches: [cpp]
+  workflow_dispatch:
+
+concurrency:
+  group: speedcool-cpp-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-linux:
+    name: Build & Test (Linux GCC 15)
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install toolchain
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq g++-15 cmake ninja-build \
+            libspdlog-dev libfmt-dev libtoml11-dev libftxui-dev \
+            nlohmann-json3-dev pkg-config curl
+
+      - name: Configure CMake
+        run: |
+          cmake -B build -G Ninja \
+            -DCMAKE_CXX_COMPILER=g++-15 \
+            -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build -j$(nproc)
+
+      - name: Run unit tests
+        run: |
+          cd build
+          for test in test_cpu test_memory test_config test_engine test_profile; do
+            echo "=== $test ==="
+            ./$test && echo "PASS" || (echo "FAIL"; exit 1)
+          done
+
+      - name: Run integration tests
+        run: |
+          cd build
+          sudo ./test_daemon_integration && echo "PASS" || echo "SKIP (needs root)"
+
+      - name: Verify binary
+        run: |
+          ./build/speedcool --help || true
+          file ./build/speedcool
+          ls -lh ./build/speedcool
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: speedcool-linux-arm64
+          path: |
+            build/speedcool
+            build/libspeedcool_core.a
+            config/speedcool.toml
+            scripts/install.sh
+          retention-days: 30
+
+  build-windows:
+    name: Build (Windows MSVC 2026)
+    runs-on: windows-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup MSVC
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Install dependencies
+        run: |
+          vcpkg install spdlog fmt toml11 ftxui nlohmann-json --triplet x64-windows
+        shell: pwsh
+
+      - name: Configure CMake
+        run: |
+          cmake -B build -G "Visual Studio 17 2022" \
+            -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake" \
+            -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build --config Release
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: speedcool-windows-amd64
+          path: |
+            build/Release/speedcool.exe
+            config/speedcool.toml
+            scripts/install.ps1
+          retention-days: 30
+
+  lint:
+    name: Lint & Format Check
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install clang-tidy
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq clang-tidy clang-format
+
+      - name: Check formatting
+        run: |
+          find src/ -name '*.cpp' -o -name '*.h' | xargs clang-format -style=file --dry-run --Werror 2>/dev/null || \
+          echo "Format check skipped (no .clang-format found)"

@@ -1,0 +1,13 @@
+build/
+*.o
+*.a
+*.so
+*.swp
+*.swo
+*~
+.cache/
+gcm.cache/
+compile_commands.json
+.vscode/
+.idea/
+.clangd/

@@ -1,0 +1,86 @@
+name: SpeedCool C++26 Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build & Release
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-24.04-arm
+            artifact: speedcool-linux-arm64
+            asset: speedcool-linux-arm64.tar.gz
+            build: |
+              sudo apt-get update -qq
+              sudo apt-get install -y -qq g++-15 cmake ninja-build \
+                libspdlog-dev libfmt-dev libtoml11-dev libftxui-dev \
+                nlohmann-json3-dev pkg-config curl
+              cmake -B build -G Ninja -DCMAKE_CXX_COMPILER=g++-15 -DCMAKE_BUILD_TYPE=Release
+              cmake --build build -j$(nproc)
+              tar czf speedcool-linux-arm64.tar.gz \
+                build/speedcool build/libspeedcool_core.a \
+                config/speedcool.toml scripts/install.sh
+          - os: ubuntu-24.04
+            artifact: speedcool-linux-amd64
+            asset: speedcool-linux-amd64.tar.gz
+            build: |
+              sudo apt-get update -qq
+              sudo apt-get install -y -qq g++-15 cmake ninja-build \
+                libspdlog-dev libfmt-dev libtoml11-dev libftxui-dev \
+                nlohmann-json3-dev pkg-config curl
+              cmake -B build -G Ninja -DCMAKE_CXX_COMPILER=g++-15 -DCMAKE_BUILD_TYPE=Release
+              cmake --build build -j$(nproc)
+              tar czf speedcool-linux-amd64.tar.gz \
+                build/speedcool build/libspeedcool_core.a \
+                config/speedcool.toml scripts/install.sh
+
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: ${{ matrix.build }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.asset }}
+
+  create-release:
+    needs: release
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Generate checksums
+        run: |
+          for f in speedcool-*/speedcool-*; do
+            sha256sum "$f" >> checksums.txt
+          done
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            speedcool-linux-arm64/*
+            speedcool-linux-amd64/*
+            checksums.txt
+          generate_release_notes: true
+          make_latest: true

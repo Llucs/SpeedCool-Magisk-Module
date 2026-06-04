@@ -1,0 +1,83 @@
+[daemon]
+interval_sec = 300
+log_level = "info"
+log_file = "/var/log/speedcool.log"
+
+[adaptive]
+enabled = true
+learning_rate = 0.01
+predictive_mode = true
+
+[profile.eco]
+cpu_governor = "powersave"
+cpu_freq_limit_pct = 70
+io_scheduler = "bfq"
+gpu_governor = "powersave"
+ram_clean_threshold_pct = 92
+swappiness = 10
+power_scheme = "powersaver"
+process_priority = "idle"
+game_mode = false
+disable_core_parking = false
+
+[profile.balanced]
+cpu_governor = "schedutil"
+cpu_freq_limit_pct = 0
+io_scheduler = "bfq"
+gpu_governor = "simple_ondemand"
+ram_clean_threshold_pct = 85
+swappiness = 60
+power_scheme = "balanced"
+process_priority = "below_normal"
+game_mode = false
+disable_core_parking = false
+
+[profile.performance]
+cpu_governor = "performance"
+cpu_freq_limit_pct = 100
+io_scheduler = "kyber"
+gpu_governor = "performance"
+ram_clean_threshold_pct = 75
+swappiness = 100
+power_scheme = "high_performance"
+process_priority = "high"
+game_mode = false
+disable_core_parking = false
+
+[profile.gaming]
+cpu_governor = "performance"
+cpu_freq_limit_pct = 100
+io_scheduler = "none"
+gpu_governor = "performance"
+ram_clean_threshold_pct = 70
+swappiness = 100
+power_scheme = "ultimate_performance"
+process_priority = "high"
+mmcss_task = "Games"
+game_mode = true
+disable_core_parking = true
+
+[profile.custom]
+cpu_governor = "schedutil"
+cpu_freq_limit_pct = 0
+io_scheduler = "bfq"
+gpu_governor = "simple_ondemand"
+ram_clean_threshold_pct = 85
+swappiness = 60
+power_scheme = "balanced"
+process_priority = "below_normal"
+game_mode = false
+disable_core_parking = false
+
+[conflict]
+known_modules = ["lspeed", "magnetar", "rickthermal", "fde.ai"]
+auto_resolve = true
+
+[update]
+auto_check = true
+channel = "stable"
+github_repo = "Llucs/SpeedCool-Magisk-Module"
+
+[telemetry]
+enabled = false
+retention_days = 30

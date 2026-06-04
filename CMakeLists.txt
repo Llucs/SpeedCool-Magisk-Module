@@ -1,0 +1,87 @@
+cmake_minimum_required(VERSION 4.0)
+project(speedcool VERSION 1.0.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 26)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(SPDLOG REQUIRED spdlog)
+pkg_check_modules(FMT REQUIRED fmt)
+pkg_check_modules(FTXUI REQUIRED ftxui)
+
+if(NOT TOML11_INCLUDE_DIR)
+    find_path(TOML11_INCLUDE_DIR toml.hpp HINTS /usr/include /usr/local/include)
+endif()
+
+add_compile_options(-Wall -Wextra -Wpedantic -Werror -fcontracts -DSPEEDCOOL_VERSION="${PROJECT_VERSION}")
+include_directories(${TOML11_INCLUDE_DIR})
+
+add_library(speedcool_core STATIC
+    src/common/logging.cpp
+    src/common/types.h
+    src/common/error.h
+    src/core/config.cpp
+    src/core/engine.cpp
+    src/core/profile_manager.cpp
+    src/core/scheduler.cpp
+    src/pal/cpu/cpu_info.cpp
+    src/pal/cpu/cpu_freq.cpp
+    src/pal/cpu/cpu_gov.cpp
+    src/pal/memory/ram_info.cpp
+    src/pal/memory/vm_tuning.cpp
+    src/pal/io/io_scheduler.cpp
+
+    src/pal/thermal/thermal.cpp
+    src/pal/gpu/gpu_info.cpp
+    src/pal/power/power.cpp
+    src/pal/platform_linux.cpp
+    src/monitor/metrics_collector.cpp
+    src/monitor/proc_stats.cpp
+    src/update/updater.cpp
+    src/update/manifest.cpp
+)
+
+target_include_directories(speedcool_core PUBLIC src)
+target_link_libraries(speedcool_core PUBLIC
+    ${SPDLOG_LINK_LIBRARIES}
+    ${FMT_LINK_LIBRARIES}
+)
+
+add_executable(speedcool
+    src/main.cpp
+    src/core/daemon.cpp
+    src/cli/cli.cpp
+    src/cli/tui.cpp
+)
+
+target_link_libraries(speedcool PRIVATE speedcool_core
+    ${SPDLOG_LINK_LIBRARIES}
+    ${FMT_LINK_LIBRARIES}
+    ${FTXUI_LINK_LIBRARIES}
+)
+
+if(WIN32)
+    target_sources(speedcool_core PRIVATE src/pal/platform_windows.cpp)
+    target_link_libraries(speedcool_core PRIVATE advapi32 powrprof pdh)
+endif()
+
+function(add_speedcool_test name)
+    add_executable(${name} ${ARGN})
+    target_link_libraries(${name} PRIVATE speedcool_core
+        ${SPDLOG_LINK_LIBRARIES}
+        ${FMT_LINK_LIBRARIES}
+    )
+    target_compile_options(${name} PRIVATE -DSCTEST)
+endfunction()
+
+add_speedcool_test(test_cpu tests/unit/test_cpu.cpp)
+add_speedcool_test(test_memory tests/unit/test_memory.cpp)
+add_speedcool_test(test_config tests/unit/test_config.cpp)
+add_speedcool_test(test_engine tests/unit/test_engine.cpp)
+add_speedcool_test(test_profile tests/unit/test_profile_manager.cpp)
+add_speedcool_test(test_daemon_integration tests/integration/test_daemon_integration.cpp src/core/daemon.cpp)
+
+install(TARGETS speedcool RUNTIME DESTINATION bin)
+install(FILES config/speedcool.toml DESTINATION /etc/speedcool)

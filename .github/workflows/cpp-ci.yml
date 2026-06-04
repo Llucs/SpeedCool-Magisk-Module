@@ -37,19 +37,31 @@ jobs:
           cmake --version | head -1
           dpkg -l | grep -E "(spdlog|fmt|toml|ftxui|json)" || true
 
+      - name: Debug environment
+        run: |
+          echo "=== GCC ==="
+          which g++-14 || echo "g++-14 not in PATH"
+          g++-14 --version || true
+          echo "=== CMake ==="
+          cmake --version || true
+          echo "=== Headers ==="
+          find /usr/include -name 'spdlog.h' 2>/dev/null | head -3
+          find /usr/include -name 'fmt' -type d 2>/dev/null | head -3
+          find /usr/include -name 'toml.hpp' 2>/dev/null | head -3
+
       - name: Configure CMake
         run: |
-          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_CXX_COMPILER=g++-14
-          RC=$?
-          echo "CMake exit code: $RC"
-          if [ $RC -ne 0 ]; then
-            echo "=== Trying with Makefiles ==="
-            rm -rf build
-            cmake -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release \
-              -DCMAKE_CXX_COMPILER=g++-14
-            exit $?
-          fi
+          echo "=== Running CMake configure ==="
+          CXX=g++-14 CC=gcc-14 cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_CXX_COMPILER=g++-14 2>&1 || true
+          echo "=== Exit code ==="
+          ls -la build/CMakeFiles/CMakeError.log 2>/dev/null && cat build/CMakeFiles/CMakeError.log || echo "No CMakeError.log"
+          ls -la build/CMakeFiles/CMakeConfigureLog.yaml 2>/dev/null && head -100 build/CMakeFiles/CMakeConfigureLog.yaml || echo "No CMakeConfigureLog.yaml"
+          echo "=== Retrying with Makefiles ==="
+          rm -rf build
+          CXX=g++-14 CC=gcc-14 cmake -B build -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_CXX_COMPILER=g++-14 2>&1
+          exit $?
 
       - name: Build
         run: cmake --build build -j$(nproc) 2>&1
